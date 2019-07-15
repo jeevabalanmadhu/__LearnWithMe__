@@ -1,0 +1,213 @@
+/*
+	posh.css
+	
+	This gives basic top/down margins and line heights for
+	elements h1...,p,li,blockquote
+	
+	left/right margins and padding are in maincontent.css
+	or in the page individual styles
+*/
+
+
+/* @group UAQA idioms */
+
+
+
+/* @end */
+
+/* @group Headers */
+
+h1 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h2, h3, h4, h5 {
+	
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-style: normal;
+}
+.welcome h2{
+    margin-top:0px;
+}
+/* @end */
+
+/* @group blockquote */
+
+blockquote {
+	padding: 0;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+blockquote p {
+	font-style: italic;
+}
+
+blockquote p cite {
+	font-style: normal;
+}
+
+blockquote.normal{
+	padding: 0;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+blockquote.normal p{
+	font-style: normal !important;
+}
+blockquote.bold p{
+	font-weight:bold;
+}
+
+/* @end */
+
+/* @group basic elements */
+
+p {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+/* @end */
+
+/* @group Lists */
+
+ul {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+ul ul, ul ul ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 15px;
+}
+
+ul ul {
+	padding-left: 20px;
+}
+
+ul ul ul {
+	padding-left: 25px;
+}
+
+ul li {
+	list-style-type: disc;
+}
+
+ul li ul li {
+	list-style-type: circle;
+}
+
+ul li ul li ul li {
+	list-style-type: square;
+}
+
+ol {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-left: 25px;		/* was 15 */
+}
+
+ol ol, ol ol ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ol ol {
+	padding-left: 30px;
+}
+
+ol ol ol {
+	padding-left: 35px;
+}
+
+.u {text-decoration:underline;}
+.underline {text-decoration:underline;}
+ul.nolist li {list-style:none;}
+ul.inlinelist {margin-left:0px;}
+ul.inlinelist li {display:inline !important; padding:0px 10px;}
+
+/*
+
+ol li {
+	list-style-type:decimal;
+}
+
+ol li ol li {
+	list-style-type:decimal;
+}
+
+ol li ol li ol li {
+	list-style-type:decimal;
+}
+
+ol[type="A"] li {
+	list-style-type: upper-alpha;
+}
+
+*/
+
+/* @end */
+
+/* @group defaults */
+
+var {
+	font-style: italic;
+}
+
+/* @end */
+
+/* @group tables */
+
+/*
+	this is meant as a default for a standard data table
+*/
+
+table.data {
+
+}
+
+table.data tr {
+	vertical-align: top;
+}
+
+table.data tr td, table.data tr th {
+	border: 1px solid #999;
+	border-collapse: collapse;
+	padding: 2px;
+	margin: 2px;
+	color: #616161;
+	text-align: center;
+}
+
+table.data tr th {
+	font-weight: bold;
+}
+
+/* @end */
+
+/*
+	default styles
+*/
+
+/*
+	mwiik added sub and sup 2009-11-02
+*/
+sub { vertical-align: sub; }
+sup { vertical-align: super; }
+
+.tabAreaWrapper {
+	height: 1%;
+}
+
+  #GoogleSearch{
+        top:54px;position:absolute;width:100px;padding-left:550px;
+    }

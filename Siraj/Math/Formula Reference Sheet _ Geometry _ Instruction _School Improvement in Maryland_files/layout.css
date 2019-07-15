@@ -1,0 +1,453 @@
+/*
+	layout.css
+	basic layouts for all pages
+	
+	div.layout
+	div.outerBox
+	div.innerBox
+	div.breadBox
+		div#Breadcrumb
+	div.masthead
+	div#Search
+	div#About
+	div#Navigation
+		ul#Menu
+*/
+
+/* @group Layout */
+ 
+.cse input.gsc-input, input.gsc-input {background-image:none !important; width:120px !important;font-size:12px !important;font-family:Arial, Helvetica, Sans-Serif !important;}
+.cse input.gsc-search-button, input.gsc-search-button-v2 {width:13px !important;padding:6px !important;}
+.cse .gsc-control-cse, .gsc-control-cse { padding: 0em !important; border:0px solid #fff !important;}
+.cse .gsc-search-box {width:135px !important;}
+.cse .gsc-search
+
+#GoogleSearchIndex{
+    width:800px;
+    position:absolute;
+    padding-left:550px;
+    top:10px;
+}
+#GoogleSearchIndex table{
+
+    border:none;
+}
+#GoogleSearchIndex td{
+    border:none;
+}
+#GoogleSearchIndex ul.searchul {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+#GoogleSearchIndex ul.searchul li {
+	float:left;
+	position:relative;
+	list-style-type: none;
+	margin-top:42px;
+}
+
+#GoogleSearch table{
+
+    border:none;
+     border-bottom:1px solid rgb(170, 170, 170);
+}
+#GoogleSearch td{
+    border:none;
+}
+#GoogleSearch ul.searchul {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+#GoogleSearch ul.searchul li {
+	float:left;
+	position:relative;
+	list-style-type: none;
+	margin-top:42px;
+}
+
+.gsc-input{
+    padding-bottom:4px;
+}
+
+div.layout {
+	width: 860px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	padding-top: 14px;
+}
+
+div.outerBox {
+	width: 860px;
+	margin-left: auto;
+	margin-right: auto;
+	background-repeat:no-repeat;
+	padding-bottom:15px;
+	background-position:bottom;
+}
+
+div.innerBox {
+	width: 790px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom:25px;
+}
+
+div.layoutDataPopup {
+	width: 682px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	padding-top: 14px;
+}
+
+div.outerBoxDataPopup {
+	width: 682px;
+	margin-left: auto;
+	margin-right: auto;
+	background-repeat:no-repeat;
+	padding-bottom:15px;
+	background-position:bottom;
+}
+
+div.innerBoxDataPopup {
+	width: 632px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom:25px;
+}
+
+/* @end */
+
+/* @group breadBox */
+
+/*
+	background image for breadBox
+	replaced in theme
+*/
+
+div.breadBox {
+	display: block;
+	width: 100%;
+	height: 24px;
+}
+
+
+div#Breadcrumb {
+	display: block;
+	float: right;
+	position: relative;
+	top: 3px;
+	z-index: 1;
+}
+
+div#Breadcrumb ul {
+	margin-top: 0;
+	padding-left: 0;
+}
+
+div#Breadcrumb ul li {
+	float: left;
+	padding-left: 4px;
+	text-transform: lowercase;
+	list-style-type: none;
+}
+
+/* @end */
+
+/* @group masthead */
+
+div.masthead {
+	margin-top: 3px;
+}
+
+div#Search {
+	width: 180px; 
+	height: 30px; 
+	float: right; 
+	margin-top:-33px;
+}
+
+div#Search ul.searchul { 
+	padding:0; 
+	margin:0; 
+	list-style-type:none; 
+}
+
+div#Search ul.searchul li { 
+	float:left; 
+	position:relative; 
+	list-style-type: none;
+	margin-top/*\**/:42px\9;
+}
+
+div#Search .formpos { 
+	position:absolute; 
+	top:1px; 
+	left:3px;
+}
+
+div#Search .inputpos { 
+	font-size:12px; 
+	font-family:Arial, Helvetica, sans-serif;
+	position:absolute; 
+	top:4px;
+	top:2px;
+	left:25px;
+	border:1px solid #fff;
+	color:#616161;
+	height:16px;
+	/*background-color:#d8e7c3;
+	border:1px solid green;*/
+}
+
+/* @end */
+
+/* @group About */
+
+div#About {
+	display: block;
+	text-transform: lowercase;
+	float: right;
+	margin-top: 0px;
+	position: relative;
+	right: 0px;
+}
+
+div#About ul {
+	margin-top: 0;
+	padding-left: 0;
+}
+
+div#About ul li {
+	float: left;
+	margin: 0;
+	padding: 0 0 0 10px;
+	list-style-type: none;
+	text-indent: 0;
+}
+
+/* @end */
+
+/* @group NavigationMenu */
+
+/*
+	NavigationMenu
+*/
+
+/*
+	mwiik 2012-11-14
+	up'd z-index from 2 to 3 due to dropdown issues
+*/
+
+div#Navigation {
+	display: block;
+	width: 789px;
+	height: 20px;
+	margin-bottom: 11px;
+	margin-left: 0px;
+	position: relative;
+	z-index: 3;
+}
+
+ul#Menu {
+	margin: 0;
+	padding: 0;
+}
+
+ul#Menu li {
+	list-style-type: none;
+}
+
+ul#Menu li.menuTop {
+	margin: 0;
+	padding: 0;
+	line-height: 20px;
+}
+
+ul#Menu li.menuTop {
+	text-transform: uppercase;
+}
+
+ul#Menu ul li {
+	text-transform: none;
+}
+
+/* /Basic SiteNavigation */
+
+/* SiteNavigationMenu Effects */
+
+ul#Menu, ul#Menu ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+/* widths for each class */
+
+ul#Menu li.menuTop {
+	border: none;
+}
+
+ul#Menu li.menuTop a {
+	padding-left: 6px;
+}
+
+ul#Menu li.menuGuide a {
+	padding-left: 0;
+}
+
+ul#Menu li.menuAssessments {
+	width: 145px;
+}
+
+ul#Menu li.menuAssessments ul li {
+	width: 139px;
+}
+
+ul#Menu li.menuDataAnalysis {
+	width: 150px;
+}
+
+ul#Menu li.menuDataAnalysis ul li {
+	width: 144px;
+}
+
+ul#Menu li.menuInstruction {
+	width: 150px;
+}
+
+ul#Menu li.menuInstruction ul li {
+	width: 144px;
+}
+
+ul#Menu li.menuSchoolImprovement, ul#Menu li.menuSchoolImprovement ul li {
+	width: 190px;
+}
+
+ul#Menu li.menuGuide {
+	width: 153px;
+}
+
+ul#Menu li.menuGuide ul li {
+	width: 149px;
+	width: 150px;
+}
+
+ul#Menu a { /* all anchors */
+	display: block;
+}
+
+ul#Menu li.menuTop { /* all list items */
+	float: left;
+}
+
+
+ul#Menu li.menuTop ul { /* second-level lists */
+	position: absolute;
+	background: #f2ebdc;
+	left: -999em;
+
+/* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+
+ul#Menu li:hover ul, ul#Menu li.sfhover ul, ul#Menu li.sfhover ul {
+	left: -999em;
+}
+
+ul#Menu li:hover ul, ul#Menu li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+}
+
+/* /SiteNavigationMenu Effects */
+
+/* SiteNavigationMenu Presentation */
+
+ul#Menu li a {
+	display: block;
+	font-size: 11px;
+	letter-spacing: .2px;
+	color: #915d0e;
+	text-decoration: none;
+	text-indent: 0px;
+	background: transparent;
+	border-width: 0 1px 1px 0;
+}
+
+ul#Menu li.menuGuide {
+	border-left: 1px solid #915d0e;
+	text-align: right;
+	display: block;
+}
+
+ul#Menu > li:hover > a, ul#Menu a.menuGuide:hover {
+	background: #e2dccf;
+}
+
+ul#Menu ul li a:hover, ul#Menu ul li:hover ul li a:hover {
+	background: #f2ebdc;
+	color:#466700;
+	text-decoration: underline;
+}
+
+ul#Menu li ul li a, ul#Menu li ul li a {
+	font-size: 10px;
+	text-indent: 0px;
+	line-height: 1em;
+	padding-left: 3px;
+	margin-top: 0.9em;
+	margin-bottom: 0.9em;
+	*margin-top: 0.35em;
+	*margin-bottom: 0.35em;
+}
+ul#Menu li ul li.special, ul#Menu li ul li.special {
+	font-size: 10px;
+	text-indent: 0px;
+	line-height: 1em;
+	padding-left: 3px;
+	margin-top: 0.9em;
+	margin-bottom: 0.9em;
+	*margin-top: 0.35em;
+	*margin-bottom: 0.35em;
+	margin-left:5px; font-size:10px;
+}
+
+ul#Menu li.menuSection {
+	padding-top: 0;
+	padding-left: 6px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+ul#Menu ul li.menuSection {
+	text-transform: uppercase;
+	font-size: 10px;
+	margin-bottom:-1px;
+	line-height: 10px;
+}
+
+ul#Menu ul li.menuList {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	line-height: 1em;
+	*margin-top: 0.5em;
+	*margin-bottom: 0.5em;
+}
+
+ul#Menu ul li.menuList a {
+	display: inline;
+}
+
+/* @end */
+
+/*
+	attempt to fix stickybug
+*/
+
+ul#Menu li:hover {
+	visibility:visible; /* Fix an IE7 sticky bug*/
+}
+

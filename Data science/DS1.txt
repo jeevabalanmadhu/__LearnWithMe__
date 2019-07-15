@@ -1,0 +1,165 @@
+Pandas
+===========
+1D or one dimentional or series
+2D or two dimentional or DataFrame
+3D or three dimentional or Panel
+
+(Pa)nel + (Da)ta'(s)=Pandas
+
+#1D or one dimentional or series
+1. List
+2. Tuple
+3. Dictionary
+4. Array or ndarray - number dimentional array
+
+Structure:
+---------------
+
+Index or Rows or axis=0 or major_axis
+
+Import Pandas
+pandas.Series(data, index, dtype, copy)
+
+---------------------------
+MyList=[10, "data", 3.15]
+print(MyList)
+
+print("\nUsing pandas package for series data conversion")
+import pandas
+series_data=pandas.Series(data=MyList)
+print(series_data)
+-----
+
+output:
+[10,'data',3.15]
+
+Using pandas package for series data conversion
+0	10
+1 	'data'
+2	3.15
+datatype=object	#highist of datatype will display
+
+-----------------------------------
+
+MyList=[10, "data", 3.15]
+print(MyList)
+
+print("\nUsing pandas package for series data conversion")
+import pandas
+series_data=pandas.Series(data=MyList,index=["row1","row2","row3"])
+print(series_data)
+print()
+print(series_data[1])
+print()
+print(series_data["row3"])
+
+output:
+[10,'data',3.15]
+
+Using pandas package for series data conversion
+row1	10
+row2	data
+row3	3.15
+datatype=object
+
+data
+
+3.15
+datatype=object
+
+-----------------------------------
+
+MyTuple=(10, "data", 3.15)
+print(MyTuple)
+
+print("\nUsing pandas package for series data conversion")
+import pandas
+series_data=pandas.Series(data=MyTuple,index=["row1","row2","row3"])
+print(series_data)
+
+output:
+(10,'data',3.15)
+
+Using pandas package for series data conversion
+row1	10
+row2	data
+row3	3.15
+datatype=object
+-----------------------------------
+
+
+MyDict={"name":"Jeevabalan","age":34,"rank":6.8}
+print(MyDict)
+
+print("\nUsing pandas package for series data conversion")
+import pandas
+series_data=pandas.Series(data=MyDict)
+print(series_data)
+
+output:
+{'name':'Jeevabalan','age':34,'rank':6.8}
+
+Using pandas package for series data conversion
+name	Jeevabalan
+age	34
+rank	6.8
+datatype=object
+-----------------------------------------------
+MyDict={"name":"Jeevabalan","age":34,"rank":6.8}
+print(MyDict)
+
+print("\nUsing pandas package for series data conversion")
+import pandas
+series_data=pandas.Series(data=MyDict,index=["row1","row2","row3"])
+print(series_data)
+
+output:
+{'name':'Jeevabalan','age':34,'rank':6.8}
+
+Using pandas package for series data conversion
+row1	NaN	#Nan = Not a number
+row2	NaN
+row3	NaN
+datatype=object
+---------------------------------------------------
+
+MyDict={"name":"Jeevabalan","age":34,"rank":6.8}
+print(MyDict)
+
+print("\nUsing pandas package for series data conversion")
+import pandas
+series_data=pandas.Series(data=MyDict,index=["age","name","rank"])
+print(series_data)
+
+output:
+{'name':'Jeevabalan','age':34,'rank':6.8}
+
+Using pandas package for series data conversion
+age	34
+name	Jeevabalan
+rank	6.8
+datatype=object
+----------------------------------------------------
+
+import numpy
+MyData=numpy.array([10,20,30])
+print(MyData)
+
+print("\nUsing pandas package for series data conversion")
+import pandas
+series_data=pandas.Series(data=MyData,index=["ID1","ID2","ID3"])
+print(series_data)
+
+output:
+[10,20,30]
+
+Using pandas package for series data conversion
+ID1	10
+ID2	20
+ID3	30
+datatype=int32
+
+
+
+
+

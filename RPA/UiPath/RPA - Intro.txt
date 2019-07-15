@@ -1,0 +1,4 @@
+1. RPA/IPA History
+2. Difference between RPA and Automation Testing
+3. Difference between BluePrism vs Automation Anywhere vs UiPath
+4. RPA Life cycle strategy, life cycle and roles.

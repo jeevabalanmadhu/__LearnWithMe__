@@ -1,0 +1,148 @@
+/*
+Copyright (c) 2007, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.3.1
+*/
+/**
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+ */
+body {font:13px/1.22 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
+table {font-size:inherit;font:100%;}
+/**
+ * Bump up IE to get to 13px equivalent
+ */
+pre,code,kbd,samp,tt {font-family:monospace;*font-size:108%;line-height:99%;}
+
+
+/*
+	Specific to new.mdk12.org
+*/
+
+h1, h2, h3, h4, h5, h6, p, li, td, th, caption {
+	color: #616161;
+}
+
+h1, h2, h3 {
+	font-style: italic;
+	font-weight: bold;
+	font-family: arial;	
+}
+
+h1 {
+	font-size: 20px;
+}
+
+h2 {
+	font-size: 17px;
+}
+
+h3 {
+	font-size: 16px;
+}
+
+h4 {
+	font-size: 13px;
+}
+
+p, li, th, td, input, textarea {
+	font: 11px Verdana, sans-serif;
+	line-height: 16px;
+}
+
+a {
+	text-decoration: none;
+	color: #8a5301;
+}
+
+a:hover {
+	color: #466700;
+	text-decoration:underline;
+}
+
+strong, b {
+	font-weight: bold;
+}
+
+em, i {
+	font-style: italic;
+}
+
+/* @group Breadcrumb */
+
+div#Breadcrumb {
+	font: 10px verdana;
+}
+
+/* @end */
+
+/* @group NavigationMenu */
+
+div#Navigation {
+	font: 14px verdana;
+}
+
+ul#Menu li {
+	text-transform: uppercase;
+}
+
+ul#Menu ul li {
+	text-transform: none;
+}
+
+/* @end */
+
+/*
+	all this does is make h2's in AuxContent the same size as h3's
+*/
+
+div#AuxContent h2 {
+	font-size: 16px;
+}
+
+
+#GoogleSearchIndex{
+    width:800px;
+    position:absolute;
+    padding-left:550px;
+    top:10px;
+}
+#GoogleSearchIndex table{
+
+    border:none;
+}
+#GoogleSearchIndex td{
+    border:none;
+}
+#GoogleSearchIndex ul.searchul {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+#GoogleSearchIndex ul.searchul li {
+	float:left;
+	position:relative;
+	list-style-type: none;
+	margin-top:42px;
+}
+
+#GoogleSearch table{
+
+    border:none;
+    border-bottom:1px solid rgb(170, 170, 170);
+}
+#GoogleSearch td{
+    border:none;
+}
+#GoogleSearch ul.searchul {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+}
+#GoogleSearch ul.searchul li {
+	float:left;
+	position:relative;
+	list-style-type: none;
+	margin-top:42px;
+}

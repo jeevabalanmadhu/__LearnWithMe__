@@ -1,0 +1,59 @@
+/*
+	maincontent.css
+	
+	handles the dimensions of the div.mainContent
+*/
+
+div.mainContent {
+	background-color: #FFF;
+	margin: 0;
+	padding: 0;
+	border-right:1px solid #ccc;
+	border-left:1px solid #f6f6f6;
+	border-left:1px solid #eee;
+	padding-left: 10px;
+	padding-right: 10px;
+	width:768px;
+}
+
+/*
+	this solves the issue with margins right inside 
+	div.mainContent
+*/
+
+div.innerMain {
+	border: 1px solid white;
+	width: 766px;
+}
+
+/*
+	mainContent h2's have gray bar
+*/
+
+div.mainContent h2 {
+	background-color: #eee;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 1px;
+}
+
+div.mainContent tr, div.mainContent td { 
+	vertical-align:top;
+}
+
+div.mainContentPopup {
+	background-color: #FFF;
+	margin: 0;
+	padding: 0;
+	border-right:1px solid #ccc;
+	border-left:1px solid #f6f6f6;
+	border-left:1px solid #eee;
+	padding-left: 15px;
+	width:615px;
+}
+
+div.innerMainPopup {
+	border: 1px solid white;
+	width: 600px;
+}
+

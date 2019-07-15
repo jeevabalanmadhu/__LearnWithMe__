@@ -1,0 +1,61 @@
+Topic 1: Probability Intro
+
+Two thery Probability
+Frequentist vs Bayesian
+
+1. Frequentist --> what is observed so far and finding probability
+	* Depends on proportion of event in infinite sample space
+	* Objective measure
+2. Bayesian --> more than 50% probability
+	* Measures degree of belief
+	
+Mathematics of resulting probabilities works same for both theorim
+P1=0.1
+P2=0.2
+P1*P2=.02
+
+Definition:
+1. Random Experiment:
+Experiment that results in different outcomes despite being seemingly similar conditions.
+Ex: Tossing of a coin, throwing of a dice, rainfall amount
+
+2. Sample space - set of all possible outcomes of a random experiment.
+Ex: Tossing a coin. S={H,T}
+Coint twice S={HH,HT,TH,TT}
+* The sample space we choose depends on the purpose of analysis
+S=R^+={x|>0}OR
+S={low,medium,high)OR
+S={satisfactory, unsatisfactory}
+
+Random variable:
+* Useful to denote outcomes of random experiments by number
+* Can be done even for cateforical outcomes
+* The variable that assocaites a number with an outcome of a random experiment is called a random variable -->R,Z
+Notation - The random variable is denoted by a capital letter(e.g, X) and its value is denoted by a small letter (e.g, x)
+
+Probability Distributions:
+A probability distribution tells us how likely a random variable is to take each of its possible states.
+
+Two types of PD:
+1. Discrete Random variable(RV)
+* has finite or countable range
+* Ex: no of typographical errors, no of diagnostic erros, etc
+* Probability measured by Probability Mass Function (PMF)
+
+Continous Random Variable(RV)
+* Has real number interval for its range
+* Ex: Temperature, pressure, voltage, height, current, etc
+* Probability measured by Probability Density Function(PDF)
+
+PMF:
+*List of possibble values with their probabilities
+* P should have some value for each output
+* Whole sample must be covered
+* 0<=P(X=x)<=1
+* Summasion of x in X P(X=x under i)=1=1/k (i is 1,2,3...k)
+
+PDF:
+* Probability per unit length
+* Like a distributed load
+* Normalized instagram approximates a probability density function
+

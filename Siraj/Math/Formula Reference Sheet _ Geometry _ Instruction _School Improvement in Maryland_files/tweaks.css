@@ -1,0 +1,411 @@
+/*
+	tweaks.css
+*/
+
+@media screen { .printonly { display: none; }
+}
+
+@media print { .screenonly { display: none; }
+}
+
+
+div.clearBoth {
+	clear: both;
+	font-size: 1px;
+	height: 1px;
+	max-height: 1px;
+}
+
+.clearfloat { 
+	clear:both; 
+}
+.fltrt { 
+	float: right; 
+	margin-left: 10px; 
+}
+.fltlft { 
+	float: left; 
+	margin-right: 10px; 
+}
+.upper { 
+	text-transform:uppercase; 
+	font-weight: bold; 
+}
+.unbold { 
+	font-weight:normal !important; 
+}
+
+.glossary {
+	position:relative; 
+	top:-18px; 
+	float:right;
+}
+
+div.tweak {
+	margin: 0;
+	padding: 0;
+}
+
+
+div.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+div.legacyContent {
+	width:600px;
+	padding-left: 95px;
+	padding-right: 93px;
+	background-color: white;
+	padding-top: 14px;
+}
+
+/*
+	we don't really need innerMain for most legacy pages,
+	but it's not needed for legacyContent
+*/
+
+div.legacyContent div.innerMain {
+	/*border:  none;*/
+	width: auto;
+}
+
+div.legacyContent table {
+	
+	
+}
+
+div.legacyContent td {
+	text-align:left;
+}
+
+div.legacyContent td.tabnumerals, div.legacyContent td.tabnumeralsp30, div.legacyContent td.tableheader {
+	text-align: center;
+}
+
+.invisitext {
+	color:  white;
+}
+
+.nomargintop {
+	margin-top:0px;
+}
+.padtop10 {
+	padding-top:10px;
+}
+
+.nomarginbottom {
+	margin-bottom: 0;
+}
+
+span.lowercase {
+	text-transform: lowercase;
+}
+
+table.expertsBios td {
+	padding: 4px;
+}
+
+.itemQuest p{ font-size:11px; }
+
+.allheaders h2 {
+	color: #616161;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color:#fff !important;
+}
+
+.allheaders h3 {
+	color: #616161;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #eee;
+	margin: 3px 0;
+	padding: 2px;
+}
+/*
+	tweaks.css
+*/
+
+@media screen { .printonly { display: none; }
+}
+
+@media print { .screenonly { display: none; }
+}
+
+
+div.clearBoth {
+	clear: both;
+	font-size: 1px;
+	height: 1px;
+	max-height: 1px;
+}
+
+.clearfloat { 
+	clear:both; 
+}
+.fltrt { 
+	float: right; 
+	margin-left: 10px; 
+}
+.fltlft { 
+	float: left; 
+	margin-right: 10px; 
+}
+.upper { 
+	text-transform:uppercase; 
+	font-weight: bold; 
+}
+.unbold { 
+	font-weight:normal !important; 
+}
+
+.glossary {
+	position:relative; 
+	top:-18px; 
+	float:right;
+}
+
+div.tweak {
+	margin: 0;
+	padding: 0;
+}
+
+
+div.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+div.legacyContent {
+	width:600px;
+	padding-left: 95px;
+	padding-right: 93px;
+	background-color: white;
+	padding-top: 14px;
+}
+
+div.legacyContent div.innerMain {
+	/*border:  none;*/
+	width: auto;
+}
+
+div.legacyContent table {
+	
+	
+}
+
+div.legacyContent td {
+	text-align:left;
+}
+
+div.legacyContent td.tabnumerals, div.legacyContent td.tabnumeralsp30, div.legacyContent td.tableheader {
+	text-align: center;
+}
+
+.invisitext {
+	color:  white;
+}
+
+.nomargintop {
+	margin-top:0px;
+}
+.padtop10 {
+	padding-top:10px;
+}
+
+.nomarginbottom {
+	margin-bottom: 0;
+}
+
+span.lowercase {
+	text-transform: lowercase;
+}
+
+table.expertsBios td {
+	padding: 4px;
+}
+
+.itemQuest p{ font-size:11px; }
+
+.allheaders h2 {
+	color: #616161;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color:#fff !important;
+}
+
+.allheaders h3 {
+	color: #616161;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #eee;
+	margin: 3px 0;
+	padding: 2px;
+}
+
+/* from subnav menu, for new menu layout */
+
+div#Navigation {
+	display: block;
+	width: 789px;
+	height: 20px;
+	margin-bottom: 11px;
+	margin-left: 0px;
+	position: relative;
+	z-index: 3;
+}
+ul#Menu {
+	margin: 0;
+	padding: 0;
+}
+ul#Menu li {
+	list-style-type: none;
+}
+ul#Menu li.menuTop {
+	margin: 0;
+	padding: 0;
+	line-height: 20px;
+}
+ul#Menu li.menuTop {
+	text-transform: uppercase;
+}
+ul#Menu ul li {
+	text-transform: none;
+}
+
+
+ul#Menu, ul#Menu ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+/* widths for each class */
+
+ul#Menu li.menuTop {
+	border: none;
+}
+ul#Menu li.menuTop a {
+	padding-left: 6px;
+}
+ul#Menu li.menuGuide a {
+	padding-left: 0;
+}
+ul#Menu li.menuInstructionAssessments {
+	width: 235px;
+}
+ul#Menu li.menuInstructionAssessments ul li {
+	width: 230px;
+}
+ul#Menu li.menuDataAnalysis {
+	width: 155px;
+}
+ul#Menu li.menuDataAnalysis ul li {
+	width: 154px;
+}
+ul#Menu li.menuSchoolImprovement, ul#Menu li.menuSchoolImprovement ul li {
+	width: 190px;
+}
+ul#Menu li.menuGuide {
+	width: 207px;
+}
+ul#Menu li.menuGuide ul li {
+	width: 203px;
+}
+ul#Menu a { /* all anchors */
+	display: block;
+}
+ul#Menu li.menuTop { /* all list items */
+	float: left;
+}
+ul#Menu li.menuTop ul { /* second-level lists */
+	position: absolute;
+	background: #f2ebdc;
+	left: -999em;/* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+ul#Menu li:hover ul, ul#Menu li.sfhover ul, ul#Menu li.sfhover ul {
+	left: -999em;
+}
+ul#Menu li:hover ul, ul#Menu li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+}
+ul#Menu li a {
+	display: block;
+	font-size: 11px;
+	letter-spacing: .2px;
+	color: #915d0e;
+	text-decoration: none;
+	text-indent: 0px;
+	background: transparent;
+	border-width: 0 1px 1px 0;
+}
+ul#Menu li.menuGuide {
+	border-left: 1px solid #915d0e;
+	text-align: right;
+	display: block;
+}
+ul#Menu > li:hover > a, ul#Menu a.menuGuide:hover {
+	background: #e2dccf;
+}
+ul#Menu ul li a:hover, ul#Menu ul li:hover ul li a:hover {
+	background: #f2ebdc;
+	color:#466700;
+	text-decoration: underline;
+}
+ul#Menu li ul li a, ul#Menu li ul li a {
+	font-size: 10px;
+	text-indent: 0px;
+	line-height: 1em;
+	padding-left: 3px;
+	margin-top: 0.9em;
+	margin-bottom: 0.9em;
+ *margin-top: 0.35em;
+ *margin-bottom: 0.35em;
+}
+ul#Menu li ul li.special, ul#Menu li ul li.special {
+	font-size: 10px;
+	text-indent: 0px;
+	line-height: 1em;
+	padding-left: 3px;
+	margin-top: 0.9em;
+	margin-bottom: 0.9em;
+ *margin-top: 0.35em;
+ *margin-bottom: 0.35em;
+	margin-left:5px;
+	font-size:10px;
+}
+ul#Menu li.menuSection {
+	padding-top: 0;
+	padding-left: 6px;
+}
+ul#Menu ul li.menuSection {
+	text-transform: uppercase;
+	font-size: 10px;
+	margin-top:7px;
+}
+ul#Menu ul li.subT {
+	padding-left: 6px;
+	font-size: 9px;
+}
+ul#Menu ul li.menuList {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	line-height: 1em;
+ *margin-top: 0.5em;
+ *margin-bottom: 0.5em;
+}
+ul#Menu ul li.menuList a {
+	display: inline;
+}
+ul#Menu li:hover {
+	visibility:visible; /* Fix an IE7 sticky bug*/
+}
+
