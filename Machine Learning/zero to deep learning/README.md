@@ -1,12 +1,3 @@
-## [Check our Zero To Deep Learning 5 day bootcamp. New dates are out!](https://bootcamp.zerotodeeplearning.com)
-
-------
-
-# Zero to Deep Learning® Video Course
-
-Welcome to the Zero to Deep Learning® Video Course repository.
-
-## Get started guide
 
 #### Clone this repository on your local computer
 
