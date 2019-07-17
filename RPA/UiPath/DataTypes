@@ -1,0 +1,25 @@
+Importent data types in UiPath
+1.	GenericValue
+2.	Int32
+3.	String
+4.	Boolean
+5.	Object
+6.	Array
+7.	Datatable
+8.	Datarow
+9.	QueueItem
+10.	Dictionary
+11.	List
+12.	ArrayList
+13.	SecureString
+14.	Image
+15.	Double
+
+
+Frequently used data types in UiPath
+Rank 1: String
+Rank 2: Boolean
+Rank 3: Object
+Rank 4: DataTable
+Rank 5: Int32
+
