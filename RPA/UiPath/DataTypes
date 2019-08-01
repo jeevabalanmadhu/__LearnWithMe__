@@ -14,12 +14,13 @@ Importent data types in UiPath
 13.	SecureString
 14.	Image
 15.	Double
+16. Exception
 
 
 Frequently used data types in UiPath
 Rank 1: String
 Rank 2: Boolean
-Rank 3: Object
+Rank 3: Exception
 Rank 4: DataTable
 Rank 5: Int32
 
