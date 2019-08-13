@@ -1,0 +1,172 @@
+Python Pandas - Panel:
+----------------------
+
+	*A panel is a 3D container of data. 
+
+	*The term Panel data is derived from econometrics and is partially responsible for the name 
+	 pandas - pan(el)-da(ta)-s.
+
+	*The names for the 3 axes are intended to give some semantic meaning to describing operations 
+	 involving panel data. 
+
+They are 
+
+	1.items - axis 0, each item corresponds to a DataFrame contained inside.
+
+	2.major_axis - axis 1, it is the index (rows) of each of the DataFrames.
+
+	3.minor_axis - axis 2, it is the columns of each of the DataFrames.
+---------------------------------------------------------------------------------------------------------------
+pandas.Panel()
+--------------
+
+Systex:
+-------
+
+	pandas.Panel(data, items, major_axis, minor_axis, dtype, copy)
+---------------------------------------------------------------------------------------------------------------
+Create Panel:
+-------------
+
+A Panel can be created using multiple ways like:
+
+	1.From ndarrays
+
+	2.From dict of DataFrames
+---------------------------------------------------------------------------------------------------------------
+From 3D ndarray:
+----------------
+
+Example:1
+=========
+# creating an empty panel
+import pandas as pd
+import numpy as np
+
+data = np.random.rand(4,5,6)
+p = pd.Panel(data)
+print(p)
+
+output:
+-------
+<class 'pandas.core.panel.Panel'>
+Dimensions: 4 (items) x 5 (major_axis) x 6 (minor_axis)
+Items axis: 0 to 3
+Major_axis axis: 0 to 4
+Minor_axis axis: 0 to 5
+---------------------------------------------------------------------------------------------------------------
+From dict of DataFrame Objects:
+-------------------------------
+Example:1
+=========
+#creating an empty panel
+import pandas as pd
+import numpy as np
+
+data = {'Item1' : pd.DataFrame(np.random.randn(4, 3)), 
+        'Item2' : pd.DataFrame(np.random.randn(4, 3))}
+p = pd.Panel(data)
+print(p)
+
+output:
+=======
+<class 'pandas.core.panel.Panel'>
+Dimensions: 2 (items) x 4 (major_axis) x 3 (minor_axis)
+Items axis: Item1 to Item2
+Major_axis axis: 0 to 3
+Minor_axis axis: 0 to 3
+---------------------------------------------------------------------------------------------------------------
+Create an Empty Panel:
+----------------------
+Example:1
+=========
+#creating an empty panel
+import pandas as pd
+p = pd.Panel()
+print(p)
+
+output:
+=======
+<class 'pandas.core.panel.Panel'>
+Dimensions: 0 (items) x 0 (major_axis) x 0 (minor_axis)
+Items axis: None
+Major_axis axis: None
+Minor_axis axis: None
+----------------------------------------------------------------------------------------------------------------
+Selecting the Data from Panel:
+------------------------------
+
+Select the data from the panel using
+
+	1.Items
+
+	2.Major_xs
+
+	3.Minor_xs
+---------------------------------------------------------------------------------------------------------------
+1.Using Items:
+--------------
+Example:1
+=========
+# creating an empty panel
+import pandas as pd
+import numpy as np
+data = {'Item1' : pd.DataFrame(np.random.randn(4, 3)), 
+        'Item2' : pd.DataFrame(np.random.randn(4, 2))}
+p = pd.Panel(data)
+print(p['Item1'])
+
+output:
+=======
+          0         1         2
+0 -0.540302  1.437100  1.544839
+1 -0.207080 -0.550778  0.263035
+2  1.027810  1.832269 -1.032542
+3  0.589801 -0.127572  0.593289
+---------------------------------------------------------------------------------------------------------------
+2.Using major_axis
+------------------
+Example:1
+=========
+# creating an empty panel
+import pandas as pd
+import numpy as np
+data = {'Item1' : pd.DataFrame(np.random.randn(4, 3)), 
+        'Item2' : pd.DataFrame(np.random.randn(4, 2))}
+p = pd.Panel(data)
+print(p.major_xs(1))
+
+output:
+=======
+      Item1     Item2
+0  1.011067  0.992360
+1 -0.350041 -1.195547
+2 -0.018365       NaN
+----------------------------------------------------------------------------------------------------------------
+Using minor_axis:
+-----------------
+Example:1
+=========
+# creating an empty panel
+import pandas as pd
+import numpy as np
+data = {'Item1' : pd.DataFrame(np.random.randn(4, 3)), 
+        'Item2' : pd.DataFrame(np.random.randn(4, 2))}
+p = pd.Panel(data)
+print(p.minor_xs(1))
+
+output:
+=======
+      Item1     Item2
+0 -0.151089 -0.279180
+1 -0.958538  0.130242
+2 -0.558346 -0.343333
+3 -1.812358 -0.578796
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

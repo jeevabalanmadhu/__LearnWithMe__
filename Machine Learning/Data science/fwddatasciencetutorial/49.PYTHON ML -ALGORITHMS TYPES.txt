@@ -1,0 +1,66 @@
+Machine Learning with Python - Algorithms
+-----------------------------------------
+
+	1.Machine learning algorithms can be broadly classified into two types - Supervised and Unsupervised. 
+
+	
+Supervised Learning
+-------------------
+
+	1.This algorithm consists of a target or outcome or dependent variable which is predicted from a given 
+	  set of predictor or independent variables. 
+
+	2.Using these set of variables, we generate a function that maps input variables to desired output 
+	  variables. 
+
+	3.The training process continues until the model achieves a desired level of accuracy on the training 
+	  data.
+
+	4.Examples of Supervised Learning - Regression, Decision Tree, Random Forest, KNN, Logistic Regression 
+	  etc.
+
+Unsupervised Learning
+---------------------
+
+	1.In this algorithm, there is no target or outcome or dependent variable to predict or estimate. 
+
+	2.It is used for clustering a given data set into different groups, which is widely used for segmenting 
+
+	  customers into different groups for specific intervention. 
+
+	3.Apriori algorithm and K-means are some of the examples of Unsupervised Learning.
+----------------------------------------------------------------------------------------------------------------
+Reinforcement Learning
+----------------------
+
+	1.Using this algorithm, the machine is trained to make specific decisions.
+
+	2. Here, the algorithm trains itself continually by using trial and error methods and feedback methods.
+
+	3. This machine learns from past experiences and tries to capture the best possible knowledge to make 
+	   accurate business decisions.
+---------------------------------------------------------------------------------------------------------------
+List of Common Machine Learning Algorithms
+-------------------------------------------
+
+	1.Here is the list of commonly used machine learning algorithms that can be applied to almost any 
+	  data problem.
+
+	1.Linear Regression
+
+	2.Multiple Linear Regression
+
+	3.Logistic Regression
+
+	4.Decision Tree
+
+	5.SVM
+
+	6.Naive Bayes
+
+	7.KNN
+
+	8.K-Means
+
+	9.Random Forest
+------------------------------------------------------------------------------------------------------------------

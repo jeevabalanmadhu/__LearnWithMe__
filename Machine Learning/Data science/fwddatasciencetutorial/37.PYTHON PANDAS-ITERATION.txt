@@ -1,0 +1,177 @@
+Python Pandas - Iteration
+-------------------------
+
+	1.The behavior of basic iteration over Pandas objects depends on the type. 
+
+	2.When iterating over a Series, it is regarded as array-like, and basic iteration produces the values. 
+
+	3.Other data structures, like DataFrame and Panel, follow the dict-like convention of iterating over the keys 
+	  of the objects.
+
+In short, basic iteration (for i in object) produces:
+
+	1.Series - values
+
+	2.DataFrame - column labels
+
+	3.Panel - item labels
+---------------------------------------------------------------------------------------------------------------
+Iterating a DataFrame:
+----------------------
+
+	*Iterating a DataFrame gives column names.
+
+Example:
+--------
+import pandas as pd
+import numpy as np
+ 
+N=20
+
+df = pd.DataFrame({
+    'A': pd.date_range(start='2016-01-01',periods=N,freq='D'),
+    'x': np.linspace(0,stop=N-1,num=N),
+    'y': np.random.rand(N),
+    'C': np.random.choice(['Low','Medium','High'],N).tolist(),
+    'D': np.random.normal(100, 10, size=(N)).tolist()
+    })
+
+for col in df:
+   print(col)
+
+output:
+=======
+A
+x
+y
+C
+D
+-----------------------------------------------------------------------------------------------------------------
+To iterate over the rows of the DataFrame, we can use the following functions:
+------------------------------------------------------------------------------
+
+	1.iteritems() - to iterate over the (key,value) pairs
+
+	2.iterrows() - iterate over the rows as (index,series) pairs
+
+	3.itertuples() - iterate over the rows as namedtuples
+----------------------------------------------------------------------------------------------------------------
+iteritems()
+-----------
+
+	*Iterates over each column as key, value pair with label as key and column value as a Series object.
+
+Example:1
+---------
+import pandas as pd
+import numpy as np
+ 
+df = pd.DataFrame(np.random.randn(4,3),columns=['col1','col2','col3'])
+print(df)
+
+print("value pair with label as key and column value as a Series object")
+for key,value in df.iteritems():
+   print(key,value)
+
+output:
+-------
+col1 0    1.667323
+1   -1.113973
+2    1.141046
+3   -0.954101
+Name: col1, dtype: float64
+col2 0   -0.776068
+1   -0.516772
+2    0.675299
+3    0.208782
+Name: col2, dtype: float64
+col3 0   -0.450245
+1   -0.356251
+2    1.724662
+3   -0.512304
+Name: col3, dtype: float64
+
+Note:
+-----
+	*Observe, each column is iterated separately as a key-value pair in a Series.
+---------------------------------------------------------------------------------------------------------------
+iterrows()
+----------
+
+	*iterrows() returns the iterator yielding each index value along with a series containing the data in 
+	 each row.
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(4,3),columns = ['col1','col2','col3'])
+print(df)
+
+for row_index,row in df.iterrows():
+   print(row_index,row)
+
+output:
+=======
+ col1      col2      col3
+0 -0.440221 -1.374133 -1.079332
+1  1.461300  0.193733  0.109713
+2 -0.912510 -1.319538 -0.219964
+3 -1.947509 -0.061995  0.173941
+0 col1   -0.440221
+col2   -1.374133
+col3   -1.079332
+Name: 0, dtype: float64
+1 col1    1.461300
+col2    0.193733
+col3    0.109713
+Name: 1, dtype: float64
+2 col1   -0.912510
+col2   -1.319538
+col3   -0.219964
+Name: 2, dtype: float64
+3 col1   -1.947509
+col2   -0.061995
+col3    0.173941
+Name: 3, dtype: float64
+
+Note:
+-----
+	*Because iterrows() iterate over the rows, it doesn't preserve the data type across the row. 
+
+	*0,1,2 are the row indices and col1,col2,col3 are column indices.
+---------------------------------------------------------------------------------------------------------------
+itertuples()
+------------
+
+	*itertuples() method will return an iterator yielding a named tuple for each row in the DataFrame. 
+
+	*The first element of the tuple will be the row’s corresponding index value, while the remaining 
+	 values are the row values.
+
+Example:1
+---------
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(4,3),columns = ['col1','col2','col3'])
+print(df)
+
+for row in df.itertuples():
+    print(row)
+
+output:
+-------
+     col1      col2      col3
+0  1.468402 -0.388159 -1.258680
+1  1.444355 -0.901721  0.481390
+2  0.331874  0.305317  1.858140
+3  2.607687  0.742568 -0.274429
+
+Pandas(Index=0, col1=1.647470466372038, col2=2.033809613428624, col3=-0.32177641581489735)
+Pandas(Index=1, col1=-0.14631924662144524, col2=0.3512739195984557, col3=-1.3268631639983344)
+Pandas(Index=2, col1=0.44216372151951255, col2=-0.14322447654669376, col3=-0.5053547097737637)
+Pandas(Index=3, col1=-0.42645732809357134, col2=2.80518485961462, col3=0.4202923295096279)
+---------------------------------------------------------------------------------------------------------------
+

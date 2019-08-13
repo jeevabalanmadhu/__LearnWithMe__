@@ -1,0 +1,391 @@
+What Is Central Tendency?
+
+	1.A measure of central tendency is a single value that describes the way in which a group of data cluster around a central 
+	  value. 
+
+	2.To put in other words, it is a way to describe the center of a data set.
+
+	3.There are three measures of central tendency: the mean, the median, and the mode.
+-------------------------------------------------------------------------------------------------------------------------------------
+Why Is Central Tendency Important?
+
+	1.Central tendency is very useful in psychology. 
+	
+	2.It lets us know what is normal or 'average' for a set of data. 
+
+	3.It also condenses the data set down to one representative value, which is useful when you are working with large amounts 
+	  of data. 
+
+	4.Could you imagine how difficult it would be to describe the central location of a 1000-item data set if you had to consider 
+	  every number individually?
+
+	5.Central tendency also allows you to compare one data set to another. 
+
+	6.For example, let's say you have a sample of girls and a sample of boys, and you are interested in comparing their heights.
+
+	7.By calculating the average height for each sample, you could easily draw comparisons between the girls and boys.
+-------------------------------------------------------------------------------------------------------------------------------------
+What is Mean?
+
+	1.The "mean" is the "average" you're used to, where you add up all the numbers and then divide by the number of numbers.
+--------------------------------------------------------------------------------------------------------------------------------------
+What is Median?
+
+	1.The "median" is the "middle" value in the list of numbers. 
+
+	2.To find the median, your numbers have to be listed in numerical order from smallest to largest, so you may have to rewrite 
+	  your list before you can find the median.
+--------------------------------------------------------------------------------------------------------------------------------------
+What is Mode?
+
+	1.The "mode" is the value that occurs most often. 
+
+	2.If no number in the list is repeated, then there is no mode for the list.
+-------------------------------------------------------------------------------------------------------------------------------------
+What is Range?
+
+	The "range" of a list a numbers is just the difference between the largest and smallest values.
+--------------------------------------------------------------------------------------------------------------------------------------
+What is skewness?
+
+	1.Skewness is asymmetry in a statistical distribution, in which the curve appears distorted or skewed either to the left or 
+	  to the right. 
+
+	2.Skewness can be quantified to define the extent to which a distribution differs from a normal distribution.
+--------------------------------------------------------------------------------------------------------------------------------------
+what is Normal Distribution?
+
+	1.A function that represents the distribution of many random variables as a symmetrical bell-shaped graph.
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Basic Concepts of Probability
+-----------------------------
+
+	1.A probability is a number that reflects the chance or likelihood that a particular event will occur. 
+
+	2.Probabilities can be expressed as proportions that range from 0 to 1, and they can also be expressed as percentages 
+	  ranging from 0% to 100%.
+-------------------------------------------------------------------------------------------------------------------------------------------
+What does mean by probability?
+
+	1.The chance that something will happen. How likely it is that some event will occur. 
+
+	2.Sometimes we can measure a probability with a number like "10% chance", or we can use words such as impossible, unlikely, 
+	  possible, even chance, likely and certain.
+-------------------------------------------------------------------------------------------------------------------------------------
+Different Types of Probabilities (Plus Important Facts)
+---------------------------------------------------------
+
+	1.Classical Probability.
+
+	2.Conditional Probability.
+
+	3.Experimental Probability.
+
+	4.Markov Chain Probability.
+
+	5.Personal (Subjective) Probability.
+
+	6.Relative Frequency Interpretation of Probability.
+
+	7.Standard Probability.
+
+	8.Theoretical Probability.
+--------------------------------------------------------------------------------------------------------------------------------------
+ODDS Ratio:
+-----------
+
+	1.The odds ratio is a statistic defined as the ratio of the odds of A in the presence of B and the odds of A without the 
+	  presence of B. 
+
+	2.This statistic attempts to quantify the strength of the association between A and B.
+---------------------------------------------------------------------------------------------------------------------------------------
+what is Standard Deviation?
+
+	1.A quantity expressing by how much the members of a group differ from the mean value for the group.
+
+	2.Standard deviation is the positive square root of average of the deviations of all the observation taken from the mean.
+
+	3.It is denoted by a greek letter v.
+---------------------------------------------------------------------------------------------------------------------------------------
+Bias–variance tradeoff
+----------------------
+
+	1.In statistics and machine learning, the bias–variance tradeoff is the property of a set of predictive models whereby models 
+	
+	  with a lower bias in parameter estimation have a higher variance of the parameter estimates across samples, and vice versa.
+---------------------------------------------------------------------------------------------------------------------------------------
+Distance metrics
+----------------
+	In statistics, probability theory, and information theory, a statistical distance quantifies the distance between two 
+	
+	statistical objects, which can be two random variables, or two probability distributions or samples, or the distance 
+
+	can be between an individual sample point and a population or a wider sample of points.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+Euclidean Distance
+------------------
+	1.In mathematics, the Euclidean distance or Euclidean metric is the "ordinary" straight-line distance between two points in 
+	  Euclidean space. 
+
+	2.With this distance, Euclidean space becomes a metric space. 
+
+	The associated norm is called the Euclidean norm. Older literature refers to the metric as the Pythagorean metric.
+--------------------------------------------------------------------------------------------------------------------------------------
+How do you calculate Euclidean distance?
+
+	1.The Pythagorean Theorem can be used to calculate the distance between two points, as shown in the figure below. 
+
+	2.If the points ( x 1 , y 1 ) and ( x 2 , y 2 ) are in 2-dimensional space, then the Euclidean distance between 
+	  them is ( x 2 - x 1 ) 2 + ( y 2 - y 1 ) 2 .
+-----------------------------------------------------------------------------------------------------------------------------------------
+Why Euclidean distance is used?
+
+	1.The Euclidean Distance tool is used frequently as a stand-alone tool for applications, such as finding the nearest hospital 
+
+	  for an emergency helicopter flight.
+
+	2.Alternatively, this tool can be used when creating a suitability map, when data representing the distance from a certain 
+
+	  object is needed.
+-------------------------------------------------------------------------------------------------------------------------------------
+Manhattan distance:
+-------------------
+
+	1.The Manhattan distance function computes the distance that would be traveled to get from one data point to the other if a 
+	
+	  grid-like path is followed. 
+
+	2.The Manhattan distance between two items is the sum of the differences of their corresponding components.
+-------------------------------------------------------------------------------------------------------------------------------------
+Example:1
+---------
+import pandas as pd
+df = pd.DataFrame([(1, 6), (2, 7), (3, 8), (4, 9),(5,10)],columns=['X', 'Y'])
+df.cov()
+
+
+Example:2
+---------
+import pandas as pd
+df = pd.DataFrame([1,2,2,3,4,5],columns=['X'])
+df.var()
+--------------------------------------------------------------------------------------------------------------------------------------
+Box plot
+--------
+
+	1.A simple way of representing statistical data on a plot in which a rectangle is drawn to represent the second and 
+	
+	  third quartiles, usually with a vertical line inside to indicate the median value. 
+
+	2.The lower and upper quartiles are shown as horizontal lines either side of the rectangle.
+--------------------------------------------------------------------------------------------------------------------------------------
+How do you find the upper and lower whiskers?
+
+	1.The first step in constructing a box-and-whisker plot is to first find the median (Q2), 
+	
+	  the lower quartile (Q1) and the upper quartile (Q3) of a given set of data.
+
+	2. You are now ready to find the interquartile range (IQR). 
+
+	3.The interquartile range is the difference between the upper quartile and the lower quartile
+-------------------------------------------------------------------------------------------------------------------------------------
+How to Find Outliers Using the Interquartile Range(IQR)
+--------------------------------------------------------
+
+	1.In statistics, an outlier is an observation point that is distant from other observations. 
+
+	2.An outlier may be due to variability in the measurement or it may indicate experimental error; 
+
+	  the latter are sometimes excluded from the data set. 
+
+	3.An outlier can cause serious problems in statistical analyses.
+
+	4.An outlier is defined as being any point of data that lies over 1.5 IQRs below the first quartile (Q1) or 
+	 
+	  above the third quartile (Q3)in a data set.
+
+High = (Q3) + 1.5 IQR
+Low = (Q1) – 1.5 IQR
+
+Example:
+--------
+import pandas as pd
+import matplotlib.pyplot as plt
+MyData=[61, 10, 32, 19, 22, 29, 36, 14, 49, 3]
+
+df=pd.DataFrame(MyData,columns=["COL1"])
+print(df)
+
+plt.boxplot(df["COL1"])
+plt.title("details")
+plt.grid(True)
+plt.show()
+
+df.describe()
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Scatter Plot:
+-------------
+	
+	1.A graph in which the values of two variables are plotted along two axes, the pattern of the resulting points revealing any 
+
+	 correlation present.
+
+	2.A scatter plot is a type of plot or mathematical diagram using Cartesian coordinates to display values for typically two 
+
+	  variables for a set of data.
+
+	3. If the points are color-coded, one additional variable can be displayed.
+--------------------------------------------------------------------------------------------------------------------------------------
+What is Cook's distance in statistics?
+
+	1.Cook's distance is useful for identifying outliers in the X values (observations for predictor variables). 
+
+	2.It also shows the influence of each observation on the fitted response values. 
+
+	3.An observation with Cook's distance larger than three times the mean Cook's distance might be an outlier.
+
+	4.In statistics, Cook's distance or Cook's D is a commonly used estimate of the influence of a data point when performing a 
+
+	  least-squares regression analysis.
+---------------------------------------------------------------------------------------------------------------------------------------
+How does data mining deal with missing values?
+
+	1.Data Mining — Handling Missing Values the Database
+
+	2.Ignore the data row. 
+
+	3.Use a global constant to fill in for missing values.
+
+	4.Use attribute mean.
+
+	5.Use attribute mean for all samples belonging to the same class.
+
+	6.Use a data mining algorithm to predict the most probable value.
+--------------------------------------------------------------------------------------------------------------------------------------
+What is the mean of Na?
+
+	1.N.A. also n/a. 
+
+	2.convention. N.A. is a written abbreviation for not applicable or not available
+-------------------------------------------------------------------------------------------------------------------------------------
+What is the Fullform of Na?
+
+	1.N/A or simply NA is a common abbreviation in tables and lists for “Not Available” or “Not Applicable” or “Not Announced”. 
+
+	2.It is used to indicate when information in a certain table cell is not provided, either because the answer is not available 
+	
+	  or because it does not apply to a particular case.
+--------------------------------------------------------------------------------------------------------------------------------------
+What is a Central Imputation in statistics?
+
+	1.In statistics, imputation is the process of replacing missing data with substituted values. 
+
+	2.When substituting for a data point, it is known as "unit imputation"; 
+
+	3.when substituting for a component of a data point, it is known as "item imputation".
+--------------------------------------------------------------------------------------------------------------------------------------
+What is KNN imputation in statistics?
+
+	1.KNN is an algorithm that is useful for matching a point with its closest k neighbors in a multi-dimensional space. 
+
+	2.It can be used for data that are continuous, discrete, ordinal and categorical which makes it particularly useful for 
+
+	  dealing with all kind of missing data.
+
+	3.Imputation is a term that denotes a procedure that replaces the missing values in a data set by some plausible values.
+-------------------------------------------------------------------------------------------------------------------------------------
+What is imputation of missing data?
+
+	1.In statistics, imputation is the process of replacing missing data with substituted values.
+
+	2.Because missing data can create problems for analyzing data, imputation is seen as a way to avoid pitfalls involved with 
+	
+	  listwise deletion of cases that have missing values.
+-------------------------------------------------------------------------------------------------------------------------------------
+What is missing data in statistics?
+
+	1.In statistics, missing data, or missing values, occur when no data value is stored for the variable in an observation. 
+
+	2.Missing data are a common occurrence and can have a significant effect on the conclusions that can be drawn from the data.
+-------------------------------------------------------------------------------------------------------------------------------------
+What is Dummification in statistics?
+
+	1.In statistics and econometrics, particularly in regression analysis, a dummy variable (also known as an indicator variable, 
+
+	  design variable, one-hot encoding, Boolean indicator, binary variable, or qualitative variable) is one that takes the 
+
+	  value 0 or 1 to indicate the absence or presence of some categorical effect.
+-------------------------------------------------------------------------------------------------------------------------------------
+What is the purpose of dummy variables?
+
+	1.A Dummy variable or Indicator Variable is an artificial variable created to represent an attribute with two or more distinct 
+
+	  categories/levels. 
+
+	2.Regression analysis treats all independent (X) variables in the analysis as numerical.
+--------------------------------------------------------------------------------------------------------------------------------------
+Can dummy variables be greater than 1?
+
+	1.Yes, coefficients of dummy variables can be more than one or less than zero.
+-------------------------------------------------------------------------------------------------------------------------------------
+What is Correlation in statistics?
+
+	1.The correlation is one of the most common and most useful statistics. 
+
+	2.A correlation is a single number that describes the degree of relationship between two variables
+
+	3.Correlation is a statistical measure that indicates the extent to which two or more variables fluctuate together. 
+
+	4.A positive correlation indicates the extent to which those variables increase or decrease in parallel; 
+
+	5.A negative correlation indicates the extent to which one variable increases as the other decreases.
+-------------------------------------------------------------------------------------------------------------------------------------
+Why do we use Pearson correlation?
+
+	1.Pearson's correlation should be used when there is a significant effect. 
+
+	2.(p > .05) When there is a relationship between two variables. 
+
+	3.There can be a positive or negative correlation. 
+
+	4.It cannot be used when we retain the null hypothesis because then there is no relationship.
+--------------------------------------------------------------------------------------------------------------------------------------
+What is Pearson correlation in statistics?
+
+	1.The Pearson product-moment correlation coefficient is a measure of the strength of the linear relationship between two 
+	  variables. 
+
+	2.It is referred to as Pearson's correlation or simply as the correlation coefficient.
+
+	3.A perfect positive linear relationship, r = 1.
+---------------------------------------------------------------------------------------------------------------------------------------
+What is positive correlation statistics?
+
+	1.Positive correlation is a relationship between two variables in which both variables move in tandem. 
+
+	2.A positive correlation exists when one variable decreases as the other variable decreases, or one variable increases while 
+	 	
+	  the other increases.
+--------------------------------------------------------------------------------------------------------------------------------------
+
+What is Negative correlation in statistics?
+
+	1.Negative correlation is a relationship between two variables in which one variable increases as the other decreases, 
+
+	  and vice versa.
+---------------------------------------------------------------------------------------------------------------------------------------
+What is Positive and Negative correlation in statistics?
+
+	1.Negative correlation is a relationship between two variables in which one variable increases as the other decreases, and 
+
+	  vice versa. 
+
+	2.In statistics, a perfect negative correlation is represented by the value -1.00, a 0.00 indicates no correlation, and 
+
+	  a +1.00 indicates a perfect positive correlation.
+-------------------------------------------------------------------------------------------------------------------------------------
+
+

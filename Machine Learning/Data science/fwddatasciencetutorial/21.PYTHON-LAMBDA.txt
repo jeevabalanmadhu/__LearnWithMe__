@@ -1,0 +1,62 @@
+Python Lambda
+-------------
+
+	1.A lambda function is a small anonymous function.
+
+	2.A lambda function can take any number of arguments, but can only have one expression.
+
+
+Syntax
+------
+lambda arguments : expression
+
+Note:
+-----
+
+	1.The expression is executed and the result is returned:
+
+
+Example:1
+---------
+sum=lambda a,b:a+b
+print(sum(10,20))
+
+output:
+-------
+30
+
+
+Example:2
+---------
+mul= lambda a, b : a * b
+print(mul(10, 5))
+
+output:
+-------
+50
+
+
+Example:3
+---------
+x = lambda a, b, c : a + b + c
+print(x(5, 6, 2))
+
+output:
+-------
+13
+
+Example:4
+---------
+def powerOf(n):
+  return lambda a : a**n
+
+result = powerOf(2)
+
+print(result(3))
+
+output:
+-------
+9
+----------------------------------------------------------------------------------------------------------------
+
+

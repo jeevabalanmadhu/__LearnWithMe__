@@ -1,0 +1,347 @@
+Dictionary
+----------
+
+	1.A dictionary is a collection which is unordered, changeable and indexed. 
+
+	2.In Python dictionaries are written with curly brackets, and they have keys and values.
+
+Example:1
+---------
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+print(MyDict)
+
+output:
+-------
+{'Name': 'Raja', 'Age': 34, 'Salary': 50000, 'Department': 'IOT'}
+
+--------------------------------------------------------------------------------------------------------------
+Accessing Items
+---------------
+
+	1.You can access the items of a dictionary by referring to its key name, inside square brackets:
+
+Example:1
+---------
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+print(MyDict['Name'])
+
+print(MyDict['Age'])
+
+print(MyDict['Salary'])
+
+print(MyDict['Department'])
+
+output:
+-------
+Raja
+34
+50000
+IOT
+---------------------------------------------------------------------------------------------------------------
+Loop Through a Dictionary
+-------------------------
+
+	1.You can loop through a dictionary by using a for loop.
+
+	2.When looping through a dictionary, the return value are the keys of the dictionary, but there are 
+
+	methods to return the values as well.
+
+Example:1
+=========
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+for i in MyDict:
+    print(i)
+
+output:
+-------
+Name
+Age
+Salary
+Department
+
+Note:
+-----
+Print all key names in the dictionary, one by one:
+
+
+Example:2
+=========
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+for i in MyDict:
+    print(MyDict[i])
+
+output:
+-------
+Raja
+34
+50000
+IOT
+
+Note:
+-----
+Print all values in the dictionary, one by one:
+
+
+Example:3
+=========
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+for i in MyDict.values():
+    print(i)
+
+output:
+-------
+Raja
+34
+50000
+IOT
+
+Note:
+-----
+Print all values in the dictionary, one by one:
+
+Example:4
+=========
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+for i, j in MyDict.items():
+  print(i, j)
+
+output:
+-------
+Name Raja
+Age 34
+Salary 50000
+Department IOT
+
+Note:
+-----
+	1.Loop through both keys and values, by using the items() function:
+---------------------------------------------------------------------------------------------------------------
+Change Values
+-------------
+
+	1.You can change the value of a specific item by referring to its key name:
+
+Example:
+--------
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+print("Before Modification")
+
+print(MyDict)
+
+MyDict['Name']='Rani'
+
+print("Before Modification")
+
+print(MyDict)
+
+output:
+-------
+Before Modification
+{'Name': 'Raja', 'Age': 34, 'Salary': 50000, 'Department': 'IOT'}
+
+Before Modification
+{'Name': 'Rani', 'Age': 34, 'Salary': 50000, 'Department': 'IOT'}
+---------------------------------------------------------------------------------------------------------------
+Accessing Items
+---------------
+
+	1.You can access the items of a dictionary by referring to its key name, inside square brackets:
+
+	2.There is also a method called get() that will give you the same result:
+
+
+Example:
+--------
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+print("Before Modification")
+
+print(MyDict)
+
+x=MyDict.get("Name")
+
+print(x)
+
+output:
+-------
+Before Modification
+{'Name': 'Raja', 'Age': 34, 'Salary': 50000, 'Department': 'IOT'}
+
+Raja
+---------------------------------------------------------------------------------------------------------------
+Check if Key Exists
+-------------------
+
+	1.To determine if a specified key is present in a dictionary use the in keyword:
+
+Example:
+--------
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+print(MyDict)
+
+if "Age" in MyDict:
+      print("Yes, 'Age' is one of the keys in the thisdict dictionary")
+
+output:
+-------
+{'Name': 'Raja', 'Age': 34, 'Salary': 50000, 'Department': 'IOT'}
+Yes, 'Age' is one of the keys in the thisdict dictionary
+---------------------------------------------------------------------------------------------------------------
+Dictionary Length
+-----------------
+
+	1.To determine how many items (key-value pairs) a dictionary have, use the len() method.
+
+Example:
+--------
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+print(len(MyDict))
+
+output:
+-------
+4
+
+Note:
+-----
+	1.Print the number of items in the dictionary.
+----------------------------------------------------------------------------------------------------------------
+Adding Items
+------------
+
+	1.Adding an item to the dictionary is done by using a new index key and assigning a value to it:
+
+Example:
+--------
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+MyDict['Gender']='Male'
+
+print(MyDict)
+
+output:
+-------
+{'Name': 'Raja', 'Age': 34, 'Salary': 50000, 'Department': 'IOT', 'Gender': 'Male'}
+
+---------------------------------------------------------------------------------------------------------------
+Removing Items
+--------------
+
+	1.There are several methods to remove items from a dictionary:
+
+	2.The pop() method removes the item with the specified key name:
+
+Example:
+--------
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+x=MyDict.pop("Name")
+
+print(x)
+
+print(MyDict)
+
+output:
+-------
+Raja
+{'Age': 34, 'Salary': 50000, 'Department': 'IOT'}
+---------------------------------------------------------------------------------------------------------------
+Pop Item:
+---------
+
+	1.The popitem() method removes the last inserted item (in versions before 3.7, a random item is 
+          removed instead):
+Example
+-------
+MyDict={'Name':'Raja','Age':34,'Salary':50000,'Department':"IOT"}
+
+x=MyDict.popitem()
+
+print(x)
+
+print(MyDict)
+
+output:
+--------
+('Department', 'IOT')
+{'Name': 'Raja', 'Age': 34, 'Salary': 50000}
+---------------------------------------------------------------------------------------------------------------
+fromkeys()
+----------
+
+	The fromkeys() method returns a dictionary with the specified keys and values.
+
+Syntax
+------
+dict.fromkeys(keys, value)
+
+	or
+dictionary.fromkeys(sequence[, value])
+
+Note:
+-----
+	1.sequence - sequence of elements which is to be used as keys for the new dictionary
+
+	2.value (Optional) - value which is set to each each element of the dictionary
+
+Example:1
+---------
+# vowels 
+keys
+keys = {'a', 'e', 'i', 'o', 'u' }
+
+value = 'vowel'
+
+
+
+vowels = dict.fromkeys(keys, value)
+
+print(vowels)
+
+output:
+-------
+{'a': 'vowel', 'o': 'vowel', 'e': 'vowel', 'i': 'vowel', 'u': 'vowel'}
+
+
+Example:2
+---------
+x = ('key1', 'key2', 'key3')
+y = 0
+
+thisdict = dict.fromkeys(x, y)
+print(thisdict)
+
+output:
+-------
+{'key1':0,'key2':0,'key3':0:
+
+
+
+Example 3: Create a dictionary from mutable object list
+-------------------------------------------------------
+# vowels keys
+keys = {'a', 'e', 'i', 'o', 'u' }
+value = [1]
+
+vowels = dict.fromkeys(keys, value)
+print(vowels)
+
+# updating the value
+value.append(2)
+print(vowels)
+
+output:
+-------
+{'a': [1], 'o': [1], 'u': [1], 'e': [1], 'i': [1]}
+{'a': [1, 2], 'o': [1, 2], 'u': [1, 2], 'e': [1, 2], 'i': [1, 2]}
+---------------------------------------------------------------------------------------------------------------
+
+

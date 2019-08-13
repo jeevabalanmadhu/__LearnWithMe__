@@ -1,0 +1,144 @@
+Python Break:
+-------------
+
+1.break statement is a jump statement that is used to pass the control to the end of the loop.
+
+2.When break statement is applied the control points to the line following the body of the loop , 
+  hence applying break statement makes the loop to terminate and controls goes to next line pointing after loop body.
+
+
+Syntax:1
+--------
+
+for var in sequence
+     #codes inside for loop
+     if conditon:
+	break
+     #codes inside for loop
+     
+     #codes outside for loop
+
+-------------------------------------------------
+Syntax:2
+--------
+
+while test expression
+     #codes inside while loop
+     if conditon:
+	break
+     #codes inside while loop
+     
+     #codes outside while loop
+
+
+--------------------------------------------------
+Example:1
+--------
+for i in [1,2,3,4,5]:
+    if i==4:
+        print ("Element Found")
+        break
+    print (i)
+
+output:
+-------
+1
+2
+3
+----------------------------------------------------------------------------------
+Example:2
+-----------
+# Use of break statement inside loop
+
+
+
+for val in "string":
+    
+	if val == "i":
+       
+	    break
+   
+	print(val)
+
+
+print("The end")
+
+output:
+-------
+s
+t
+r
+The end
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Continue Statement
+
+1.continue Statement is a jump statement that is used to skip the present iteration and forces next iteration of loop to take place. 
+
+2.It can be used in while as well as for loop statements.
+
+
+Syntax:1
+-----------
+for var in sequence
+---->#codes inside while loop
+     if conditon:
+	continue
+     #codes inside for loop
+     
+#codes outside for loop
+
+--------------------------------------------------------------------------------------------------------------
+Syntax:2
+----------
+while test expression
+---->#codes inside while loop
+     if conditon:
+	continue
+     #codes inside while loop
+     
+#codes outside while loop
+-------------------------------------------------------------------------------------------------------------
+Example:1
+---------------
+
+#Program to show the use of continue statement inside loops
+
+for val in "string":
+    if val == "i":
+        continue
+    print(val)
+
+print("The end")
+
+
+output:
+-------
+s
+t
+r
+n
+g
+The end
+---------------------------------------------------------------------------------
+Example:2
+-----------
+
+a=0  
+while a<=5:  
+    a=a+1  
+    if a%2==0:  
+        continue  
+    print (a)  
+print("End of Loop")
+
+
+ouput:
+-------
+1
+3
+5
+End of Loop
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+

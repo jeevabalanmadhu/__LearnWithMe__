@@ -1,0 +1,164 @@
+Logistic Regression
+-------------------
+
+	1.Don’t get confused by its name! It is a classification not a regression algorithm. 
+
+	2.It is used to estimate discrete values ( Binary values like 0/1, yes/no, true/false ) based on given 
+	  set of independent variable(s). 
+
+	3.In simple words, it predicts the probability of occurrence of an event by fitting data to a logit 
+	  function. 
+
+	4.Hence, it is also known as logit regression. 
+
+	5.Since, it predicts the probability, its output values lies between 0 and 1 (as expected).
+
+---------------------------------------------------------------------------------------------------------------
+Coming to the math, the log odds of the outcome is modeled as a linear combination of the predictor variables.
+--------------------------------------------------------------------------------------------------------------
+
+odds= p/ (1-p) = probability of event occurrence / probability of not event occurrence
+
+ln(odds) = ln(p/(1-p))
+
+logit(p) = ln(p/(1-p)) = b0+b1X1+b2X2+b3X3....+bkXk
+---------------------------------------------------------------------------------------------------------------
+Python Code
+-----------
+#Import Library
+from sklearn.linear_model import LogisticRegression
+
+#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+
+# Create logistic regression object
+model = LogisticRegression()
+
+# Train the model using the training sets and check score
+model.fit(X, y)
+model.score(X, y)
+
+#Equation coefficient and Intercept
+print('Coefficient: \n', model.coef_)
+print('Intercept: \n', model.intercept_)
+
+#Predict Output
+predicted= model.predict(x_test)
+print(predicted)
+---------------------------------------------------------------------------------------------------------------
+Example:
+========
+from sklearn.linear_model import LogisticRegression
+import pandas as pd
+
+df=pd.read_csv("C:\\Users\\LENIN\\Desktop\\dataset.csv")
+print("\n\nLogisticRegression")
+
+reg=LogisticRegression()   
+print(reg.fit(df[['Age']],df.Salary))
+
+print(reg.coef_)
+print(reg.intercept_)
+print(reg.predict(33))
+
+output:
+=======
+LogisticRegression
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+
+[[-0.10204647]
+ [-0.09351406]
+ [-0.09628287]
+ [-0.08558601]
+ [-0.09351406]
+ [-0.0614645 ]
+ [-0.08558601]
+ [-0.07111343]
+ [-0.05389518]
+ [-0.07111343]
+ [-0.07341738]
+ [-0.06884718]]
+[ 0.19085101  0.0870147   0.12151563 -0.0158391   0.0870147   0.04880455
+ -0.0158391  -0.21877519 -0.48432322 -0.21877519 -0.18519125 -0.25227072]
+
+[35000]
+---------------------------------------------------------------------------------------------------------------
+Example:
+=========
+Dataset:
+---------
+   Weight  Gender
+0      25       0
+1      56       1
+2      15       0
+3      20       0
+4      63       1
+5      12       0
+6      75       1
+7      59       1
+8      23       0
+9      62       1
+
+
+Program:
+--------
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+
+df=pd.read_excel("F:\\raja sir\\LogisticRegression.xlsx")
+print(df)
+
+model=LogisticRegression()
+model.fit(df[["Weight"]],df.Gender)
+print(model.predict([34))
+
+output:
+-------
+[1]
+--------------------------------------------------------------------------------------------------------------------------------------
+Example:
+--------
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+
+df=pd.read_excel("F:\\raja sir\\LogisticRegression.xlsx")
+print(df)
+
+model=LogisticRegression()
+model.fit(df[["Weight"]],df.Gender)
+print(model.predict([[34],[23]]))
+--------------------------------------------------------------------------------------------------------------------------------------
+Example:
+--------
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+
+df=pd.read_excel("F:\\raja sir\\LogisticRegression.xlsx")
+print(df)
+
+model=LogisticRegression()
+model.fit(df[["Weight"]],df.Gender)
+
+prediction=model.predict([[27],[21]])
+print(prediction)
+
+for i in prediction:
+    if i==1:
+        print("Male")
+    else:
+        print("Female")
+        
+print(model.coef_)
+print(model.intercept_)
+
+
+output:
+-------
+[1 0]
+Male
+Female
+[[0.05256673]]
+[-1.38048082]
+-------------------------------------------------------------------------------------------------------------------------------------

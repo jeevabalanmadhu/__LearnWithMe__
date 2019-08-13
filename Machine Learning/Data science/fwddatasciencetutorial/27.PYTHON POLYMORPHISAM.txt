@@ -1,0 +1,138 @@
+INTRODUCTION:
+-------------
+1.Polymorphism is made by two words "poly" and "morphs".
+
+2.Poly means many and Morphs means form, shape. 
+
+3.It defines that one task can be performed in different ways.
+
+
+There are two types of polymorphism:
+-------------------------------------
+	1.Compile Time Polymorphism/Method overloading
+
+	2.Run Time Polymorphism/Method overriding
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.Compile Time Polymorphism/Method overloading
+-----------------------------------------------
+If two or more methods with same name in the same class but they differ in following ways.
+
+
+Example:1
+---------
+class Father:
+    def work(self):
+        print("Businessman")
+
+class Mother:
+    def work(self):
+        print("House Wife")
+
+
+fobj=Father()
+fobj.work()
+
+mobj=Mother()
+mobj.work()
+
+output:
+-------
+Businessman
+House Wife
+---------------------------------------------------------------------------------------------------------------
+Example:2
+---------
+class Arithmetic:
+
+    def add(self,x,y):
+        print("Addition of x+y",x+y)
+
+    def add(self,x,y,z):
+        print("Addition of x+y+z=",x+y+z)
+
+
+obj=Arithmetic()
+obj.add(1,2,4)
+ob.add(1,2)
+
+output:
+-------
+Addition of x+y+z= 7
+Traceback (most recent call last):
+  File "C:/Users/LENIN/AppData/Local/Programs/Python/Python36/MethodOverloading.py", line 12, in <module>
+    obj.add(1,2)
+TypeError: add() missing 1 required positional argument: 'z'
+
+
+---------------------------------------------------------------------------------------------------------------
+Example:3
+---------
+class Father:
+    def work(self):
+        print("Businessman")
+
+class Mother:
+    def work(self):
+        print("House Wife")
+
+def runFamily(type):
+    type.work()
+
+
+fobj=Father()
+mobj=Mother()
+runFamily(fobj)
+runFamily(mobj)
+
+
+output:
+-------
+Businessman
+House Wife
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.Run Time Polymorphism/Method overriding
+------------------------------------------
+
+If two or more methods available in the Superclass and Subclass
+
+
+Example:2
+
+class Father:
+    def work(self):
+        print("Businessman")
+
+class Mother(Father):
+    def work(self):
+        print("House Wife")   
+    
+
+ob=Mother()
+ob.work()
+
+
+output:
+House Wife
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Example
+=======
+class A:
+    def display(self):
+        print("display() method from class A")
+ 
+class B(A):
+    def display(self):
+        print("display() method from class B")
+ 
+ 
+b_obj = B()
+a_obj = A()
+ 
+b_obj.display()
+a_obj.display()
+
+output
+======
+display() method from class B
+display() method from class A
+-------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,313 @@
+Python Pandas - Descriptive Statistics:
+---------------------------------------
+	
+	*A large number of methods collectively compute descriptive statistics and other related operations 
+	 
+	 on DataFrame.
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+data={'Name':pd.Series(['Raja','Teja'])}
+print(data)
+
+output:
+=======
+{'Name': 0    Raja
+	 1    Teja
+dtype: object}
+
+
+
+Example:2
+=========
+import pandas as pd
+import numpy as np
+
+#Create a Dictionary of series
+data = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+#Create a DataFrame
+df = pd.DataFrame(data)
+print(df)
+
+output:
+=======
+    Name     Age   Rating
+0     Raja   25    4.23
+1   Gerald   26    3.24
+2   Suresh   25    3.98
+3   Vinoth   23    2.56
+4     Rani   30    3.20
+5      Uma   29    4.60
+6     Jack   23    3.80
+7   Engles   34    3.78
+8    Peter   40    2.98
+9     Arun   30    4.80
+10   Priya   51    4.10
+11  Prince   46    3.65
+---------------------------------------------------------------------------------------------------------------
+1.sum()
+-----
+
+	*Returns the sum of the values for the requested axis. By default, axis is index (axis=0).
+
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a Dictionary of series
+d = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+#Create a DataFrame
+df = pd.DataFrame(d)
+print(df.sum())
+
+output:
+=======
+Name      RajaGeraldSureshVinothRaniUmaJackEnglesPeterAr...
+Age                                                     382
+Rating                                                44.92
+dtype: object
+
+
+Note:
+=====
+	*Each individual column is added individually (Strings are appended).
+---------------------------------------------------------------------------------------------------------------
+2.axis=1
+--------
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+data = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+df = pd.DataFrame(data)
+print(df)
+print(df.max(axis=1))
+print(df.min(axis=1))
+
+output:
+=======
+ Name  Age  Rating
+0     Raja   25    4.23
+1   Gerald   26    3.24
+2   Suresh   25    3.98
+3   Vinoth   23    2.56
+4     Rani   30    3.20
+5      Uma   29    4.60
+6     Jack   23    3.80
+7   Engles   34    3.78
+8    Peter   40    2.98
+9     Arun   30    4.80
+10   Priya   51    4.10
+11  Prince   46    3.65
+
+0     25.0
+1     26.0
+2     25.0
+3     23.0
+4     30.0
+5     29.0
+6     23.0
+7     34.0
+8     40.0
+9     30.0
+10    51.0
+11    46.0
+dtype: float64
+
+0     4.23
+1     3.24
+2     3.98
+3     2.56
+4     3.20
+5     4.60
+6     3.80
+7     3.78
+8     2.98
+9     4.80
+10    4.10
+11    3.65
+dtype: float64
+6     26.80
+7     37.78
+8     42.98
+9     34.80
+10    55.10
+11    49.65
+dtype: float64
+---------------------------------------------------------------------------------------------------------------
+3.mean()
+---------
+	*Returns the average value
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a Dictionary of series
+d = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+#Create a DataFrame
+df = pd.DataFrame(d)
+print(df.mean())
+
+output:
+=======
+Age       31.833333
+Rating     3.743333
+dtype: float64
+---------------------------------------------------------------------------------------------------------------
+4.std()
+-------
+	*Returns the Bressel standard deviation of the numerical columns.
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a Dictionary of series
+d = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+#Create a DataFrame
+df = pd.DataFrame(d)
+print(df.std())
+
+output:
+=======
+Age       9.232682
+Rating    0.661628
+dtype: float64
+---------------------------------------------------------------------------------------------------------------
+Summarizing Data:
+-----------------
+
+	*The describe() function computes a summary of statistics pertaining to the DataFrame columns.
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a Dictionary of series
+d = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+#Create a DataFrame
+df = pd.DataFrame(d)
+print(df.describe())
+
+output:
+=======
+Age     Rating
+count  12.000000  12.000000
+mean   31.833333   3.743333
+std     9.232682   0.661628
+min    23.000000   2.560000
+25%    25.000000   3.230000
+50%    29.500000   3.790000
+75%    35.500000   4.132500
+max    51.000000   4.800000
+---------------------------------------------------------------------------------------------------------------
+Try it:
+-------
+Functions & Description
+-----------------------
+S.No.	Function	Description
+---------------------------------------------------------
+1	count()		Number of non-null observations
+2	sum()		Sum of values
+3	mean()		Mean of Values
+4	median()	Median of Values
+5	mode()		Mode of values
+6	std()		Standard Deviation of the Values
+7	min()		Minimum Value
+8	max()		Maximum Value
+9	abs()		Absolute Value
+10	prod()		Product of Values
+11	cumsum()	Cumulative Sum
+12	cumprod()	Cumulative Product
+13      transpose()     Transfer rows and columns values
+14	describe()	summary of statistics
+---------------------------------------------------------------------------------------------------------------
+Try It:
+-------
+Example:
+========
+import pandas as pd
+import numpy as np
+
+data = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+df = pd.DataFrame(data)
+print(df.transpose())
+
+output:
+=======
+         0       1       2       3    ...       8     9      10      11
+Name    Raja  Gerald  Suresh  Vinoth   ...    Peter  Arun  Priya  Prince
+Age       25      26      25      23   ...       40    30     51      46
+Rating  4.23    3.24    3.98    2.56   ...     2.98   4.8    4.1    3.65
+
+[3 rows x 12 columns]
+---------------------------------------------------------------------------------------------------------------
+Note:
+====
+Find the mean, median, mode, and range for the following list of values:
+13, 18, 13, 14, 13, 16, 14, 21, 13
+
+The mean is the usual average, so I'll add and then divide:
+
+(13 + 18 + 13 + 14 + 13 + 16 + 14 + 21 + 13) ÷ 9 = 15
+
+Note that the mean, in this case, isn't a value from the original list. This is a common result. You should not assume that your mean will be one of your original numbers.
+
+The median is the middle value, so first I'll have to rewrite the list in numerical order:
+
+13, 13, 13, 13, 14, 14, 16, 18, 21
+
+There are nine numbers in the list, so the middle one will be the (9 + 1) ÷ 2 = 10 ÷ 2 = 5th number:
+
+13, 13, 13, 13, 14, 14, 16, 18, 21
+
+So the median is 14.
+
+The mode is the number that is repeated more often than any other, so 13 is the mode.
+
+The largest value in the list is 21, and the smallest is 13, so the range is 21 – 13 = 8.
+
+mean: 15
+median: 14
+mode: 13
+range: 8
+----------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,350 @@
+For Loop:
+---------
+
+	1.for Loop is used to iterate a variable over a sequence(i.e., list or string) in the order that they 
+	  appear.
+
+Syntax:
+-------
+	for <variable> in <sequence>:
+
+
+Example:1
+---------
+>>> i=0
+>>> for i in range(0,6):
+	print(i)
+
+ouput:
+---------
+0
+1
+2
+3
+4
+5
+
+Explanation:
+----------------
+1.Firstly, the first value will be assigned in the variable.
+
+2.Secondly all the statements in the body of the loop are executed with the same value.
+
+3.Thirdly, once step second is completed then variable is assigned the next value in the sequence and step second is repeated.
+
+4.Finally, it continues till all the values in the sequence are assigned in the variable and processed.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+More Examples:
+
+
+Example:2
+---------
+
+>>> for a in range(0,6):
+	 print(a)
+	
+ouput:
+
+0
+1
+2
+3
+4
+5
+------------------------------------------------------
+Example:3
+---------
+>>>a=0
+>>> for a in range(0,6): 
+	  
+    	  print('value of a:',a)
+	
+
+output:
+value of a: 0
+value of a: 1
+value of a: 2
+value of a: 3
+value of a: 4
+value of a: 5
+--------------------------------------------------------
+Example:4
+
+>>> for n in range(1,10):
+	
+	 sum+=n
+	 print("print sum in every stage:",sum)
+	
+
+output:
+
+print sum in every stage: 1
+print sum in every stage: 3
+print sum in every stage: 6
+print sum in every stage: 10
+print sum in every stage: 15
+print sum in every stage: 21
+print sum in every stage: 28
+print sum in every stage: 36
+print sum in every stage: 45
+---------------------------------------------------------
+Example:4
+---------
+sum=0
+for i in range(1,3):
+    sum=sum+i 
+    print("Each Step",i ,"time sum value:",sum)
+
+print("Toatl:",sum)
+
+output:
+-------
+Each Step 1 time sum value: 1
+Each Step 2 time sum value: 3
+Total: 3
+
+---------------------------------------------------------
+Example:6
+---------
+
+>>> sum=0
+>>> for n in range(1,10):
+	
+	 sum+=n
+        
+>>> print('Final sum value=',sum)
+
+output:
+Final sum value= 45
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nested Loops:
+-------------
+
+1.Loops defined within another Loop is called Nested Loop.
+
+2.When an outer loop contains an inner loop in its body it is called Nested Looping.
+
+Syntax:
+-------
+
+for  <expression>:  
+        for <expression>:  
+            Body  
+
+
+Example:1
+----------
+
+for i in range(1,6):
+      
+      for j in range (1,3): 
+	   
+           print(i),
+	  
+     print()
+    
+
+Explanation:
+
+1.For each value of Outer loop the whole inner loop is executed.
+
+2.For each value of inner loop the Body is executed each time.
+
+Example:1
+---------
+num=5
+for i in range(1,num+1):
+	for j in range(1,i+1):
+		print("*",end="")
+	print()
+
+output:
+-------
+*
+**
+***
+****
+*****
+
+Example:2
+---------
+num=3
+k=1
+for i in range(1,num+1):
+    for j in range(1,k+1):
+        print("*",end="")
+    k=k+2
+    print()
+
+output:
+-------
+*
+***
+*****
+
+Example:3
+---------
+num=3
+k=1
+for i in range(1,num+1):
+    for j in range(1,k+1):
+        print(j,end="")
+    k=k+2
+    print()
+
+output:
+-------
+1
+123
+12345
+
+
+Example:4
+---------
+num=3
+k=1
+for i in range(1,num+1):
+    for j in range(1,k+1):
+        print(j,end=" ")
+    k=k+2
+    print()
+
+output:
+-------
+num=3
+k=1
+for i in range(1,num+1):
+    for j in range(1,k+1):
+        print(j,end=" ")
+    k=k+2
+    print()
+
+output:
+-------
+1 
+1 2 3 
+1 2 3 4 5
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+While Loop:
+-----------
+
+	1.while Loop is used to execute number of statements or body till the condition passed in while is true. 
+
+	2.Once the condition is false, the control will come out of the loop.
+
+
+Syntax:
+--------
+while <expression>:  
+        Body  
+
+Note:
+------
+	*Here, body will execute multiple times till the expression passed is true. 
+
+	*The Body may be a single statement or multiple statement.
+
+
+
+Example:1
+-------------
+a=0
+
+while a<=5:
+    print (a)
+    a=a+1
+
+output:
+0
+1
+2
+3
+4
+5
+----------------------------------------------------------------------------
+
+Example:2
+----------
+a=5
+
+while a>=0:
+    print (a)
+    a=a-1
+
+output:
+5
+4
+3
+2
+1
+0
+------------------------------------------------------------------------------
+Example:3
+-------------
+a = int(input("Please enter an integer:"))
+
+
+while a<=5:
+    print(a)
+    a=a+1
+
+input:
+------
+Please enter an integer:0
+
+output:
+-------
+0
+1
+2
+3
+4
+5
+
+-----------------------------------------------------------------------------------
+Example:4
+----------
+a = int(input("Please enter an integer:"))
+
+
+while a>=0:
+    print(a)
+    a=a-1
+
+input:
+-------
+Please enter an integer:5
+
+output:
+-------
+5
+4
+3
+2
+1
+0
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+do-while loop:
+--------------
+
+Example:1
+----------
+a=0
+
+while True:
+    print(a)
+    a=a+1
+
+    if a>3:
+        break
+
+output:
+-------
+0
+1
+2
+3
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,66 @@
+Pie Charts:
+===============
+	1.Python Programming language has numerous libraries to create charts and graphs. 
+
+	2.A pie-chart is a representation of values as slices of a circle with different colors. 
+
+	3.The slices are labeled and the numbers corresponding to each slice is also represented in the chart.
+
+
+Bar Charts:
+===============
+
+	1.A bar chart represents data in rectangular bars with length of the bar proportional to the value of 
+	  the variable. 
+
+	2.Python uses the function  to create bar charts.
+
+	3.Python can draw both vertical and Horizontal bars in the bar chart. 
+
+	4.In bar chart each of the bars can be given different colors.
+
+Boxplots:
+=========
+
+	1.Boxplots are a measure of how well distributed is the data in a data set. 
+	
+	2.It divides the data set into three quartiles. 
+	
+	3.This graph represents the minimum, maximum, median,first quartile and third quartile in the data set. 
+
+	4.It is also useful in comparing the distribution of data across data sets by drawing boxplots for 
+          each of them.
+
+	5.Boxplots are created in python by using the boxplot() function.
+
+Histograms:
+===========
+
+	*A histogram represents the frequencies of values of a variable bucketed into ranges. 
+
+	*Histogram is similar to bar chat but the difference is it groups the values into continuous ranges. 
+
+	*Each bar in histogram represents the height of the number of values present in that range.
+
+Line Graphs:
+============
+	
+	*A line chart is a graph that connects a series of points by drawing line segments between them. 
+
+	*These points are ordered in one of their coordinate (usually the x-coordinate) value. 
+
+	*Line charts are usually used in identifying the trends in data.
+
+
+Scatterplots:
+=============
+
+	*Scatterplots show many points plotted in the Cartesian plane. 
+
+	*Each point represents the values of two variables.
+
+	*One variable is chosen in the horizontal axis and another in the vertical axis.
+---------------------------------------------------------------------------------------------------------------
+
+
+

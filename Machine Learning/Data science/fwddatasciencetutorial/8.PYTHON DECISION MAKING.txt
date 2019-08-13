@@ -1,0 +1,160 @@
+Python If Statements:
+---------------------
+
+1.The if statement in python is same as c language which is used test a condition.
+ 
+2.If condition is true, statement of if block is executed otherwise it is skipped.
+
+Syntax:
+-------
+
+if(condition):  
+   statements  
+
+
+Example:1
+---------
+
+	a=5
+	b=4
+	if a>b:
+   	    print("A is greater")
+output:
+A is greater
+
+
+Example:2
+---------
+	if a==5:
+    	   print("a is perfectly equal to value 5")
+output:
+a is perfectly equal to value 5
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Python If else Statements:
+--------------------------
+
+1.If condition is false, statement of else block is executed.
+
+Syntax:
+
+if(condition):  False  
+             statements  
+
+    else:   True  
+              statements 
+
+
+Example:1
+	a=5
+	b=6
+	if a>b:
+   	   print("A is greater")
+	else:
+   	   print("B is greater")
+
+output:
+B is greater
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Python Else If Statements:
+--------------------------
+
+1.If condition is false, statement of else if block is executed.
+
+2.otherwise it is skipped
+
+Syntax:
+-------
+
+If statement:  
+    Body 
+ 
+elif statement:  
+    Body
+
+Example:1
+---------
+
+	a=5
+	b=5
+	if a>b:
+    	   print("A is greater")
+
+	elif(a==b):
+   	   print("A & B are Equal")
+
+output:
+-------
+A & B are Equal
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nested If Else Statement:
+-------------------------
+
+1.When we need to check for multiple conditions to be true then we use elif Statement.
+
+2.This statement is like executing a if statement inside a else statement.
+
+
+Syntax:
+-------
+
+If statement:  
+    Body  
+
+elif statement:  
+    Body  
+
+else:  
+    Body    
+
+
+Example:1
+---------
+	a=5
+	b=5
+	if a>b:
+    	   print("A is greater")
+
+	elif(a==b):
+           print("A & B are Equal")
+
+	else:
+           print("B is greater")
+
+output:
+-------
+A & B are Equal
+---------------------------------------------------------------------------------------------------------------
+Example:1
+---------
+
+userName=input("Enter Your User name:")
+password=input("Enter Your Password:")
+
+if userName=="Raja":    
+    if password=="raja@123":
+        print("You are Valid User")
+    else:
+        print("You entered wrong Password")
+
+else:
+    print("You entered wrong User name")
+
+output:
+-------
+Enter Your User name:Raja
+Enter Your Password:raja@123
+You are Valid User
+
+output:
+-------
+Enter Your User name:raja
+Enter Your Password:raja@123
+You entered wrong User name
+
+output:
+-------
+Enter Your User name:Raja
+Enter Your Password:raja@12
+You entered wrong Password
+---------------------------------------------------------------------------------------------------------------

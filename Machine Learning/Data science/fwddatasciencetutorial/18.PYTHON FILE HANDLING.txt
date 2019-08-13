@@ -1,0 +1,418 @@
+Python Input And Output:
+------------------------
+
+	1.Python can be used to read and write data. 
+
+	2.Also it supports reading and writing data to Files.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+print statement:
+----------------
+
+	1.print statement is used to print the output on the screen.
+
+	2.print statement is used to take string as input and place that string to standard output.
+
+	3.Whatever you want to display on output place that expression inside the inverted commas. 
+
+	4.The expression whose value is to printed place it without inverted commas.
+
+
+Syntax:
+---------
+print("expression") or  print expression. 
+
+
+Example:1
+--------- 
+print("Hello Python" ) 
+
+
+Example:2
+---------
+a=10   
+print(a) 
+
+
+Example:3
+---------
+a=10   
+print("a value is: ",a) 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Input from Keyboard:
+--------------------
+	Python offers two in-built functions for taking input from user. 
+
+		They are:
+
+			1) input()
+
+			2) raw_input()  #python 2.0 only accept this command
+
+
+1) input() 
+
+   -->input() function is used to take input from the user. 
+
+   -->Whatever expression is given by the user, it is evaluated and result is returned back.
+
+
+Syntax:
+--------
+input("Expression") 
+
+Example:1
+
+input("Enter your expression")
+
+ 
+Example:2
+-----------
+n=input("Enter your expression ");  
+print ("The evaluated expression is ", n)  
+---------------------------------------------------------------------------------------------------------------
+
+2) raw_input()
+
+-->raw_input() function is used to take input from the user. 
+
+-->It takes the input from the Standard input in the form of a string and reads the data from a line at once.
+
+
+Syntax:
+----------
+raw_input("statement")
+  
+Example:1
+
+n=raw_input("Enter your name");  
+print("Welcome ", n ) 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+File Handling:
+-----------------
+
+1.Python provides the facility of working on Files.
+
+2.A File is an external storage on hard disk from where data can be stored and retrieved.
+---------------------------------------------------------------------------------------------------------------
+
+Operations on Files:
+--------------------
+1) Opening a File: 
+
+Before working with Files you have to open the File.
+
+To open a File, Python built in function open() is used. 
+
+It returns an object of File which is used with other functions. 
+
+Having opened the file now you can perform read, write, etc. operations on the File.
+
+
+Syntax:
+-----------
+obj=open(filename , mode , buffer)   
+
+
+Here,
+
+filename:It is the name of the file which you want to access.
+
+mode:It specifies the mode in which File is to be opened.There are many types of mode. 
+     Mode depends the operation to be performed on File. Default access mode is read.
+
+----------------------------------------------------------------------------------------------------
+2) Closing a File:
+
+Once you are finished with the operations on File at the end you need to close the file. 
+
+It is done by the close() method.
+
+close() method is used to close a File.
+
+Syntax:
+--------
+
+fileobject.close() 
+-----------------------------------------------------------------------------------------------------
+
+3) Writing to a File:
+
+write() method is used to write a string into a file.
+
+Syntax:
+-------
+fileobject.write(string str)
+
+------------------------------------------------------------------------------------------------------  
+4) Reading from a File:
+
+read() method is used to read data from the File.
+
+Syntax:
+--------
+fileobject.read(value)  
+
+here, 
+
+i)value is the number of bytes to be read. 
+
+ii)In case, no value is given it reads till end of file is reached.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Program to read data from a file:
+----------------------------------
+
+Example:1
+-------------
+obj1=open("D:/read.txt","r") 
+ 
+s=obj1.read()  
+
+print(s)
+
+obj1.close() 
+
+output:
+----------
+Hello Python
+--------------------------------------------------------------------------------------------
+Program to write data to a file:
+----------------------------------
+
+Example:2
+----------
+obj=open("D:/read.txt","w")
+  
+obj.write("Welcome to the world of Python")  
+
+obj.close() 
+
+
+output:
+-------
+
+Welcome to the world of Python
+--------------------------------------------------------------------------------------------
+Example:3
+---------
+obj=open("D:/read.txt","w")
+  
+obj.write("Welcome to the world of Python")  
+
+obj.close()
+
+obj=open("D:/read.txt","a")
+obj.write(" Hello")
+obj.close()
+
+output:
+-------
+Welcome to the world of Python Hello
+--------------------------------------------------------------------------------------------
+Example:4
+-------------
+obj2=open("D:/read.txt","r")  
+
+s1=obj2.read(20)  
+
+print(s1)  
+
+obj2.close()
+
+output:
+--------
+Welcome to the world
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Attributes of File:
+--------------------
+
+There are following File attributes.
+
+Attribute	Description
+Name		Returns the name of the file.
+Mode		Returns the mode in which file is being opened.
+Closed		Returns Boolean value. True, in case if file is closed else false.
+
+Example:1
+---------
+obj = open("D:/read.txt","w")  
+
+print (obj.name)  
+
+print (obj.mode) 
+
+print (obj.closed)
+
+  
+Output:
+--------- 
+data.txt  
+w  
+False  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Modes of File:
+---------------
+
+There are different modes of file in which it can be opened. 
+
+They are mentioned in the following table.
+
+A File can be opened in two modes:
+
+1) Text Mode.
+
+2) Binary Mode.
+
+Mode	Description
+----    ------------
+R	It opens in Reading mode. It is default mode of File. Pointer is at beginning of the file.
+
+rb	It opens in Reading mode for binary format. It is the default mode. Pointer is at beginning of file.
+
+r+	Opens file for reading and writing. Pointer is at beginning of file.
+
+rb+	Opens file for reading and writing in binary format. Pointer is at beginning of file.
+
+W	Opens file in Writing mode. If file already exists, then overwrite the file else create a new file.
+
+wb	Opens file in Writing mode in binary format. If file already exists, then overwrite the file else create a new file.
+
+w+	Opens file for reading and writing. If file already exists, then overwrite the file else create a new file.
+
+wb+	Opens file for reading and writing in binary format. If file already exists, then overwrite the file else create a new file.
+
+a	Opens file in Appending mode. If file already exists, then append the data at the end of existing file, else create a new file.
+
+ab	Opens file in Appending mode in binary format. If file already exists, then append the data at the end of existing file, else create a new file.
+
+a+	Opens file in reading and appending mode. If file already exists, then append the data at the end of existing file, else create a new file.
+
+ab+	Opens file in reading and appending mode in binary format. If file already exists, then append the data at the end of existing file, else create a new file.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Methods:
+--------
+
+Method		Description
+-------         ------------
+
+rename()	It is used to rename a file. It takes two arguments, existing_file_name and new_file_name.
+
+remove()	It is used to delete a file. It takes one argument. Pass the name of the file which is to be deleted as the argument of method.
+
+mkdir()		It is used to create a directory. A directory contains the files. It takes one argument which is the name of the directory.
+
+chdir()		It is used to change the current working directory. It takes one argument which is the name of the directory.
+
+getcwd()	It gives the current working directory.
+
+rmdir()		It is used to delete a directory. It takes one argument which is the name of the directory.
+
+tell()		It is used to get the exact position in the file
+---------------------------------------------------------------------------------------------------------------
+1) mkdir()
+
+Syntax:
+-------
+os.mkdir("file_name")
+
+Example:3
+----------
+import os  
+
+os.mkdir("D:/dinesh")
+---------------------------------------------------------------------------------------------------------------
+2) rename():
+
+Syntax:
+-------
+
+os.rename(existing_file_name, new_file_name)  
+
+Example:1
+------------
+
+import os
+
+os.rename("D:/read1.txt", "D:/read2.txt")
+---------------------------------------------------------------------------------------------------------------
+3) remove():
+
+Syntax:
+-------
+os.remove(file_name)  
+
+Example:2
+
+import os  
+os.remove("D:/read2.txt") 
+---------------------------------------------------------------------------------------------------------------
+4) chdir()
+
+Syntax:
+
+os.chdir("file_name")
+
+Example:3
+---------
+
+os.chdir("D:\\A\Raja")
+>>> os.getcwd()
+
+output:
+-------
+'D:\\A\\Raja'
+---------------------------------------------------------------------------------------------------------------
+5)6) rmdir()
+
+Syntax:
+
+os.rmdir("directory_name)
+
+Example:
+
+os.rmdir("D:\\A\\Raja")
+
+
+output:
+-------
+D:\\A
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Excel sheet Reading:
+--------------------
+
+Example:
+--------
+import xlrd
+
+book=xlrd.open_workbook("D:\\testdata.xls")
+
+print(book.nsheets)
+
+print(book.sheet_names())
+
+first_sheet=book.sheet_by_index(0)
+
+print(first_sheet.row_values(0))
+
+cell=first_sheet.cell(3,1)
+
+print(cell)
+
+output:
+=======
+3
+['Sheet1', 'Sheet2', 'Sheet3']
+['Username', 'Password', 'Mobile_No', 'Salary']
+text:'prince@123'
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

@@ -1,0 +1,316 @@
+Python Strings:
+---------------
+
+	1.Python string is a built-in type text sequence. 
+	
+	2.It is used to handle textual data in python. 
+
+	3.Python Strings are immutable sequences of Unicode points. 
+	
+	4.Creating Strings are simplest and easy to use in Python.
+	
+	5.We can simply create Python String by enclosing a text in single as well as double quotes. 
+	
+	6.Python treat both single and double quotes statements same.
+
+
+Syntex:
+-------
+var1 = 'Hello World!'
+var2 = "Python Programming"
+---------------------------------------------------------------------------------------------------------------
+Accessing Values in Strings:
+----------------------------
+
+Example:1
+----------
+
+var1="Hello"
+var2="Python"
+
+print("var1[0] position character",var1[0])
+print("var1[0:5] position characters",var1[1:5])
+
+
+output:
+-------
+var1[0] position character H
+var1[0:5] position characters ello
+---------------------------------------------------------------------------------------------------------------
+Updating Strings:
+-----------------
+
+Example:1
+---------
+var1="Hello"
+print("Updating String:",var1[:6]+" Python")
+
+output:
+-------
+Updating String: Hello Python
+---------------------------------------------------------------------------------------------------------------
+Triple Quotes:
+--------------
+	*Python's triple quotes comes to the rescue by allowing strings to span multiple lines, including 
+	 verbatim NEWLINEs, TABs, and any other special characters.
+
+	*The syntax for triple quotes consists of three consecutive single or double quotes.
+
+Example:1
+---------
+var1="""Hello
+Python
+Programming"""
+
+print(var1)
+
+output:
+-------
+Hello
+Python
+Programming
+----------------------------------------------------------------------------------------------------------------
+Python String Functions and Methods:
+------------------------------------
+
+1.Python String capitalize() Method
+	
+	*This method capitalizes the first character of the String.
+
+Example:1
+---------
+var1="hello Python"
+
+var2=var1.capitalize()
+
+print("After above operation completed var1 changed as:",var2)
+
+
+output:
+------
+After above operation completed var1 changed as: Hello python
+
+------------------------------------------------------------------------------------------------------------------
+2.Python String count(string) Method
+
+ 	*This method counts number of times substring occurs in a String between begin and end index.    
+
+Example:1
+---------
+var1="hello python"
+
+var2=var1.count("o")
+
+print("Count:",var2)
+
+output:
+-------
+Count: 2
+----------------------------------------------------------------------------------------------------------------
+3.Python String endswith(string) Method
+
+	*This method returns a Boolean value if the string terminates with given suffix between begin and end.
+
+Example:1
+---------
+var1="hello python"
+
+var2=var1.endswith("on")
+
+print("Result:",var2)
+
+output:
+-------
+Result: True
+---------------------------------------------------------------------------------------------------------------
+4.Python String find(string) Method
+
+	*This method returns the index value of the string where substring is found between begin index and 
+	 end index.
+
+Example:1
+---------
+var1="hello python"
+
+var2=var1.find("on")
+
+print("Given Character Positiom:",var2)
+
+output:
+-------
+Given Character Positiom: 10
+---------------------------------------------------------------------------------------------------------------
+5.Python String index() Method
+
+	*This method returns the index value of the string where substring is found between begin index and
+         end index.
+
+Example:1
+---------
+var1="hello python"
+
+var2=var1.index("p")
+
+print("Given Character index value:",var2)
+
+output:
+-------
+Given Character index value: 6
+---------------------------------------------------------------------------------------------------------------
+6.Python String isalnum() Method
+
+	*This method returns True if characters in the string are alphanumeric 
+	 i.e., alphabets or numbers and there is at least 1 character. 
+	
+	*Otherwise it returns False.
+
+Example:1
+---------
+var1="135555"
+
+var2=var1.isalnum()
+
+print("Check given string is numbers only available:",var2)
+
+output:
+-------
+Check given string is numbers only available: True
+---------------------------------------------------------------------------------------------------------------
+7.Python String isalpha() Method
+
+	*It returns True when all the characters are alphabets and there is at least one character, 
+	 otherwise False.
+
+Example:1
+---------
+var1="raja12"
+
+var2=var1.isalpha()
+
+print("Check given string is Alphabetical only available:",var2)
+
+
+output:
+-------
+Check given string is Alphabetical only available: True
+---------------------------------------------------------------------------------------------------------------
+8.Python String isdigit()
+
+	*This method returns True if all the characters are digit and there is at least one character, 
+	 otherwise False.
+
+Example:1
+---------
+var1="165522"
+
+var2=var1.isdigit()
+
+print("Check given string digits available:",var2)
+
+output:
+-------
+Check given string digits available: True
+----------------------------------------------------------------------------------------------------------------
+9.Python String islower() Method
+
+	*This method returns True if the characters of a string are in lower case, otherwise False.
+
+Example:1
+---------
+var1="hello python"
+
+var2=var1.islower()
+
+print("Check given string all characters are lowercase:",var2)
+
+output:
+-------
+Check given string all characters are lowercase: True
+---------------------------------------------------------------------------------------------------------------
+10.Python String isupper() Method
+
+	*This method returns False if characters of a string are in Upper case, otherwise False.
+
+Example:1
+---------
+var1="HELLO PYTHON"
+
+var2=var1.isupper()
+
+print("Check given string all characters are Uppercase:",var2)
+
+output:
+-------
+Check given string all characters are Uppercase: True
+---------------------------------------------------------------------------------------------------------------
+11.Python String isspace() Method
+
+	*This method returns True if the characters of a string are whitespace, otherwise false.
+
+Example:1
+---------
+var1=" ";
+
+var2=var1.isspace()
+
+print("Check given string all characters are space:",var2)
+
+output:
+-------
+Check given string all characters are space: True
+---------------------------------------------------------------------------------------------------------------
+12.Python String len(string) Method
+
+	*This method returns the length of a string.
+
+Example:1
+---------
+var1="Hello";
+
+var2=len(var1)
+
+print("Length of the given string:",var2)
+
+output:
+-------
+Length of the given string: 5
+---------------------------------------------------------------------------------------------------------------
+13.Python String lower() Method
+
+	*It converts all the characters of a string to Lower case.
+
+Example:1
+---------
+var1="HELLO";
+
+var2=var1.lower()
+
+print("After conversion:",var2)
+
+
+output:
+-------
+After conversion: hello
+---------------------------------------------------------------------------------------------------------------
+14.Python String upper() Method
+
+	*This method converts all the characters of a string to upper case.
+
+Example:1
+---------
+var1="hello";
+
+var2=var1.upper()
+
+print("After conversion:",var2)
+
+output:
+-------
+After conversion: HELLO
+
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
+

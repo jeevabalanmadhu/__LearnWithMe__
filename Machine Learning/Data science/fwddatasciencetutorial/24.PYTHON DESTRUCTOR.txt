@@ -1,0 +1,96 @@
+Destroying Objects:
+-------------------
+
+   *Python deletes unneeded objects (built-in types or class instances) automatically to free the memory space.
+ 
+   *The process by which Python periodically reclaims blocks of memory that no longer are in use is termed 
+    as Garbage Collection.
+
+Syntex:
+-------
+
+	__del__() 
+
+	*destructor prints the class name of an instance that is about to be destroyed.
+---------------------------------------------------------------------------------------------------------------
+Example:1
+
+#Destructor Declaration
+
+class Destructor:
+    def __init__(self):
+        print("Constructor Initiated")
+
+    def __del__(self):
+        print("Destructor process completed")
+
+obj=Destructor()
+obj.__del__()
+
+output:
+-------
+Constructor Initiated
+Destructor process completed
+---------------------------------------------------------------------------------------------------------------
+Example:2
+
+
+class Destructor:
+    def __init__(self):
+        print("Constructor Initiated")
+
+    def __del__(self):
+        print("Destructor process completed")
+
+    def addition(self,a,b):
+        self.a=a
+        self.b=b
+        self.sum=a+b
+        print("Addition value=",self.sum)
+    
+        
+
+obj=Destructor()
+obj.addition(5,4)
+obj.__del__()
+
+
+output:
+-------
+Constructor Initiated
+Addition value= 9
+Destructor process completed
+---------------------------------------------------------------------------------------------------------------
+Example:3
+---------
+
+class Destructor:
+    def __init__(self):
+        print("Constructor Initiated")
+
+    def __del__(self):
+        print("Destructor process completed")
+
+    def addition(self,a,b):
+        self.a=a
+        self.b=b
+        self.sum=a+b
+    def result(self):
+        print("Addition value=",self.sum)
+    
+        
+
+obj=Destructor()
+obj.addition(5,4)
+obj.result()
+obj.__del__()
+
+
+output:
+-------
+
+Constructor Initiated
+Addition value= 9
+Destructor process completed
+---------------------------------------------------------------------------------------------------------------
+

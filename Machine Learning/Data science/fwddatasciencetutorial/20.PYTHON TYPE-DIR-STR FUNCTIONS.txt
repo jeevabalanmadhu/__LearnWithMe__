@@ -1,0 +1,116 @@
+Using type, str, dir, and Other Built-In Functions:
+---------------------------------------------------
+
+	*Python has a small set of extremely useful built-in functions. 
+
+	*All other functions are partitioned off into modules.
+ 
+	*This was actually a conscious design decision, to keep the core language from getting bloated like 
+	 other scripting languages
+
+---------------------------------------------------------------------------------------------------------------
+The type Function:
+------------------
+
+	*The type function returns the datatype of any arbitrary object. 
+
+	*The possible types are listed in the types module. 
+
+	*This is useful for helper functions that can handle several types of data.
+
+Example:1
+----------
+>>> type(1)           
+<type 'int'>
+
+Example:2
+---------
+>>> type("raja")
+<class 'str'>
+
+Example:3
+---------
+>>> type(100.5)
+<class 'float'>
+
+Example:4
+---------
+>>> li = []
+>>> type(li)          
+<type 'list'>
+
+Example:5
+---------
+>>> import odbchelper
+>>> type(odbchelper)  
+<type 'module'>
+
+---------------------------------------------------------------------------------------------------------------
+2.The str Function:
+-------------------
+
+	*The str coerces data into a string. Every datatype can be coerced into a string.
+
+Example:1
+---------
+>>> str(1)          
+'1'
+
+Example:2
+---------
+>>> horsemen = ['war', 'pestilence', 'famine']
+>>> horsemen
+['war', 'pestilence', 'famine']
+
+Example:3
+---------
+>>> horsemen.append('Powerbuilder')
+>>> str(horsemen)   
+"['war', 'pestilence', 'famine', 'Powerbuilder']"
+
+Example:4
+---------
+>>> str(None)       
+'None'
+---------------------------------------------------------------------------------------------------------------
+2.The dir Function:
+-------------------
+
+	*At the heart of the info function is the powerful dir function. 
+
+	*dir returns a list of the attributes and methods of any object: modules, functions, strings, lists, 
+	 dictionaries... pretty much anything.
+
+Example:1
+---------
+>>> li = []
+>>> dir(li)           
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', 
+'__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__iadd__', '__imul__', 
+'__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__',
+ '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', 
+'__sizeof__', '__str__', '__subclasshook__', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 
+'pop', 'remove', 'reverse', 'sort']
+
+Example:2
+---------
+>>> d={}
+>>> dir(d)
+['__class__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', 
+'__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__',
+ '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__',
+ '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 
+'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+
+
+Example:3
+---------
+>>> a=()
+>>> dir(a)
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', 
+'__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__', 
+'__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', 
+'__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count',
+'index']
+
+---------------------------------------------------------------------------------------------------------------

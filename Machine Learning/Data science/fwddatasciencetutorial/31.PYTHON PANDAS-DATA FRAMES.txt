@@ -1,0 +1,207 @@
+DATA FRAME:
+-----------
+
+	*A Data frame is a two-dimensional data structure, i.e., data is aligned in a tabular fashion in rows 
+	 and columns.
+
+Features of DataFrame:
+----------------------
+
+	1.Potentially columns are of different types
+
+	2.Size – Mutable
+
+	3.Labeled axes (rows and columns)
+
+	4.Can Perform Arithmetic operations on rows and columns
+---------------------------------------------------------------------------------------------------------------
+pandas.DataFrame
+----------------
+
+Syntax:
+-------
+
+	pandas.DataFrame( data, index, columns, dtype, copy)
+
+---------------------------------------------------------------------------------------------------------------
+Create DataFrame:
+-----------------
+
+A pandas DataFrame can be created using various inputs like.. 
+
+	1.Lists
+
+	2.dict
+
+	3.Series
+
+	4.Numpy ndarrays
+
+	5.Another DataFrame
+---------------------------------------------------------------------------------------------------------------
+Create a DataFrame from Lists:
+------------------------------
+
+Example:1
+---------
+import pandas as pd
+
+data=[10,20,30]
+result=pd.DataFrame(data)
+print(result)
+
+output:
+------
+    0
+0  10
+1  20
+2  30
+
+Example:2
+---------
+import pandas as pd
+data=[['Name','Age','ID'],['Raja',30,'PPV01']]
+result=pd.DataFrame(data)
+print(result)
+
+output:
+-------
+      0    1      2
+0  Name  Age     ID
+1  Raja   30  PPV01
+
+Example:
+--------
+import pandas as pd
+data = [['Raja',30],['Prince',25],['Hasan',22]]
+result = pd.DataFrame(data,columns=['Name','Age'])
+print(result)
+
+output:
+-------
+     Name  Age
+0    Raja   30
+1  Prince   25
+2   Hasan   22
+----------------------------------------------------------------------------------------------------------------
+Create a DataFrame from Dict of ndarrays / Lists:
+-------------------------------------------------
+
+Example:1
+---------
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+result = pd.DataFrame(data)
+print(result)
+
+output:
+-------
+     Name  Age
+0    Raja   28
+1    Jack   34
+2  Prince   29
+3    Mala   42
+
+Example:2
+---------
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+result = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(result)
+
+output:
+-------
+      Name  Age
+ECE    Raja   28
+CSE    Jack   34
+EEE  Prince   29
+IT     Mala   42
+
+Example:3
+---------
+import pandas as pd
+%matplotlib inline
+data=pd.read_excel("D:/testdata.xls")
+df=pd.DataFrame(data)
+df.plot(kind='bar')
+---------------------------------------------------------------------------------------------------------------
+SET INDEX:
+==========
+Example:
+--------
+import pandas as pd
+
+d1={"Number":[1,2,3,4],"Day":["Sunday","Monday","Tuesday","Wednesday"]}
+print(d1)
+
+d2=pd.DataFrame(d1)
+print(d2)
+
+d2.set_index("Number",inplace=True)
+print(d2)
+
+output:
+-------
+{'Number': [1, 2, 3, 4], 'Day': ['Sunday', 'Monday', 'Tuesday', 'Wednesday']}
+
+   Number        Day
+0       1     Sunday
+1       2     Monday
+2       3    Tuesday
+3       4  Wednesday
+              Day
+Number           
+1          Sunday
+2          Monday
+3         Tuesday
+4       Wednesday
+----------------------------------------------------------------------------------------------------------------
+Try It:
+-------
+Example:
+========
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+df = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(df)
+
+head=df.head(2)
+print(head)
+
+tail=df.tail(2)
+print(tail)
+
+print(df[2:5])
+
+df['Salary']=[1200,1300,1400,1500]
+print(df)
+
+rows,columns=df.shape
+print(rows)
+print(columns)
+
+
+print(df.Salary)
+
+print(df['Salary'])
+
+print(df[['Salary','Age']])
+
+print(type(df['Salary']))
+
+print(df['Salary'].max())
+
+print(df['Salary'].min())
+
+print(df['Salary'].std())
+
+print(df.describe())
+
+print(df[df.Salary>=1400])
+
+print(df.index)
+
+output:
+=======
+
+

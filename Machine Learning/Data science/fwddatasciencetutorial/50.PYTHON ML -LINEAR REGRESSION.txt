@@ -1,0 +1,249 @@
+Simple Linear Regression
+------------------------
+
+	*Regression analysis is a very widely used statistical tool to establish a relationship model between 
+	 two variables. 
+
+	*One of these variable is called predictor variable whose value is gathered through experiments. 
+
+	*The other variable is called response variable whose value is derived from the predictor variable.
+
+	*In Linear Regression these two variables are related through an equation, where exponent (power) of 
+	 both these variables is 1. 
+
+	*Mathematically a linear relationship represents a straight line when plotted as a graph. 
+
+	*A non-linear relationship where the exponent of any variable is not equal to 1 creates a curve.
+
+The general mathematical equation for a linear regression is.
+-------------------------------------------------------------
+y = ax + b
+
+
+Following is the description of the parameters used
+---------------------------------------------------
+
+	1.y is the response variable.
+
+	2.x is the predictor variable.
+
+	3.a(Correlation Co-effient) and b(Intercept) are constants which are called the coefficients.
+
+
+Dataset(Multiple.csv)
+---------------------
+    Age  Salary  Experience
+0   33   20000          12
+1   25   15000           1
+2   27   20000           6
+3   24   12000           3
+4   27   25000           5
+5   29   20000           4
+6   29   50000           5
+7   27   25000           4
+8   23   12000           1
+9   27   30000           4
+
+Example:
+--------
+import pandas
+from sklearn  import linear_model
+
+dataset=pandas.read_csv("C:\\Users\\LENIN\\Desktop\\R\\DATA\\Multiple.csv")   
+print(dataset)
+
+reg=linear_model.LinearRegression()
+
+reg.fit(dataset[["Salary"]],dataset.Age)
+
+print("Prediction:",reg.predict(25000))
+
+print("Co-efficient:",reg.coef_)
+
+print("Intercept:",reg.intercept_)
+
+#Salary=mx+b
+print("Prediction using Linear Regression")
+print(25000*0.00011002+24.58057020287783)
+    
+
+output:
+-------
+   Age  Salary  Experience
+0   33   20000          12
+1   25   15000           1
+2   27   20000           6
+3   24   12000           3
+4   27   25000           5
+5   29   20000           4
+6   29   50000           5
+7   27   25000           4
+8   23   12000           1
+9   27   30000           4
+Prediction: [27.33103941]
+Co-efficient: [0.00011002]
+Intercept: 24.58057020287783
+Prediction using Linear Regression
+27.33107020287783
+----------------------------------------------------------------------------------------------------------------------
+Important Tips:
+---------------
+from sklearn.linear_model import LinearRegression
+regressor=LinearRegression()
+
+---------------------------------------------------------------------------------------------------------------
+Example:2
+---------
+#Linear Regression
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import linear_model
+
+dataset=pd.read_csv("F:\\R\\DATA\\raja.csv")
+print(dataset)
+
+%matplotlib inline
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.scatter(dataset.Age,dataset.Salary,color="red",marker='+')
+
+reg=linear_model.LinearRegression()
+reg.fit(dataset[['Age']],dataset.Salary)
+
+reg.predict(33)
+
+reg.coef_
+
+reg.intercept_
+
+dataset:
+--------
+       Name  Age  Salary  Gender  Department  Experience
+0      Raja   33   20000    male          IT          12
+1      Teja   25   15000    male          HR           1
+2      Jeya   27   20000  Female  Operations           6
+3   Karthik   24   12000    male       Admin           3
+4   Sathish   27   25000    male     Manager           5
+5  Dhayalan   29   20000    Male     Finance           4
+6     Priya   29   50000  Female   Developer           5
+7     Jeeva   27   25000    male      Tester           4
+8     Esika   23   12000    male      Server           1
+9  Musthafa   27   30000    male   Analytics           4
+
+
+
+%matplotlib inline
+plt.xlabel('Age',fontsize=20)
+plt.ylabel('Salary',fontsize=20)
+plt.scatter(dataset.Age,dataset.Salary,color='red',marker='+')
+plt.plot(dataset.Age,reg.predict(dataset[['Age']]),color='blue')
+--------------------------------------------------------------------------------------------------------------------------------------
+Linear Regression with Slop Line
+--------------------------------
+Dataset:
+========
+          Name  Age  Salary Department  Experience  Gender
+0      Sridevi   21   25000  Developer           1       0
+1      Sathish   23   26000  Developer           2       1
+2     Dhayalan   25   27000  Developer           3       1
+3         Teja   27   28000  Developer           4       1
+4         Rani   29   29000  Developer           5       0
+5       Sundar   31   30000  Developer           6       1
+6        Deepa   33   31000  Developer           7       0
+7  Jeyalakshmi   35   32000  Developer           8       0
+8       Prince   37   33000  Developer           9       1
+9      Shanker   40   34000  Developer          10       1
+
+Example:
+--------
+import pandas as pd
+
+df=pd.read_excel("F:/raja sir/DATA/PythonSpreadSheet.xls",sheet_name=1)
+print(df)
+
+x=df.iloc[:,1:2].values
+print(x)
+
+y=df.iloc[:,2:3].values
+print(y)
+
+from sklearn.linear_model import LinearRegression
+model=LinearRegression()
+model.fit(x,y)
+
+import matplotlib.pyplot as plt
+plt.scatter(x,y)
+plt.plot(x,model.predict(x))
+plt.title("Scatter-Employee Salary Prediction")
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.grid(True)
+plt.legend("Salary")
+plt.show()
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Dataset
+-------
+          Name  Age  Salary Department  Experience  Gender
+0      Sridevi   21   25000  Developer           1       0
+1      Sathish   23   26000  Developer           2       1
+2     Dhayalan   25   27000  Developer           3       1
+3         Teja   27   28000  Developer           4       1
+4         Rani   29   29000  Developer           5       0
+5       Sundar   31   30000  Developer           6       1
+6        Deepa   33   31000  Developer           7       0
+7  Jeyalakshmi   35   32000  Developer           8       0
+8       Prince   37   33000  Developer           9       1
+9      Shanker   40   34000  Developer          10       1
+
+Example:2
+---------
+#Pandas import
+import pandas as pd
+
+df=pd.read_excel("F:/raja sir/DATA/PythonSpreadSheet.xls",sheet_name=1)
+print(df)
+
+#Training Data
+x=df.iloc[:,1:2]
+print(x)
+
+y=df.iloc[:,2:3]
+print(y)
+
+#visual part
+import matplotlib.pyplot as plt
+plt.scatter(x,y,marker="*",color="Red",s=80)
+plt.title("Plotting-Age vs Salary",color="Green")
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.grid(True)
+plt.legend("Salary")
+plt.show()
+
+#import science kit learn
+from sklearn.linear_model import LinearRegression
+
+model=LinearRegression()
+model.fit(x,y)
+print("Goodness score:",model.score(x,y))
+
+prediction=model.predict(22)
+print("Prediction Value:",prediction)
+
+#visual part
+import matplotlib.pyplot as plt
+plt.scatter(x,y,marker="*",color="Red",s=80)
+plt.plot(x,model.predict(x))
+plt.title("Plotting-Age vs Salary",color="Green")
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.xlim([20,40])
+plt.grid(True)
+plt.legend("Salary")
+plt.show()
+
+print("a(co-effient) value:",model.coef_)
+print("b(intercept) value:",model.intercept_)
+-------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,155 @@
+Python Code Example:
+--------------------
+
+	Python code is simple and easy to run. 
+
+	Here is a simple Python code that will print "Welcome to Python".
+
+
+Example:1
+---------
+>>> print ("Hello Python")
+Hello Python 
+>>> 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Example:2
+---------
+>>> a="Welcome To Python"  
+>>> print (a)  
+Welcome To Python  
+>>>    
+
+
+Explanation:
+------------
+	1.Here,we are using IDLE to write the Python code. 
+
+	2.Detail explanation to run code is given in Execute Python section.
+
+	3.A variable is defined named "a" which holds "Welcome To Python".
+
+	4."print" statement is used to print the content. 
+
+	5.Therefore "print a" statement will print the content of the variable.
+ 
+	6.Therefore, the output "Welcome To Python" is produced.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to execute python:
+----------------------
+
+1.Interactive Mode
+
+2.Script Mode
+
+3.Using IDLE
+ 	i)Using Interactive mode
+	ii)Using Script Mode
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Python Keywords:
+----------------
+	*Python Keywords are special reserved words which convey a special meaning to the compiler/interpreter.
+ 
+	*Each keyword have a special meaning and a specific operation. 
+
+	*These keywords can't be used as variable.
+ 
+Following is the List of Python Keywords(30).
+
+	True	
+	False	
+	None	
+	and	
+	as
+	asset	
+	def	
+	class	
+	continue	
+	break
+	else	
+	finally	
+	elif	
+	del	
+	except
+	global	
+	for	
+	if	
+	from	
+	import
+	raise	
+	try	
+	or	
+	return	
+	pass
+	nonlocal	
+	in	
+	not	
+	is	
+	lambda
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Identifiers:
+------------
+Identifiers are the names given to the fundamental building blocks in a program.
+
+-->These can be variables ,class ,object ,functions , lists , dictionaries etc.
+
+
+There are certain rules defined for naming i.e., Identifiers.
+
+	1.An identifier is a long sequence of characters and numbers.
+
+	2.No special character except underscore ( _ ) can be used as an identifier.
+
+	3.Keyword should not be used as an identifier name.
+
+	4.Python is case sensitive. So using case is significant.
+
+	5.First character of an identifier can be character(Alphabetical a-z & A-Z), underscore ( _ ) 
+	  but not digit.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Python Comments:
+----------------
+
+Python supports two types of comments:
+
+1) Single lined comment:
+  
+	In case user wants to specify a single line comment, then comment must start with ?#?
+
+	Example:
+
+	# This is single line comment.
+
+
+2) Multi lined Comment:
+   
+	Multi lined comment can be given inside triple quotes.
+
+	Example:  
+
+	''' This 
+   	      Is 
+              Multipleline comment''' 
+
+		or
+
+	""" This 
+   	      Is 
+              Multipleline comment""" 
+
+Comments in your code help you or someone else undersand:
+
+	1.What your pogram does?
+
+	2.What a particular line or section of code does?
+
+	3.Why you choose to do something a particular way?
+
+	4.Anything that might be helpful to know if i am looking at the code later and trying to understand it.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+

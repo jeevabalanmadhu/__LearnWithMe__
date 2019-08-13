@@ -1,0 +1,232 @@
+Data aggregation with pandas DataFrames:
+----------------------------------------
+
+	1.Data aggregation is a term known from relational databases. 
+
+	2.In a database query, we can group data by the value in a column or columns. 
+
+	3.We can then perform various operations on each of these groups.
+
+	4.The pandas DataFrame has similar capabilities. 
+
+	5.We will generate data held in a Python dict and then use this data to create a pandas DataFrame. 
+-------------------------------------------------------------------------------------------------------------------------------------
+Pandas Data Aggregation:
+=======================
+1.count()
+---------
+
+Example:
+=========
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+
+df = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(df)
+
+print("Pandas Data Aggregation:count()")
+
+print(df.Age.count())
+
+ouput:
+======
+       Name  Age
+ECE    Raja   28
+CSE    Jack   34
+EEE  Prince   29
+IT     Mala   42
+Pandas Data Aggregation:count()
+4
+
+
+2.sum()
+--------
+Example:
+========
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+
+df = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(df)
+
+print("Pandas Data Aggregation:count()")
+
+print(df.Age.sum())
+
+output:
+=======
+
+3.min() 
+-------
+Example:
+========
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+
+df = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(df)
+
+print("Pandas Data Aggregation:count()")
+
+print(df.Age.min())
+
+output:
+=======
+       Name  Age
+ECE    Raja   28
+CSE    Jack   34
+EEE  Prince   29
+IT     Mala   42
+Pandas Data Aggregation:count()
+28
+
+4.max()
+-------
+Example:
+========
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+
+df = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(df)
+
+print("Pandas Data Aggregation:count()")
+
+print(df.Age.max())
+
+output:
+=======
+       Name  Age
+ECE    Raja   28
+CSE    Jack   34
+EEE  Prince   29
+IT     Mala   42
+Pandas Data Aggregation:count()
+42
+
+5.mean()
+--------
+Example:
+========
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+
+df = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(df)
+
+print("Pandas Data Aggregation:count()")
+
+print(df.Age.mean())
+
+output:
+=======
+       Name  Age
+ECE    Raja   28
+CSE    Jack   34
+EEE  Prince   29
+IT     Mala   42
+Pandas Data Aggregation:count()
+33.25
+
+6.median()
+----------
+Example:
+--------
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+
+df = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(df)
+
+print("Pandas Data Aggregation:count()")
+
+print(df.Age.median())
+
+output:
+=======
+       Name  Age
+ECE    Raja   28
+CSE    Jack   34
+EEE  Prince   29
+IT     Mala   42
+Pandas Data Aggregation:count()
+31.5
+--------------------------------------------------------------------------------------------------------------------------------------
+Grouping in pandas
+-------------------
+
+	1.pandas performs “segmentation” (grouping and aggregation) based on the column values
+
+Example:
+========
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+
+df = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(df)
+
+print("Pandas Data Aggregation and Grouping:")
+
+print(df.groupby("Name").mean()[["Age"]])
+
+print("\n",df.groupby("Name").mean().Age
+
+output:
+=======
+       Name  Age
+ECE    Raja   28
+CSE    Jack   34
+EEE  Prince   29
+IT     Mala   42
+Pandas Data Aggregation and Grouping:
+        Age
+Name       
+Jack     34
+Mala     42
+Prince   29
+Raja     28
+
+ Name
+Jack      34
+Mala      42
+Prince    29
+Raja      28
+Name: Age, dtype: int64
+-------------------------------------------------------------------------------------------------------------------------------------
+Aggregate:
+----------
+Example:
+========
+import pandas as pd
+data = {'Name':['Raja', 'Jack', 'Prince', 'Mala'],'Age':[28,34,29,42]}
+
+df = pd.DataFrame(data,index=['ECE','CSE','EEE','IT'])
+print(df)
+
+print("Pandas Data Aggregation and Grouping:")
+
+group=df.groupby(["Age"])
+
+print(group.agg('min'))
+
+output:
+=======
+       Name  Age
+ECE    Raja   28
+CSE    Jack   34
+EEE  Prince   29
+IT     Mala   42
+Pandas Data Aggregation and Grouping:
+Age    Name        
+28     Raja
+29   Prince
+34     Jack
+42     Mala
+
+
+Note:
+=====
+group=df.groupby(["Age","Salary"])
+
+print(group.agg(['max','min','std','mean','median']))
+-------------------------------------------------------------------------------------------------------------------------------------

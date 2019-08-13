@@ -1,0 +1,74 @@
+kNN (k- Nearest Neighbors)
+--------------------------
+
+	1.It can be used for both classification and regression problems. 
+
+	2.However, it is more widely used in classification problems in the industry. 
+
+	3.K nearest neighbors is a simple algorithm that stores all available cases and classifies new cases by 
+	  a majority vote of its k neighbors. 
+
+	4.The case being assigned to the class is most common amongst its K nearest neighbors measured by a 
+	  distance function.
+
+	5.These distance functions can be Euclidean, Manhattan, Minkowski and Hamming distance. 
+
+	6.First three functions are used for continuous function and fourth one (Hamming) for categorical 
+	  variables. 
+
+	7.If K = 1, then the case is simply assigned to the class of its nearest neighbor. 
+
+	8.At times, choosing K turns out to be a challenge while performing kNN modeling.
+---------------------------------------------------------------------------------------------------------------
+Things to consider before selecting kNN:
+----------------------------------------
+
+	1.KNN is computationally expensive
+
+	2.Variables should be normalized else higher range variables can bias it.
+
+	3.Works on pre-processing stage more before going for kNN like outlier, noise removal
+----------------------------------------------------------------------------------------------------------------
+Python Code
+-----------
+#Import Library
+from sklearn.neighbors import KNeighborsClassifier
+
+#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+
+# Create KNeighbors classifier object model 
+KNeighborsClassifier(n_neighbors=6) # default value for n_neighbors is 5
+
+# Train the model using the training sets and check score
+model.fit(X, y)
+
+#Predict Output
+predicted= model.predict(x_test)
+---------------------------------------------------------------------------------------------------------------
+Example:
+========
+import pandas as pd
+from sklearn import neighbors 
+
+df=pd.read_csv("C:\\Users\\LENIN\\Desktop\\dataset.csv")
+print(df)
+print("\nk- Nearest Neighbors")
+
+model = neighbors.KNeighborsClassifier(n_neighbors=6)
+
+model.fit(df[['Age']],df.Salary)
+
+model.score(df[['Age']],df.Salary)
+
+#print(model.coef_)
+#print(model.intercept_)
+
+predicted= model.predict(33)
+print(predicted)
+
+output:
+=======
+k- Nearest Neighbors
+[35000]
+----------------------------------------------------------------------------------------------------------------
+https://www.listendata.com/2017/12/k-nearest-neighbor-step-by-step-tutorial.html

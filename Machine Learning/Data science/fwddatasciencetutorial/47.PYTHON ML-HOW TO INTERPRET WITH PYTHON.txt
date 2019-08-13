@@ -1,0 +1,90 @@
+Machine Learning in Python:
+---------------------------
+
+	1.Installing the Python and SciPy platform.
+
+	2.Loading the dataset.
+	
+	3.Summarizing the dataset.
+
+	4.Visualizing the dataset.
+
+	5.Evaluating some algorithms.
+
+	6.Making some predictions
+---------------------------------------------------------------------------------------------------------------
+1. Downloading, Installing and Starting Python SciPy
+----------------------------------------------------
+
+1.1 Install SciPy Libraries
+------------------------------
+
+	*You can choose Python version 2.7 or 3.7.
+
+	*There are 5 key libraries that you will need to install. 
+
+Below is a list of the Python SciPy libraries required for this tutorial:
+
+	1.scipy
+
+	2.numpy
+
+	3.matplotlib
+
+	4.pandas
+
+	5.sklearn
+---------------------------------------------------------------------------------------------------------------
+1.2 Start Python and Check Versions:
+------------------------------------
+
+	*It is a good idea to make sure your Python environment was installed successfully and is working as 
+	 expected.
+
+	*The script below will help you test out your environment.
+
+	*It imports each library required in this tutorial and prints the version.
+
+Open a command line and start the python interpreter:
+------------------------------------------------------
+python
+
+Example:1
+---------
+# Check the versions of libraries
+ 
+# Python version
+import sys
+print('Python Version: {}'.format(sys.version))
+
+# scipy
+import scipy
+print('scipy Version: {}'.format(scipy.__version__))
+
+# numpy
+import numpy
+print('numpy Version: {}'.format(numpy.__version__))
+
+# matplotlib
+import matplotlib
+print('matplotlib Version: {}'.format(matplotlib.__version__))
+
+# pandas
+import pandas
+print('pandas Version: {}'.format(pandas.__version__))
+
+# scikit-learn
+import sklearn
+print('sklearn Version: {}'.format(sklearn.__version__))
+
+
+
+output:
+-------
+Python Version: 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:57:36) [MSC v.1900 64 bit (AMD64)]
+scipy Version: 1.1.0
+numpy Version: 1.14.5
+matplotlib Version: 2.2.2
+pandas Version: 0.23.1
+sklearn Version: 0.19.2
+---------------------------------------------------------------------------------------------------------------

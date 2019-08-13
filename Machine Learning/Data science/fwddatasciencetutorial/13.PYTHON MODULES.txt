@@ -1,0 +1,209 @@
+Python Module:
+--------------
+
+	*Modules are used to categorize Pyhton code into smaller parts. 
+
+	*A module is simply a Python file, where classes, functions and variables are defined.
+ 
+	*Grouping similar code into a single file makes it easy to access. 
+
+
+
+Python Module Advantage:
+------------------------
+
+	1) Reusability: Module can be used in some other python code. 
+                	Hence it provides the facility of code reusability.
+
+	2) Categorization: Similar type of attributes can be placed in one module.
+---------------------------------------------------------------------------------------------------------------
+Importing a Module:
+-------------------
+
+There are different ways by which you we can import a module. These are as follows:
+
+1) Using import statement:
+--------------------------
+
+	"import" statement can be used to import a module.
+
+Syntax:
+-------
+
+import <file_name1, file_name2,...file_name(n)="">
+
+Example:1
+---------
+def sum(a,b):  
+    c=a+b  
+    print c  
+    return 
+
+Note:Save the file by the name addition.py. To import this file "import" statement is used.
+
+import addition  
+addition.sum(10,20)  
+addition.sum(30,40) 
+
+
+Example:2
+---------- 
+def sum(a,b):  
+    c=a+b  
+    print c  
+    return 
+
+def sub(a,b):  
+    c=a-b  
+    print c  
+    return 
+
+Module Calling:
+---------------
+import addition  
+addition.sum(10,20)  
+addition.sub(50,40) 
+---------------------------------------------------------------------------------------------------------------
+2.Python Importing Multiple Modules
+-----------------------------------
+Example:1
+----------
+1.save addition.py
+
+def sum(a,b):  
+    c=a+b  
+    print(c)  
+    return 
+
+2.save subtraction.py
+def sub(a,b):  
+    c=a-b  
+    print(c)  
+    return 
+
+3.multiimport.py:
+
+import addition,subtraction  
+addition.sum()  
+subtraction.sub()  
+---------------------------------------------------------------------------------------------------------------
+Built in Modules in Python:
+---------------------------
+
+There are many built in modules in Python. Some of them are as follows:
+
+	*math, random , threading , collections , os , mailbox , string , time , tkinter etc..
+
+	*Each module has a number of built in functions which can be used to perform various functions.
+
+Functions:
+----------
+
+	Function		Description
+	----------------------------------------------------------------------------------------
+	ceil(n)			It returns the next integer number of the given number
+	
+	sqrt(n)			It returns the Square root of the given number.
+
+	exp(n)			It returns the natural logarithm e raised to the given number
+
+	floor(n)		It returns the previous integer number of the given number.
+
+	log(n,baseto)		It returns the natural logarithm of the number.
+
+	pow(baseto, exp)	It returns baseto raised to the exp power.
+
+	sin(n)			It returns sine of the given radian.
+
+	cos(n)			It returns cosine of the given radian.
+
+	tan(n)			It returns tangent of the given radian.
+	-----------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+Example:1
+---------
+import math
+
+a=3.6
+
+print(math.ceil(a))
+
+output:
+-------
+4
+---------------------------------------------------------------------------------------------------------------
+Example:2
+---------
+import math
+
+a=3.6
+
+print(math.floor(a))
+---------------------------------------------------------------------------------------------------------------
+Example:3
+---------
+import math
+
+a=9
+
+print(math.sqrt(a))
+
+output:
+-------
+3
+---------------------------------------------------------------------------------------------------------------
+Example:4
+---------
+import math
+
+a=3
+
+print(math.exp(a))
+
+output:
+-------
+20.085536923187668
+---------------------------------------------------------------------------------------------------------------
+Example:5
+---------
+import math
+
+a=2
+
+print(math.log(a))
+
+output:
+-------
+0.6931471805599453
+---------------------------------------------------------------------------------------------------------------
+Example:6
+---------
+import math
+
+a=2
+b=3
+
+print(math.pow(a,b))
+
+output:
+-------
+8.0
+---------------------------------------------------------------------------------------------------------------
+Example:7
+---------
+import math
+
+a=0
+
+print(math.sin(0))
+
+output:
+-------
+0.0
+----------------------------------------------------------------------------------------------------------------
+
+
+
+
+

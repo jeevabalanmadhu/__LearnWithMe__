@@ -1,0 +1,116 @@
+Introduction to Data Structures
+-------------------------------
+1.Pandas was built on NumPy
+
+2.NumPy stores your data in arrays
+
+3.Pandas takes the NumPy Array
+
+4.And gives you a labled index on it
+
+Pandas deals with the following three data structures -
+
+	1.Series
+
+	2.DataFrame
+
+	3.Panel
+
+Note:
+-----
+These data structures are built on top of Numpy array, which means they are fast.
+---------------------------------------------------------------------------------------------------------------
+Dimension & Description:
+------------------------
+
+Data Structure		Dimensions	Description
+-------------------------------------------------------------------------------------------------------
+Series			1		1D labeled homogeneous array, sizeimmutable.
+
+Data Frames		2		General 2D labeled, size-mutable tabular structure with potentially 
+					heterogeneously typed columns.
+
+Panel			3		General 3D labeled, size-mutable array.
+---------------------------------------------------------------------------------------------------------------
+Series:
+-------
+	*Series is a one-dimensional array like structure with homogeneous data.
+
+	*One-dimensional labeled array that is capable of holding any data type
+
+Key Points:
+------------
+	1.Homogeneous data
+
+	2.Size Immutable
+
+	3.Values of Data Mutable
+
+Example:
+--------
+import pandas as pd
+#s=pd.Series([10,20,30,40])
+data=[10,20,30,40]
+s=pd.Series(data)
+print(s)
+
+output:
+-------
+0    10
+1    20
+2    30
+3    40
+dtype: int64
+---------------------------------------------------------------------------------------------------------------
+DataFrame:
+---------
+	*DataFrame is a two-dimensional array with heterogeneous data.
+
+	*Two-dimensional labeled data structures with columns of potentially different types
+
+Key Points:
+-----------
+
+	1.Heterogeneous data
+
+	2.Size Mutable
+
+	3.Data Mutable
+
+Example:
+--------
+import pandas as pd
+data=[10,20,30,40]
+df=pd.DataFrame(data)
+print(df)
+
+output:
+=======
+    0
+0  10
+1  20
+2  30
+3  40
+---------------------------------------------------------------------------------------------------------------
+Panel:
+------
+
+	*Panel is a three-dimensional data structure with heterogeneous data. 
+
+	*It is hard to represent the panel in graphical representation. 
+
+	*But a panel can be illustrated as a container of DataFrame.
+
+Key Points:
+-----------
+
+	1.Heterogeneous data
+
+	2.Size Mutable
+
+	3.Data Mutable
+
+Example:
+--------
+
+---------------------------------------------------------------------------------------------------------------

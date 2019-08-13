@@ -1,0 +1,253 @@
+Classification Metrics
+----------------------
+
+	1.Classification problems are perhaps the most common type of machine learning problem and as such there are a myriad of 
+	
+	  metrics that can be used to evaluate predictions for these problems.
+
+In this section we will review how to use the following metrics:
+----------------------------------------------------------------
+
+	1.Classification Accuracy.
+
+	2.Logarithmic Loss.
+
+	3.Area Under ROC Curve.
+
+	4.Confusion Matrix.
+
+	5.Classification Report.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+1. Classification Accuracy
+
+	1.Classification accuracy is the number of correct predictions made as a ratio of all predictions made.
+
+	2.This is the most common evaluation metric for classification problems, it is also the most misused. 
+
+	3.It is really only suitable when there are an equal number of observations in each class (which is rarely the case) and that 
+
+	  all predictions and prediction errors are equally important, which is often not the case.
+----------------------------------------------------------------------------------------------------------------------------------------
+2. Logarithmic Loss
+
+	1.Logarithmic loss (or logloss) is a performance metric for evaluating the predictions of probabilities of membership to a 
+	  given class.
+
+	2.The scalar probability between 0 and 1 can be seen as a measure of confidence for a prediction by an algorithm. 
+
+	3.Predictions that are correct or incorrect are rewarded or punished proportionally to the confidence of the prediction.
+-------------------------------------------------------------------------------------------------------------------------------------
+3. Area Under ROC Curve
+
+	1.Area under ROC Curve (or AUC for short) is a performance metric for binary classification problems.
+
+	2.The AUC represents a model’s ability to discriminate between positive and negative classes. 
+
+	3.An area of 1.0 represents a model that made all predictions perfectly. An area of 0.5 represents a model as good as random.
+
+
+ROC CURVE
+---------
+	
+	1.The ROC is also known as a relative operating characteristic curve, because it is a comparison of two operating 
+	  
+	  characteristics (TPR and FPR) as the criterion changes.
+
+Note:
+-----
+TPR-True Positive Rate
+FPR-False Positive Rate
+
+
+ROC can be broken down into sensitivity and specificity:
+--------------------------------------------------------- 
+A binary classification problem is really a trade-off between sensitivity and specificity.
+
+	1.Sensitivity is the true positive rate also called the recall. 
+
+	2.It is the number instances from the positive (first) class that actually predicted correctly.
+
+	3.Specificity is also called the true negative rate. 
+	
+	4.Is the number of instances from the negative class (second) class that were actually predicted correctly.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+4. Confusion Matrix
+--------------------
+
+	1.The confusion matrix is a handy presentation of the accuracy of a model with two or more classes.
+
+	2.The table presents predictions on the x-axis and accuracy outcomes on the y-axis. 
+
+	3.The cells of the table are the number of predictions made by a machine learning algorithm.
+
+For example, a machine learning algorithm can predict 0 or 1 and each prediction may actually have been a 0 or 1. 
+
+Predictions for 0 that were actually 0 appear in the cell for prediction=0 and actual=0, whereas predictions for 0 that were 
+
+actually 1 appear in the cell for prediction = 0 and actual=1. And so on.
+-------------------------------------------------------------------------------------------------------------------------------------
+5. Classification Report
+------------------------
+
+	1.Scikit-learn does provide a convenience report when working on classification problems to give you a quick idea of the 
+
+	  accuracy of a model using a number of measures.
+
+	2.The classification_report() function displays the precision, recall, f1-score and support for each class.
+
+Example:
+--------
+#Classification accuracy:
+
+from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+
+y_true = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+y_pred = [0, 1, 0, 0, 0, 0, 0, 1, 1, 1]
+
+print ('Accuracy:', accuracy_score(y_true, y_pred))
+print (confusion_matrix(y_true, y_pred))
+print (precision_recall_fscore_support(y_true, y_pred))
+
+plt.matshow(confusion_matrix(y_true, y_pred))
+plt.title('Confusion matrix')
+plt.colorbar()
+plt.ylabel('True label')
+plt.xlabel('Predicted label')
+plt.show()
+
+output:
+-------
+Accuracy: 0.7
+[[4 1]
+ [2 3]]
+(array([0.66666667, 0.75]), array([0.8, 0.6]), array([0.72727273, 0.66666667]), array([5, 5], dtype=int64))
+
+
+F score 
+--------
+P = True Positive / (True Positive+ False Positive)
+R = True Positive / (True Positive+ False Negative)
+F score = 2 (PR / P+R)
+--------------------------------------------------------------------------------------------------------------------------------------
+Regression Metrics
+------------------
+
+	In this section will review 3 of the most common metrics for evaluating predictions on regression machine learning problems:
+
+	1.Mean Absolute Error.
+
+	2.Mean Squared Error.
+
+	3.R^2.
+
+
+1. Mean Absolute Error
+----------------------
+
+	1.The Mean Absolute Error (or MAE) is the sum of the absolute differences between predictions and actual values. 
+
+	2.It gives an idea of how wrong the predictions were.
+
+	3.The measure gives an idea of the magnitude of the error, but no idea of the direction (e.g. over or under predicting).
+
+
+2. Mean Squared Error
+---------------------
+
+	1.The Mean Squared Error (or MSE) is much like the mean absolute error in that it provides a gross idea of the magnitude of 
+	  error.
+
+	2.Taking the square root of the mean squared error converts the units back to the original units of the output variable and 
+	  can be meaningful for description and presentation. 
+
+	3.This is called the Root Mean Squared Error (or RMSE).
+
+
+3. R^2 Metric
+--------------
+
+	1.The R^2 (or R Squared) metric provides an indication of the goodness of fit of a set of predictions to the actual values. 
+
+	2.In statistical literature, this measure is called the coefficient of determination.
+
+	3.This is a value between 0 and 1 for no-fit and perfect fit respectively.
+
+
+4.Root Mean Squared Error (RMSE)
+--------------------------------
+
+	1.RMSE is the most popular evaluation metric used in regression problems. 
+
+	2.It follows an assumption that error are unbiased and follow a normal distribution. 
+
+Here are the key points to consider on RMSE:
+
+	1.The power of ‘square root’  empowers this metric to show large number deviations.
+
+	2.The ‘squared’ nature of this metric helps to deliver more robust results which prevents cancelling the positive and negative 
+
+	  error values. 
+
+	3.In other words, this metric aptly displays the plausible magnitude of error term.
+
+
+	4.It avoids the use of absolute error values which is highly undesirable in mathematical calculations.
+
+	5.When we have more samples, reconstructing the error distribution using RMSE is considered to be more reliable.
+
+	6.RMSE is highly affected by outlier values. 
+
+	7.Hence, make sure you’ve removed outliers from your data set prior to using this metric.
+
+	8.As compared to mean absolute error, RMSE gives higher weightage and punishes large errors.
+
+
+5.Mean Absolute Percentage Error(MAPE)
+--------------------------------------
+
+	1.The mean absolute percentage error (MAPE), also known as mean absolute percentage deviation (MAPD), is a measure of 
+	
+	  prediction accuracy of a forecasting method in statistics, for example in trend estimation, also used as a Loss function 
+
+	  for regression problems in Machine Learning.
+--------------------------------------------------------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt 
+from sklearn.linear_model import LinearRegression
+
+x = [[6], [8], [10], [14], [18]]
+y = [[7], [9], [13], [17.5], [18]]
+
+print(type(x))
+print(type(y))
+
+model = LinearRegression()
+model.fit(x,y)
+
+print("Score",model.score(x,y))
+
+print(model.predict(x))
+
+
+plt.figure()
+plt.title('Apple price statistics')
+plt.xlabel('Diameter (inches)')
+plt.ylabel('Price (dollars)')
+plt.plot(x,y,'.')
+plt.plot(x,model.predict(x),'--')
+plt.axis([0,25,0,25])
+plt.grid(True)
+plt.show()
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

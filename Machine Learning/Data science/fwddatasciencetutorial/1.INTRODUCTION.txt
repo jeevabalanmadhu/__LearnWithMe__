@@ -1,0 +1,78 @@
+INTRODUCTION:
+
+1.Python is a simple, easy to learn, powerful, high level and object-oriented programming language.
+
+2.Python is an interpreted scripting language.
+
+3.Python laid its foundation in the late 1980s.Guido Van Rossum is known as the founder of python programming.
+
+4.Python is an object-oriented, high level language, interpreted, dynamic and multipurpose programming language. 
+
+5..Python is designed to be highly readable.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Python Features:
+----------------
+	1.Easy to Use
+
+	2.Expressive Language
+
+	3.Interpreted Language
+
+	4.Cross-platform language
+
+	5.Free and Open Source
+
+	6.Object-Oriented language
+
+	7.Extensible
+
+	8.Large Standard Library
+
+	9.GUI Programming
+
+	10.Integrated
+
+	11.Databases
+
+	12.Portable
+
+	13.Scalable
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Python Version:
+---------------
+Python programming language is being updated regularly with new features and support.
+
+There are a lot of updation in python versions, started from 1994 to current date.
+
+	1.Python 2.7.13
+	2.Python 3.6.2
+
+*Note that Python 3.5+ cannot be used on Windows XP or earlier.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Python Applications:
+--------------------
+	1.Console Based Application
+
+	2.Audio or Video based Applications
+
+	3.3D CAD Applications
+
+	4.Web Applications
+
+	5.Enterprise Applications
+
+	6.Applications for Images
+
+	7.Back end web development
+	
+	8.Data Analysis
+
+	9.AI and Scientific Computing
+
+	10.Games Desktop apps
+	
+	11.Graphical User Interface
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

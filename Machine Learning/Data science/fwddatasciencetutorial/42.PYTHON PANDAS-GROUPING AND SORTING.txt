@@ -1,0 +1,234 @@
+Groups and Sorting:
+-------------------
+
+	*Any groupby operation involves one of the following operations on the original object. 
+
+         They are 
+
+		1.Splitting the Object
+
+		2.Applying a function
+
+		3.Combining the results
+
+	*In many situations, we split the data into sets and we apply some functionality on each subset. 
+
+	*In the apply functionality, we can perform the following operations.
+
+		1.Aggregation - computing a summary statistic
+
+		2.Transformation - perform some group-specific operation
+
+		3.Filtration - discarding the data with some condition
+-------------------------------------------------------------------------------------------------------------------------------------
+Example:1
+---------
+#import the pandas library
+import pandas as pd
+
+student_data = {'Name':['Raja', 'Raju', 'Prince', 'Deva','Uma'],
+            	'Rank':[1, 2, 2, 3, 1],
+            	'Year':[2014,2015,2014,2016,2015],
+            	'Points':[876,789,863,673,741],
+            	'Grade':['A','B','B','C','A']}
+df = pd.DataFrame(student_data)
+print(df)
+
+output:
+-------
+     Name    Rank Year    Points  Grade
+0    Raja     1   2014     876     A
+1    Raju     2   2015     789     B
+2    Prince   2   2014     863     B
+3    Deva     3   2016     673     C
+4    Uma      1   2015     741     A
+---------------------------------------------------------------------------------------------------------------
+Split Data into Groups:
+----------------------
+
+	*Pandas object can be split into any of their objects. 
+
+There are multiple ways to split an object like..
+
+	obj.groupby('key')
+
+	obj.groupby(['key1','key2'])
+
+	obj.groupby(key,axis=1)
+
+Example:1
+---------
+#import the pandas library
+import pandas as pd
+
+student_data = {'Name':['Raja', 'Raju', 'Prince', 'Deva','Uma'],
+            'Rank':[1, 2, 2, 3, 1],
+            'Year':[2014,2015,2014,2016,2015],
+            'Points':[876,789,863,673,741],
+            'Grade':['A','B','B','C','A']}
+df = pd.DataFrame(student_data)
+print(df.groupby("Name"))
+
+output:
+-------
+<pandas.core.groupby.groupby.DataFrameGroupBy object at 0x000000A510978160>
+
+
+Example:2
+---------
+#import the pandas library
+import pandas as pd
+
+student_data = {'Name':['Raja', 'Raju', 'Prince', 'Deva','Uma'],
+            'Rank':[1, 2, 2, 3, 1],
+            'Year':[2014,2015,2014,2016,2015],
+            'Points':[876,789,863,673,741],
+            'Grade':['A','B','B','C','A']}
+df = pd.DataFrame(student_data)
+print(df.groupby("Name").groups)
+
+output:
+-------
+{'Deva': Int64Index([3], dtype='int64'), 
+'Prince': Int64Index([2], dtype='int64'), 
+'Raja': Int64Index([0], dtype='int64'), 
+'Raju': Int64Index([1], dtype='int64'), 
+'Uma': Int64Index([4], dtype='int64')}
+
+
+Example:3
+---------
+#import the pandas library
+import pandas as pd
+
+student_data = {'Name':['Raja', 'Raju', 'Prince', 'Deva','Uma'],
+            'Rank':[1, 2, 2, 3, 1],
+            'Year':[2014,2015,2014,2016,2015],
+            'Points':[876,789,863,673,741],
+            'Grade':['A','B','B','C','A']}
+df = pd.DataFrame(student_data)
+print(df.groupby(["Name","Rank"]).groups)
+
+output:
+-------
+{('Deva', 3): Int64Index([3], dtype='int64'), ('Prince', 2): Int64Index([2], dtype='int64'), ('Raja', 1): Int64Index([0], dtype='int64'), ('Raju', 2): Int64Index([1], dtype='int64'), ('Uma', 1): Int64Index([4], dtype='int64')}
+
+----------------------------------------------------------------------------------------------------------------------
+Iterating through Groups:
+-------------------------
+
+Example:1
+---------
+#import the pandas library
+import pandas as pd
+
+student_data = {'Name':['Raja', 'Raju', 'Prince', 'Deva','Uma'],
+            'Rank':[1, 2, 2, 3, 1],
+            'Year':[2014,2015,2014,2016,2015],
+            'Points':[876,789,863,673,741],
+            'Grade':['A','B','B','C','A']}
+df = pd.DataFrame(student_data)
+groupedBy=df.groupby("Name")
+
+for name,group in groupedBy:
+    print(name)
+    print(group)
+
+output:
+-------
+Deva
+   Name  Rank  Year  Points Grade
+3  Deva     3  2016     673     C
+Prince
+     Name  Rank  Year  Points Grade
+2  Prince     2  2014     863     B
+Raja
+   Name  Rank  Year  Points Grade
+0  Raja     1  2014     876     A
+Raju
+   Name  Rank  Year  Points Grade
+1  Raju     2  2015     789     B
+Uma
+  Name  Rank  Year  Points Grade
+4  Uma     1  2015     741     A
+
+Example:2
+---------
+import pandas as pd
+%matplotlib inline
+data=pd.read_excel("D:/testdata.xls")
+df=pd.DataFrame(data)
+groupedBy=df.groupby(["Salary"])
+
+for name,i in groupedBy:
+    print(name)
+    print(i)
+ 
+output:
+-------
+30000
+  Username    Password   Mobile_No  Salary
+2   Prince  prince@123  9742197421   30000
+40000
+  Username  Password   Mobile_No  Salary
+1     Rani  rani@123  9942199421   40000
+50000
+  Username     Password   Mobile_No  Salary
+0     Raja  Vignesh@123  9842198421   50000
+
+---------------------------------------------------------------------------------------------------------------
+Select a Group:
+---------------
+
+Example:1
+---------
+#import the pandas library
+import pandas as pd
+
+student_data = {'Name':['Raja', 'Raju', 'Prince', 'Deva','Uma'],
+            	'Rank':[1, 2, 2, 3, 1],
+            	'Year':[2014,2015,2014,2016,2015],
+            	'Points':[876,789,863,673,741],
+            	'Grade':['A','B','B','C','A']}
+df = pd.DataFrame(student_data)
+groupedBy=df.groupby("Year")
+print(groupedBy.get_group(2014))
+
+output:
+-------
+     Name  Rank  Year  Points Grade
+0    Raja     1  2014     876     A
+2  Prince     2  2014     863     B
+-------------------------------------------------------------------------------------------------------------------------------------
+WRITE TO ANOTHER EXCEL FILE:
+----------------------------
+Example:1
+---------
+import pandas
+df=pandas.read_excel("F:/R/dataset.xlsx")
+print(df)
+df.to_excel("F:/new2.xlsx",sheet_name="output",startcol=0,index=False)
+
+Example:2
+---------
+import pandas
+df=pandas.read_excel("F:/R/dataset.xlsx")
+print(df)
+
+df.loc[1:2,].to_excel("F:/new1.xlsx",sheet_name="output",startcol=0,index=False)
+-------------------------------------------------------------------------------------------------------------------------------------
+Real-Time 
+---------
+import pandas as pd
+
+df=pd.read_excel("F:/R/DATA/RSpreadSheet.xlsx")
+print(df) 
+
+x=df.groupby(["Department"]).get_group("IOT")
+print(x)
+x.to_excel("F:/output.xlsx",index=False)
+----------------------------------------------------------------------------------------------------------------------------------------
+Try It
+------
+https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html
+-------------------------------------------------------------------------------------------------------------------------------------

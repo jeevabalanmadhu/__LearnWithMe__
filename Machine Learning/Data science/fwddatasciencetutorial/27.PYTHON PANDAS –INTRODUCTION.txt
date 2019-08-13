@@ -1,0 +1,73 @@
+What is Data Science?
+
+	*Data science or data analytics is a process of analyzing large set of data points to get answers on 
+	 questions related to that data. 
+
+	*Pandas is a python module that makes data science easy and effective.
+
+---------------------------------------------------------------------------------------------------------------
+Key Features of Pandas:
+-----------------------
+
+	1.Fast and efficient DataFrame object with default and customized indexing.
+
+	2.Tools for loading data into in-memory data objects from different file formats.
+
+	3.Data alignment and integrated handling of missing data.
+
+	4.Reshaping and pivoting of date sets.
+
+	5.Label-based slicing, indexing and subsetting of large data sets.
+
+	6.Columns from a data structure can be deleted or inserted.
+
+	7.Group by data for aggregation and transformations.
+
+	8.High performance merging and joining of data.
+
+	9.Time Series functionality.
+---------------------------------------------------------------------------------------------------------------
+Python Pandas - Environment Setup
+---------------------------------
+https://www.spyder-ide.org/
+
+https://www.anaconda.com/download/#windows
+
+https://pythonhosted.org/spyder/installation.html
+open command propmt:
+--------------------
+pip install pandas
+pip install numpy
+pip install matplotlib
+---------------------------------------------------------------------------------------------------------------
+Linux Ubuntu
+------------
+raja@raja-lenovo:~$bash ~/Downloads/Anaconda3.5-Linux-x86_64.sh
+
+>>>Enter
+
+>>>yes
+
+[/home/codebind/anaconda3]>>>Enter
+
+export PATH=/home/codebind/anaconda3/bin:$PATH
+
+Do you wish to prepared with the installation of Microsoft VSCode?[yes/no]
+
+>>>no
+
+raja@raja-lenovo:~$ gedit /home/codebind/.bashrc
+
+paste   export PATH=/home/codebind/anaconda3/bin:$PATH
+
+raja@raja-lenovo:~$ source /home/codebind/.bashrc
+
+raja@raja-lenovo:~$ anaconda-navigator
+
+raja@raja-lenovo:~$conda info
+
+raja@raja-lenovo:~$conda list
+
+raja@raja-lenovo:~$ jupyter notebook
+
+---------------------------------------------------------------------------------------------------------------

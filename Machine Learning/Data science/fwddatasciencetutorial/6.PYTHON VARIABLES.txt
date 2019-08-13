@@ -1,0 +1,166 @@
+Python Variables:
+-----------------
+
+	1.Variable is a name of the memory location where data is stored. 
+
+	2.Once a variable is stored that means a space is allocated in memory.
+	
+	3.Variable also known as identifier and used to hold value.
+
+	4.In Python, we don't need to specify the type of variable because Python is a type infer language and
+	  smart enough to get variable type.
+
+	5.Variable names can be a group of both letters and digits, but they have to begin with a letter or an 
+          underscore.
+
+*Note:1.Variable name should not be a keyword.
+      
+      2.Remember that variables are case-sensitive
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Assigning values to Variable:
+-----------------------------
+	1.We need not to declare explicitly variable in Python.
+
+	2.When we assign any value to the variable that variable is declared automatically.
+
+	3.The assignment is done using the equal (=) operator.
+
+Example:
+
+	a=12
+
+	b=100.5
+	
+	FirstName='Raja'
+	
+	SurName="Poolan"	
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Multiple Assignment:
+----------------------
+
+1.Multiple assignment can be done in Python at a time.
+
+	There are two ways to assign values in Python:
+
+	1. Assigning single value to multiple variables:
+
+	Example:
+		a=b=c=50  
+		print a  
+		print b 
+		print c
+
+
+2.Assigning multiple values to multiple variables:
+
+	Example:
+
+		a,b,c=5,10,15  
+		print a  
+		print b  
+		print c 
+   
+Note:The values will be assigned in the order in which variables appears.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Basic Fundamentals:
+--------------------
+
+This section contains the basic fundamentals of Python like :
+
+	i)Tokens and their types.
+
+	ii)Comments
+
+i)Tokens:
+---------
+
+	*Tokens can be defined as a punctuator mark, reserved words and each individual word in a statement.
+
+	*Token is the smallest unit inside the given program.
+
+There are following tokens in Python:
+
+	1.Keywords.
+	2.Identifiers.
+	3.Literals.
+	4.Operators.
+
+
+Tuples:
+-------
+
+	*Tuple is another form of collection where different type of data can be stored.
+	
+	*It is similar to list where data is separated by commas. 
+	
+	*Only the difference is that list uses square bracket and tuple uses parenthesis.
+	
+	*Tuples are enclosed in parenthesis and cannot be changed.
+
+Example:1
+---------
+	
+	>>> tuple=('raja','100',4.5,'ra')
+	>>> tuple
+	('raja', '100', 4.5, 'ra')
+
+--------------------------------------------------
+Example:2
+---------
+
+	>>> tuple[0]
+	'raja'
+--------------------------------------------------
+Example:3
+
+	>>> tuple=('raja','100',4.5,'ra')
+	>>> tuple[1:]
+	('100', 4.5, 'ra')
+---------------------------------------------------
+Example:4
+
+	>>> tuple1=('raja','100',4.5,'ra')
+	>>> tuple2=('tech',200)
+	>>> tuple1+tuple2
+	('raja', '100', 4.5, 'ra', 'tech', 200)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dictionary:
+-----------
+
+1.Dictionary is a collection which works on a key-value pair.
+
+2.It works like an associated array where no two keys can be same.
+
+3.Dictionaries are enclosed by curly braces ({}) and values can be retrieved by square bracket([]).
+
+Example:1
+
+	>>> dictionary={'Name':'Raja','ID':100,'DEPT':'IT'}
+	>>> dictionary
+	{'Name': 'Raja', 'ID': 100, 'DEPT': 'IT'} 
+------------------------------------------------------------------------------------------------
+Example:2
+
+	>>> dictionary={'Name':'Raja','ID':100,'DEPT':'IT'}
+	>>> dictionary.keys()
+	dict_keys(['Name', 'ID', 'DEPT'])
+------------------------------------------------------------------------------------------------
+
+Example:3
+
+	>>> dictionary={'Name':'Raja','ID':100,'DEPT':'IT'}
+	>>> dictionary.values()
+	dict_values(['Raja', 100, 'IT'])
+-------------------------------------------------------------------------------------------------
+Example:4
+---------
+>>> b={"Name":"Teja"}
+>>> print(b)
+{'Name': 'Teja'}
+>>> b["Age"]=30
+>>> print(b)
+{'Name': 'Teja', 'Age': 30}
+----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------

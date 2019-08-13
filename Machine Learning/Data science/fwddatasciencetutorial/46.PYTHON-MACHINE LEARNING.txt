@@ -1,0 +1,72 @@
+What is Deep Learning?
+
+	1.Deep learning is a machine learning method that relies on artificial neural networks, allowing 
+	
+	  computer systems to learn by example. 
+
+	3.In most cases, deep learning algorithms are based on information patterns found in biological nervous 
+	
+	  systems.
+---------------------------------------------------------------------------------------------------------------
+Machine Learning:
+----------------
+
+
+	1. Machine Learning is the "field of study that gives computers the ability to learn without being 
+	   explicitly programmed."
+
+	2.Machine Learning (ML) is coming into its own, with a growing recognition that ML can play a key role 
+	
+	  in a wide range of critical applications, such as data mining, natural language processing, image 
+	
+	  recognition,and expert systems. 
+
+	3.ML provides potential solutions in all these domains and more, and is set to be a pillar of our future 
+
+	  civilization.
+
+
+E.” -- Tom Mitchell, Carnegie Mellon University:
+------------------------------------------------
+
+	1.“A computer program is said to learn from experience E with respect to some task T and some 
+	  performance measure P, if its performance on T, as measured by P, improves with experience.
+---------------------------------------------------------------------------------------------------------------
+Machine Learning vs Artificial Intelligence: What’s the difference?
+-------------------------------------------------------------------
+	
+	1.Artificial Intelligence (AI) is a broad term used to describe systems capable of making certain 
+	  decisions on their own. 
+
+	2.Machine Learning (ML) is a specific subject within the broader AI arena, describing the ability for 
+	  a machine to improve its ability by practicing a task or being exposed to large data sets.
+---------------------------------------------------------------------------------------------------------------
+How to learn Machine Learning?
+
+	1.Machine Learning requires a great deal of dedication and practice to learn, due to the many subtle 
+
+	  complexities involved in ensuring your machine learns the right thing and not the wrong thing.
+---------------------------------------------------------------------------------------------------------------
+What is a Machine Learning model?
+
+	1.A Machine Learning model is a set of assumptions about the underlying nature the data to be trained 
+	  for. 
+
+	2.The model is used as the basis for determining what a Machine Learning algorithm should learn. 
+
+	3.A good model, which makes accurate assumptions about the data, is necessary for the machine to give 
+	  good results
+---------------------------------------------------------------------------------------------------------------
+Machine Learning in Python:
+---------------------------
+
+	1.Python is a popular and powerful interpreted language. 
+
+	2.Unlike R, Python is a complete language and platform that you can use for both research and 
+	  development and developing production systems.
+
+	3.There are also a lot of modules and libraries to choose from, providing multiple ways to do each task. 
+
+	4.It can feel overwhelming.
+---------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,56 @@
+Python Pass:
+------------
+
+1.When you do not want any code to execute, pass Statement is used. 
+
+2.It is same as the name refers to. 
+
+3.It just makes the control to pass by without executing any code.
+ 
+4.If we want to bypass any code pass statement can be used.
+
+
+Syntax:
+-------
+pass  
+
+
+----------------------------------------------------------------------------------------------------------------
+
+Example:1
+----------
+for i in [1,2,3,4,5]:  
+    if i==3:  
+        pass  
+        print ("Pass when value is",i) 
+    print (i)
+
+output:
+-------
+1
+2
+Pass when value is 3
+3
+4
+5
+
+---------------------------------------------------------------------------------------------------------------
+Example:2
+----------
+# pass is just a placeholder for
+# functionality to be added later.
+sequence = {'r', 'a', 'n', 'i'}
+for val in sequence:
+    if val=='n':
+        pass
+        print("pass when character is",val)
+    print (val)
+
+output:
+-------
+Pass when character is j
+j
+r
+a
+a
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------

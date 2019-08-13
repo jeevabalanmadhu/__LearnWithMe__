@@ -1,0 +1,238 @@
+Python Pandas Plotting Data:
+----------------------------
+
+	1.A picture says a thousand words, and with Python’s matplotlib library, it fortunately takes far less 
+	  than a thousand words of code to create a production-quality graphic.
+
+	2.However, matplotlib is also a massive library, and getting a plot to look “just right” is often 
+	  practiced on a trial-and-error basis. 
+
+	3.Using one-liners to generate basic plots in matplotlib is fairly simple, but skillfully commanding 
+	  the remaining 98% of the library can be daunting.
+Note:
+-----
+Pycharm install Jupyter Notebook
+
+Example:1
+---------
+import pandas as pd
+%matplotlib inline
+student_data = {'Rank':[1, 2, 2, 3, 1]}
+df = pd.DataFrame(student_data)
+df.plot()
+
+output:
+-------
+<matplotlib.axes._subplots.AxesSubplot at 0x457f865198>
+--------------------------------------------------------------------------------------------------------------------------------------
+DataSet:
+--------
+ 	Logic    Name    Age  Salary  Department  Experience  Gender
+0       1        Raja    33   90000         IOT          12    Male
+1       1      Sathish   27   35000   Developer           3    Male
+2       1     Dhayalan   28   40000  Operations           4    Male
+3       0         Teja   25   25000    Analysis           1    Male
+4       0         Rani   34   50000    Training          10  Female
+5       0       Sundar   42   70000     Testing          11    Male
+6       0        Deepa   24   28000  Automation           2  Female
+7       0  Jeyalakshmi   28   35000   Executive           5  Female
+8       1       Prince   25   33000          IT           4    Male
+9       1      Shanker   28   29000       Admin           5    Male
+10      0  Vel murugan   22   15000       Admin           1    Male
+11      1      Sankili   34   80000   Developer          12    Male
+12      0       Suresh   35   95000         IOT          13    Male
+----------------------------------------------------------------------------------------------------------------
+plot:
+-----
+
+Example:
+========
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df=pd.read_excel("F:/R/DATA/RSpreadSheet.xlsx")
+print(df)
+
+print("Python Pandas Plotting Data")
+
+plt.plot(df["Age"],df["Salary"],color="Gray",linewidth=5,linestyle="dotted",markersize=12)
+plt.title("Plotting Graph:Employee Deatils",color="Blue",fontsize=20)
+plt.xlabel("Age",color="Green",fontsize=10)
+plt.ylabel("Salary",color="Red",fontsize=10)
+plt.xlim([20,40])
+plt.ylim([10000,100000])
+plt.grid(True)
+plt.legend("Salary")
+plt.savefig("F:/plotGraph.png",bbox_inches="tight",pad_inches=2,transparent=True )
+plt.show() 
+
+---------------------------------------------------------------------------------------------------------------
+Bar:
+----
+
+Example:
+========
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df=pd.read_excel("F:/R/DATA/RSpreadSheet.xlsx")
+print(df)
+
+print("Python Pandas Plotting Data")
+
+plt.bar(df["Name"],df["Salary"],color="Yellow",Linewidth=5,edgecolor="Red",orientation="horizontal")
+plt.title("Plotting Graph:Employee Deatils",color="Blue",fontsize=20)
+plt.xlabel("Age",color="Green",fontsize=10)
+plt.ylabel("Salary",color="Red",fontsize=10)
+#plt.xlim([20,40])
+plt.ylim([10000,100000])
+plt.grid(True)
+plt.legend("Salary")
+plt.savefig("F:/BarVerticalGraph.png",bbox_inches="tight",pad_inches=2,transparent=True)
+plt.show()
+
+-----------------------------------------------------------------------------------------------------------------
+Barh:
+-----
+
+Example:
+========
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df=pd.read_excel("F:/R/DATA/RSpreadSheet.xlsx")
+print(df)
+
+print("Python Pandas Plotting Data")
+
+plt.barh(df["Name"],df["Salary"],color="Yellow",Linewidth=5,edgecolor="Red")
+plt.title("Plotting Graph:Employee Deatils",color="Blue",fontsize=20)
+plt.xlabel("Salary",color="Green",fontsize=10)
+plt.ylabel("Name",color="Red",fontsize=10)
+#plt.ylim([20,40])
+plt.xlim([10000,100000])
+plt.grid(True)
+plt.legend("Salary")
+plt.savefig("F:/BarHorizontalGraph.png",bbox_inches="tight",pad_inches=2,transparent=True)
+plt.show()
+---------------------------------------------------------------------------------------------------------------
+Pie Chart:
+----------
+Example:
+========
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df=pd.read_csv("C:\\Users\\LENIN\\Desktop\\dataset.csv")
+print(df)
+
+plt.pie(df.Salary,labels=df.Name,radius=1.5,autopct='%0.2f%%',shadow=True,
+        explode=[0.2,0,0,0,0,0,0,0,0,0,0,0,0],startangle=180)
+
+plt.axis('equal')
+
+plt.title("Employee Salary Details",fontsize=30)
+
+plt.legend("Salary")
+
+plt.show()
+---------------------------------------------------------------------------------------------------------------
+Hist:
+-----
+
+Example:
+========
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df=pd.read_csv("C:\\Users\\LENIN\\Desktop\\dataset.csv")
+print(df)
+
+
+plt.hist(df.Salary,bins=[15000,30000,60000,80000,100000],rwidth=0.95,color='Green',
+         histtype='step',label=['Employee'],orientation='horizontal')
+
+plt.xlabel('Employee Salary',fontsize=20)
+
+plt.ylabel("Total no of Employees",fontsize=20)
+
+plt.title("Employee Details",fontsize=40)
+
+plt.legend("Salary")
+
+plt.show()
+------------------------------------------------------------------------------------------------------------------------------------
+Scatter:
+--------
+Example:
+========
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df=pd.read_excel("F:/R/DATA/RSpreadSheet.xlsx")
+print(df)
+
+print("Python Pandas Plotting Data")
+
+plt.scatter(df["Age"],df["Salary"],color="Gray",s=50,marker="*")
+plt.title("Plotting Graph:Employee Deatils",color="Blue",fontsize=20)
+plt.xlabel("Age",color="Green",fontsize=10)
+plt.ylabel("Salary",color="Red",fontsize=10)
+plt.xlim([20,40])
+plt.ylim([10000,100000])
+plt.grid(True)
+plt.legend("Salary")
+plt.savefig("F:/ScatterPlot.png",bbox_inches="tight",pad_inches=2,transparent=True )
+plt.show()  
+-------------------------------------------------------------------------------------------------------------------------------------
+Boxplot:
+--------
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df=pd.read_excel("F:/R/DATA/RSpreadSheet.xlsx")
+print(df)
+
+plt.boxplot(df["Salary"],meanline=True,showmeans=True,vert=True,sym="r+",whis=True)
+
+plt.title("Box Plot-Distribution")
+
+plt.ylabel("Salary Range")
+
+plt.ylim([10000,100000])
+
+plt.grid(True)
+
+plt.savefig("F:/BoxPlot.png",bbox_inches="tight",pad_inches=2,transparent=True)
+
+plt.legend("Salary")
+
+plt.show()
+--------------------------------------------------------------------------------------------------------------------------------------
+Try it:
+-------
+df.plot(kind='bar')
+
+df.plot(figsize=(20,5))
+
+df.plot(figsize=(20,5)).set_title("Student Report")
+
+df.plot(figsize=(20,5)).set_title("Student Report",fontsize=40)
+
+p=df.plot()
+p.set_xlabel("x axis")
+p.set_ylabel("y axis")
+
+p=df.plot()
+p.set_xlabel("x axis",fontsize="20")
+p.set_ylabel("y axis",fontsize="20")
+
+p=df.plot(color='green')
+p.set_xlabel("x axis",fontsize="20")
+p.set_ylabel("y axis",fontsize="20")
+p.legend("Testing")
+-----------------------------------------------------------------------------------------------------------------
+

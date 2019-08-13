@@ -1,0 +1,349 @@
+Introduction:
+-------------
+
+	1.Inheritance is used to specify that one class will get most or all of its features from its parent class. 
+
+	2.It is a feature of Object Oriented Programming. 
+
+	3.It is a very powerful feature which facilitates users to create a new class with a few or more modification
+  	  to an existing class. 
+
+	4.The new class is called child class or derived class and the main class from which it inherits the 
+  	  properties is called base class or parent class.
+
+	5.The child class or derived class inherits the features from the parent class, adding new features 
+	  to it. 
+
+	6.It facilitates re-usability of code.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Types of Inheritance
+-------------------------
+	1.Single Inheritance
+
+	2.Multi Level Inheritance
+
+	3.Hierarchical Inheritance
+
+	4.Multiple Inheritance
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1.Single Inheritance:
+---------------------
+
+classA<-----classB
+
+syntax:
+class classA:
+ 
+  -----------
+  -----------
+
+class classB(classA):
+
+  -----------
+  -----------
+-----------------------------------------------------------------------------------------
+Example:1
+----------
+class Addition:
+	def add(self):
+		a=5
+		b=4
+		c=a+b
+		print("Addition value of c:",c)
+
+class Subtraction(Addition):
+	def sub(self):
+		a=5
+		b=4
+		c=a-b
+		print("Subtraction value of c:",c)
+
+ob=Subtraction()
+ob.add()
+ob.sub()
+
+output:
+-------
+Addition value of c: 9
+Subtraction value of c: 1
+----------------------------------------------------------------------------------------
+Example:2
+---------
+
+class ClassA:
+
+    def add(self):
+        a=5
+        b=4
+        print("Addition value of a+b: ",a+b)
+
+    def sub(self):
+        a=5
+        b=4
+        print("Subtraction value of a-b: ",a-b)
+
+class ClassB(ClassA):
+
+    def mul(self):
+        a=5
+        b=4
+        print("Multiplication value of a*b: ",a*b)
+
+    def div(self):
+        a=5
+        b=4
+        print("Division value of a/b: ",a/b)
+
+
+ob=ClassB()
+ob.add()
+ob.sub()
+ob.mul()
+ob.div()
+
+
+Output:
+
+Addition value of a+b:  9
+Subtraction value of a-b:  1
+Multiplication value of a*b:  20
+Division value of a/b:  1.25
+---------------------------------------------------------------------------------------------------------------
+2.Multi Level Inheritance
+
+classA<-----classB<----classC
+
+syntax:
+
+class classA:
+ 
+  -----------
+  -----------
+
+class classB(classA):
+
+  -----------
+  -----------
+
+class classC(classB):
+
+  -----------
+  -----------
+
+
+Example:
+
+class ClassA:
+
+    def add(self):
+        a=5
+        b=4
+        print("Addition value of a+b: ",a+b)
+
+    def sub(self):
+        a=5
+        b=4
+        print("Subtraction value of a-b: ",a-b)
+
+class ClassB(ClassA):
+
+    def mul(self):
+        a=5
+        b=4
+        print("Multiplication value of a*b: ",a*b)
+
+    def div(self):
+        a=5
+        b=4
+        print("Quotient value of a/b: ",a/b)
+
+
+class ClassC(ClassB):
+
+    def rem(self):
+        a=5
+        b=4
+        print("Remainder value of a%b: ",a%b)
+
+    def floor(self):
+        a=5
+        b=4
+        print("Floor value of a//b: ",a//b)
+
+        
+ob=ClassC()
+ob.add()
+ob.sub()
+ob.mul()
+ob.div()
+ob.rem()
+ob.floor()
+
+Output:
+
+Addition value of a+b:  9
+Subtraction value of a-b:  1
+Multiplication value of a*b:  20
+Quotient value of a/b:  1.25
+Remainder value of a%b:  1
+Floor value of a//b:  1
+----------------------------------------------------------------------------------------------------------------
+3.Hierarchical Inheritance
+
+classB----->classA<----classC
+
+syntax:
+class classA:
+ 
+  -----------
+  -----------
+
+class classB(classA):
+
+  -----------
+  -----------
+
+class classC(classA):
+
+  -----------
+  -----------
+
+
+Example:
+class ClassA:
+
+    def add(self):
+        a=5
+        b=4
+        print("Addition value of a+b: ",a+b)
+
+    def sub(self):
+        a=5
+        b=4
+        print("Subtraction value of a-b: ",a-b)
+
+class ClassB(ClassA):
+
+    def mul(self):
+        a=5
+        b=4
+        print("Multiplication value of a*b: ",a*b)
+
+    def div(self):
+        a=5
+        b=4
+        print("Quotient value of a/b: ",a/b)
+
+
+class ClassC(ClassA):
+
+    def rem(self):
+        a=5
+        b=4
+        print("Remainder value of a%b: ",a%b)
+
+    def floor(self):
+        a=5
+        b=4
+        print("Floor value of a//b: ",a//b)
+
+        
+ob=ClassC()
+ob.add()
+ob.sub()
+#ob.mul()
+#ob.div()
+ob.rem()
+ob.floor()
+
+output:
+
+Addition value of a+b:  9
+Subtraction value of a-b:  1
+Remainder value of a%b:  1
+Floor value of a//b:  1
+---------------------------------------------------------------------------------------------------------------------
+4.Multiple Inheritance
+----------------------
+
+classA<-----classC---->classB
+
+syntax:
+
+class classA:
+ 
+  -----------
+  -----------
+
+class classB:
+
+  -----------
+  -----------
+
+class classC(classA,ClassB):
+
+  -----------
+  -----------
+
+Example:
+
+class ClassA:
+
+    def add(self):
+        a=5
+        b=4
+        print("Addition value of a+b: ",a+b)
+
+    def sub(self):
+        a=5
+        b=4
+        print("Subtraction value of a-b: ",a-b)
+
+class ClassB:
+
+    def mul(self):
+        a=5
+        b=4
+        print("Multiplication value of a*b: ",a*b)
+
+    def div(self):
+        a=5
+        b=4
+        print("Quotient value of a/b: ",a/b)
+
+
+class ClassC(ClassA,ClassB):
+
+    def rem(self):
+        a=5
+        b=4
+        print("Remainder value of a%b: ",a%b)
+
+    def floor(self):
+        a=5
+        b=4
+        print("Floor value of a//b: ",a//b)
+
+        
+ob=ClassC()
+ob.add()
+ob.sub()
+ob.mul()
+ob.div()
+ob.rem()
+ob.floor()
+
+Output:
+-------
+
+Addition value of a+b:  9
+Subtraction value of a-b:  1
+Multiplication value of a*b:  20
+Quotient value of a/b:  1.25
+Remainder value of a%b:  1
+Floor value of a//b:  1
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+

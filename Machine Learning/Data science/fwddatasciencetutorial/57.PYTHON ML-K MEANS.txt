@@ -1,0 +1,161 @@
+K-Means
+-------
+
+	1.It is a type of unsupervised algorithm which  solves the clustering problem. 
+
+	2.Its procedure follows a simple and easy way to classify a given data set through a certain number of  
+	  clusters (assume k clusters). 
+
+	3.Data points inside a cluster are homogeneous and heterogeneous to peer groups
+	
+	4.The k-means clustering algorithms is a simple Unsupervised algorithm that's used for quickly 
+	  predicting grouping from within an unlabled dataset.
+
+
+Note:
+-----
+
+	1.The most striking difference between supervised and unsupervised learning lies in the results. 
+
+	2.Unsupervised learning creates a new variable, the label, while supervised learning predicts an 
+	  outcome. 
+
+	3.The machine helps the practitioner in the quest to label the data based on close relatedness. 
+
+	4.It is up to the analyst to make use of the groups and give a name to them.
+-------------------------------------------------------------------------------------------------------------------------------------
+How K-means forms cluster:
+--------------------------
+
+	1.K-means picks k number of points for each cluster known as centroids.
+
+	2.Each data point forms a cluster with the closest centroids i.e. k clusters.
+
+	3.Finds the centroid of each cluster based on existing cluster members. Here we have new centroids.
+
+	4.As we have new centroids, repeat step 2 and 3. 
+
+	5.Find the closest distance for each data point from new centroids and get associated with new 
+	  k-clusters. 
+
+	6.Repeat this process until convergence occurs i.e. centroids does not change.
+-------------------------------------------------------------------------------------------------------------------------------------
+How to determine value of K:
+----------------------------
+
+	1.In K-means, we have clusters and each cluster has its own centroid. 
+	
+	2.Sum of square of difference between centroid and the data points within a cluster constitutes within 
+	  sum of square value for that cluster. 
+
+	3.Also, when the sum of square values for all the clusters are added, it becomes total within sum of 
+	  square value for the cluster solution.
+
+	4.We know that as the number of cluster increases, this value keeps on decreasing but if you plot the 
+	  result you may see that the sum of squared distance decreases sharply up to some value of k, and then 
+	  much more slowly after that. 
+	
+	5.Here, we can find the optimum number of cluster.
+-------------------------------------------------------------------------------------------------------------------------------------
+Application of KMeans Clustering
+---------------------------------
+
+	1.Cluster analysis is part of the unsupervised learning. 
+
+	2.A cluster is a group of data that share similar features. 
+
+	3.We can say, clustering analysis is more about discovery than a prediction. 
+
+	4.The machine searches for similarity in the data. 
+
+For instance, you can use cluster analysis for the following application:
+
+	1.Customer segmentation: Looks for similarity between groups of customers
+	
+	2.Stock Market clustering: Group stock based on performances
+	
+	3.Reduce dimensionality of a dataset by grouping observations with similar values
+	
+	4.Clustering analysis is not too difficult to implement and is meaningful as well as actionable for business.
+--------------------------------------------------------------------------------------------------------------------------------------
+Python Code
+-----------
+
+#Import Library
+from sklearn.cluster import KMeans
+
+#Assumed you have, X (attributes) for training data set and x_test(attributes) of test_dataset
+
+# Create KNeighbors classifier object model 
+k_means = KMeans(n_clusters=3, random_state=0)
+
+# Train the model using the training sets and check score
+model.fit(X)
+
+#Predict Output
+predicted= model.predict(x_test)
+----------------------------------------------------------------------------------------------------------------------------------------
+Example:1
+========
+import pandas as pd
+from sklearn import cluster
+
+df=pd.read_csv("C:\\Users\\LENIN\\Desktop\\dataset.csv")
+print(df)
+print("\nK-Means")
+
+model = cluster.KMeans(n_clusters=6,random_state=0)
+
+model.fit(df[['Age']])
+
+#model.score(df[['Age']])
+#print(model.coef_)
+#print(model.intercept_)
+
+predicted= model.predict(53)
+print(predicted)
+
+output:
+=======
+K-Means
+[2]
+-------------------------------------------------------------------------------------------------------------------------------------
+Example:2
+----------
+import pandas as pd
+from matplotlib import pyplot as plt
+from sklearn.cluster import KMeans
+#from sklearn.preprocessing import MinMaxScaler
+#%matplotlib inline
+
+df=pd.read_excel("F:/R/DATA/RSpreadSheet.xlsx")
+print(df.head())
+
+
+plt.scatter(df["Age"],df["Salary"])
+plt.show()
+
+model=KMeans(n_clusters=3)
+print(model)
+
+Y_prediction=model.fit_predict(df[["Age","Salary"]])
+print(Y_prediction)
+
+df["cluster"]=Y_prediction
+print(df)
+
+print(model.cluster_centers_)
+
+df1=df[df.cluster==0]
+df2=df[df.cluster==1]
+df3=df[df.cluster==2]
+
+plt.scatter(df1["Age"],df1["Salary"],color="green")
+plt.scatter(df2["Age"],df2["Salary"],color="red")
+plt.scatter(df3["Age"],df3["Salary"],color="blue")
+plt.xlabel("Age")
+plt.ylabel("Salary")
+plt.scatter(model.cluster_centers_[:,0],model.cluster_centers_[:,1],color="black",marker="+",label="centroid")
+plt.legend()
+plt.show()
+--------------------------------------------------------------------------------------------------------------------------------------

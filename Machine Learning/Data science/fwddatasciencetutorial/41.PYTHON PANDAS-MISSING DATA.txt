@@ -1,0 +1,360 @@
+Python Pandas - Missing Data
+----------------------------
+
+	*Missing data is always a problem in real life scenarios.
+
+	*Areas like machine learning and data mining face severe issues in the accuracy of their model 
+
+	*Predictions because of poor quality of data caused by missing values. 
+
+	*In these areas, missing value treatment is a major point of focus to make their models more accurate 
+	 and valid.
+
+Example:1
+=========
+# import the pandas library
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f','h'],columns=['one', 'two', 'three'])
+
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+
+print(df)
+
+
+output:
+=======
+        one       two     three
+a  1.682024  1.058227 -0.885456
+b       NaN       NaN       NaN
+c  0.524686 -0.573321 -0.921679
+d       NaN       NaN       NaN
+e  0.036431  0.037259 -1.812664
+f -0.150620 -0.807981 -0.648102
+g       NaN       NaN       NaN
+h -0.724120 -0.356512  1.598833
+
+Note:
+=====
+	*NaN means Not a Number.
+---------------------------------------------------------------------------------------------------------------
+Check for Missing Values:
+-------------------------
+
+	*To make detecting missing values easier (and across different array dtypes), Pandas provides the 
+	 isnull() and notnull() functions, which are also methods on Series and DataFrame objects.
+
+Example:1
+=========
+# import the pandas library
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f','h'],columns=['one', 'two', 'three'])
+
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+
+print (df['one'].isnull())
+
+output:
+=======
+a    False
+b     True
+c    False
+d     True
+e    False
+f    False
+g     True
+h    False
+Name: one, dtype: bool
+
+
+Example:2
+=========
+# import the pandas library
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f','h'],columns=['one', 'two', 'three'])
+
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+
+print (df['one'].notnull())
+
+
+output:
+=======
+a     True
+b    False
+c     True
+d    False
+e     True
+f     True
+g    False
+h     True
+Name: one, dtype: bool
+---------------------------------------------------------------------------------------------------------------
+Calculations with Missing Data:
+-------------------------------
+
+	*When summing data, NA will be treated as Zero
+
+	*If the data are all NA, then the result will be NA
+
+Example:1
+=========
+# import the pandas library
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f','h'],columns=['one', 'two', 'three'])
+
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+
+print(df['one'].sum())
+
+output:
+=======
+-3.2850559973481746
+
+
+Example:2
+=========
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(index=[0,1,2,3,4,5],columns=['one','two'])
+print(df)
+print(df['one'].sum())
+
+output:
+=======
+one  two
+0  NaN  NaN
+1  NaN  NaN
+2  NaN  NaN
+3  NaN  NaN
+4  NaN  NaN
+5  NaN  NaN
+0
+---------------------------------------------------------------------------------------------------------------
+Cleaning / Filling Missing Data:
+--------------------------------
+
+	*Pandas provides various methods for cleaning the missing values. 
+
+	*The fillna function can “fill in” NA values with non-null data in a couple of ways, which we have 
+	 illustrated in the following sections.
+
+1.Replace NaN with a Scalar Value:
+----------------------------------
+
+	*The following program shows how you can replace "NaN" with "0".
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+df = pd.DataFrame(np.random.randn(3, 3), index=['a', 'c', 'e'],columns=['one','two', 'three'])
+df = df.reindex(['a', 'b', 'c'])
+print(df)
+print ("NaN replaced with '0':")
+print(df.fillna(0))
+
+output:
+=======
+        one       two     three
+a  1.543841  1.214464 -1.791521
+b       NaN       NaN       NaN
+c -1.862808 -0.485580 -0.106548
+NaN replaced with '0':
+        one       two     three
+a  1.543841  1.214464 -1.791521
+b  0.000000  0.000000  0.000000
+c -1.862808 -0.485580 -0.106548
+-----------------------------------------------------------------------------------------------------------------
+Fill NA Forward and Backward:
+----------------------------
+
+	*Using the concepts of filling discussed in the ReIndexing Chapter we will fill the missing values.
+
+-------------------------------------------------------
+Method			Action
+-------------------------------------------------------
+pad/ffill		Fill methods Forward
+
+bfill/backfill		Fill methods Backward
+-------------------------------------------------------
+
+Example:1
+---------
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f','h'],columns=['one', 'two', 'three'])
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+print(df.fillna(method='pad'))
+
+output:
+======
+        one       two     three
+a  1.297904 -0.821027 -0.445811
+b  1.297904 -0.821027 -0.445811
+c  0.577527 -0.019995 -3.430717
+d  0.577527 -0.019995 -3.430717
+e  0.407125  0.630286 -0.565186
+f -1.486251  0.419960 -1.859584
+g -1.486251  0.419960 -1.859584
+h  1.965458 -0.332298 -1.834589
+
+
+Example:2
+=========
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f',
+'h'],columns=['one', 'two', 'three'])
+
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+print(df.fillna(method='backfill'))
+
+output:
+=======
+        one       two     three
+a -1.559619  1.161966 -0.263919
+b -0.665241  0.294629  0.517452
+c -0.665241  0.294629  0.517452
+d  1.438400 -0.887635  0.028748
+e  1.438400 -0.887635  0.028748
+f -0.016103 -2.129997 -0.481473
+g  0.985616 -1.991935 -1.036941
+h  0.985616 -1.991935 -1.036941
+---------------------------------------------------------------------------------------------------------------
+Drop Missing Values:
+--------------------
+
+	*If you want to simply exclude the missing values, then use the dropna function along with the axis 
+	 argument. 
+
+	*By default, axis=0, i.e., along row, which means that if any value within a row is NA then the whole 
+	 row is excluded.
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f','h'],columns=['one', 'two', 'three'])
+
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+
+print(df)
+
+print("\nDrop Missing Values")
+
+print (df.dropna())
+
+output:
+=======
+  one       two     three
+a -0.892799 -1.380080 -0.652378
+b       NaN       NaN       NaN
+c -1.132839 -0.348489  0.146781
+d       NaN       NaN       NaN
+e  0.159436 -0.318416 -0.268685
+f  1.435577  0.593651 -0.316942
+g       NaN       NaN       NaN
+h -1.298191 -1.052403 -0.005804
+
+Drop Missing Values
+        one       two     three
+a -0.892799 -1.380080 -0.652378
+c -1.132839 -0.348489  0.146781
+e  0.159436 -0.318416 -0.268685
+f  1.435577  0.593651 -0.316942
+h -1.298191 -1.052403 -0.005804
+
+Example:2
+=========
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f','h'],columns=['one', 'two', 'three'])
+
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+
+print(df)
+
+print("\nDrop Missing Values")
+
+print(df.dropna(axis=1))
+
+output:
+=======
+        one       two     three
+a  0.663500  1.572099  0.251611
+b       NaN       NaN       NaN
+c  1.031230 -0.800171  0.892048
+d       NaN       NaN       NaN
+e  0.142639  0.767791 -0.117434
+f  0.864712 -0.147251  0.123832
+g       NaN       NaN       NaN
+h -1.497915  0.982256  0.074711
+
+Drop Missing Values
+Empty DataFrame
+Columns: []
+Index: [a, b, c, d, e, f, g, h]
+-----------------------------------------------------------------------------------------------------------------
+Replace Missing (or) Generic Values:
+------------------------------------
+
+	*Many times, we have to replace a generic value with some specific value. 
+
+	*We can achieve this by applying the replace method.
+
+	*Replacing NA with a scalar value is equivalent behavior of the fillna() function.
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+df = pd.DataFrame({'one':[10,20,30,40,50,2000],'two':[1000,0,30,40,50,60]})
+print(df.replace({1000:10,2000:60}))
+
+
+output:
+=======
+   one  two
+0   10   10
+1   20    0
+2   30   30
+3   40   40
+4   50   50
+5   60   60
+
+Example:2
+=========
+import pandas as pd
+import numpy as np
+df = pd.DataFrame({'one':[10,20,30,40,50,2000],'two':[1000,0,30,40,50,60]})
+print(df.replace({1000:10,2000:60}))
+
+output:
+=======
+   one  two
+0   10   10
+1   20    0
+2   30   30
+3   40   40
+4   50   50
+5   60   60
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+

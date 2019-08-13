@@ -1,0 +1,260 @@
+INTRODUCTION:
+------------------
+	1.Exception can be said to be any abnormal condition in a program resulting to the disruption in 
+	  the flow of the program.
+
+	2.Whenever an exception occurs the program halts the execution and thus further code is not executed. 
+
+	3.Thus exception is that error which python script is unable to tackle with.
+
+	4.Exception in a code can also be handled. 
+
+	5.In case it is not handled, then the code is not executed further and hence execution stops when 
+	  exception occurs.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Hierarchy Of Exception:
+------------------------
+
+	1.ZeroDivisionError: Occurs when a number is divided by zero.
+
+	2.NameError: It occurs when a name is not found. It may be local or global.
+
+	3.IndentationError: If incorrect indentation is given.
+
+	4.IOError: It occurs when Input Output operation fails.
+
+	5.EOFError: It occurs when end of file is reached and yet operations are being performed etc..
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Exception Handling:
+----------------------
+
+	1.The suspicious code can be handled by using the try block. 
+
+	2.Enclose the code which raises an exception inside the try block.
+ 
+	3.The try block is followed except statement. 
+
+	4.It is then further followed by statements which are executed during exception and in case 
+	  if exception does not occur.
+
+
+
+Syntax:
+----------
+try:  
+    malicious code  
+
+except Exception1:  
+    execute code  
+
+except Exception2:  
+    execute code  
+....  
+....  
+except ExceptionN:  
+    execute code  
+
+else:  
+    In case of no exception, execute the else block code.  
+
+---------------------------------------------------------------------------------------------------------------
+
+Example:1
+-------------
+a=5
+b=3
+
+try:
+    c=a/b
+    print("Vlaue of c: ",c)
+
+except ArithmeticError:
+    print("Arithmetic Exception occured")
+
+else:
+    print("*------------------*")
+
+
+output:
+-------
+Vlaue of c:  1.6666666666666667
+*------------------*
+
+
+---------------------------------------------------------------------------------------------------------------
+Example:2
+---------
+
+a=5
+b=0
+
+try:
+    c=a/b
+    print("Vlaue of c: ",c)
+
+except ArithmeticError:
+    print("Arithmetic Exception occured")
+
+else:
+    print("------------------")
+
+
+output:
+--------
+Arithmetic Exception occured
+-----------------------------------------------------------------------------------------------------------------
+Example:2
+---------
+import math
+
+num=int(input("Please enter the number to calculate factorial of:"))
+
+try:
+    result=math.factorial(num)
+    print(result)
+
+except:
+    print("Cannot compute the factorial of Negative Numbers")
+
+
+output:
+-------
+Please enter the number to calculate factorial of:-5
+Cannot compute the factorial of Negative Numbers
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Except with no Exception:
+-------------------------
+Except statement can also be used without specifying Exception.
+
+Syntax:
+
+try:  
+        code  
+    except:  
+        code to be executed in case exception occurs.  
+    else:  
+        code to be executed in case exception does not occur.   
+
+
+Example:3
+---------
+a=5
+b=0
+
+try:
+    c=a/b
+    print("Vlaue of c: ",c)
+
+except Exception as e:
+    print("Arithmetic Exception occured")
+    print(e)
+
+else:
+    print("------------------")
+
+
+output:
+-------
+Arithmetic Exception occured
+division by zero
+-----------------------------------------------------------------------------------------------------------
+
+Example:4
+-----------
+List=[1,2,3]
+
+try:
+    
+   print(List[0])
+   print(List[1])
+   print(List[2])
+   print(List[3])
+
+except  IndexError:
+    print("Index Error occured")
+
+else:
+    print("------------------")
+
+
+output:
+
+1
+2
+3
+Index Error occured
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Finally Block:
+-----------------
+1.In case if there is any code which the user want to be executed, whether exception occurs or not then that code can be placed inside the finally block. 
+
+2.Finally block will always be executed irrespective of the exception.
+
+Syntax:
+--------
+try:  
+    Code 
+ 
+finally:   
+    code which is must to be executed.
+
+
+Example:5
+---------
+
+try:  
+    a=10/0;  
+    print ("Exception occurred")
+    
+finally:  
+    print ("Code to be executed" )
+
+
+output:
+--------
+code to be executed
+Traceback (most recent call last):
+  File "C:/Users/LENIN/AppData/Local/Programs/Python/Python36/RajaPrograms/Exception.py", line 2, in <module>
+    a=10/0;
+ZeroDivisionError: division by zero
+---------------------------------------------------------------------------------------------------------------
+Example:6
+---------
+import math
+num=int(input("input:"))
+
+try:
+    result=math.factorial(num)
+    print(result)
+finally:
+    print("Goodbye!!")
+
+output:
+-------
+input:-5
+Goodbye!!
+Traceback (most recent call last):
+  File "C:/Users/LENIN/AppData/Local/Programs/Python/Python36/exception.py", line 27, in <module>
+    result=math.factorial(num)
+ValueError: factorial() not defined for negative values
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Example:7[raise Approach)
+
+try:
+    num=int(input("Enter a number:"))
+
+    if num<=0:
+        raise ValueError("That is not Positive Number")
+
+except ValueError as error:
+    print(error)
+
+output:
+-------
+Enter a number:-5
+That is not Positive Number
+---------------------------------------------------------------------------------------------------------------

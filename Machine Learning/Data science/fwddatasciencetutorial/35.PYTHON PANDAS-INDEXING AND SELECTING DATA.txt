@@ -1,0 +1,231 @@
+Python Pandas - Indexing and Selecting Data:
+--------------------------------------------
+
+	*The Python and NumPy indexing operators "[ ]" and attribute operator "." provide quick and 
+	 easy access to Pandas data structures across a wide range of use cases. 
+
+Pandas now supports three types of Multi-axes indexing:
+-------------------------------------------------------
+Indexing	Description
+----------------------------
+
+.iloc()		Integer based
+
+.loc()		Label based
+
+.ix()		Both Label and Integer based
+-------------------------------------------------------------------------------------------------------------------------------------
+.loc()
+-------
+	
+	*Pandas provide various methods to have purely label based indexing. 
+
+Example:1
+=========
+#import the pandas library and aliasing as pd
+import pandas as pd
+import numpy as np
+
+data=np.random.randn(5, 4)
+df = pd.DataFrame(data,index = ['a','b','c','d','e'], columns = ['A', 'B', 'C', 'D'])
+
+#select all rows for a specific column
+print(df.loc[:,'A'])
+
+output:
+=======
+a    0.009415
+b    0.274046
+c   -1.145216
+d   -0.095816
+e   -0.025610
+Name: A, dtype: float64
+
+
+Example:2
+=========
+#import the pandas library and aliasing as pd
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 4),
+index = ['a','b','c','d','e'], columns = ['A', 'B', 'C', 'D'])
+
+# Select all rows for multiple columns, say list[]
+print(df.loc[:,['A','D']])
+
+output:
+=======
+A         D
+a  0.114961  0.648621
+b -0.460362  0.886288
+c -0.466889 -0.013822
+d -1.964376  0.685355
+e  0.737711  1.152971
+---------------------------------------------------------------------------------------------------------------
+.iloc()
+-------
+
+	*Pandas provide various methods in order to get purely integer based indexing. 
+
+	*Like python and numpy, these are 0-based indexing.
+
+Example:1
+=========
+# import the pandas library and aliasing as pd
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(5, 4), columns = ['A', 'B', 'C', 'D'])
+
+# select all rows for a specific column
+print (df.iloc[:4])
+
+
+output:
+=======
+       A         B         C         D
+0 -0.219254  1.381604  0.538896  0.244021
+1 -1.936615 -1.522892  0.481577  2.517462
+2  0.845146  0.012392 -1.354808 -0.846436
+3 -1.580324  0.446899  0.461886  0.739638
+---------------------------------------------------------------------------------------------------------------
+ix()
+----
+
+	*Besides pure label based and integer based, Pandas provides a hybrid method for selections and 
+	 subsetting the object using the .ix() operator.
+
+Example:1
+=========
+# import the pandas library and aliasing as pd
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.random.randn(8, 4), columns = ['A', 'B', 'C', 'D'])
+
+# Integer slicing
+print(df.ix[:4])
+
+output:
+=======
+	A         B         C         D
+0 -0.660612 -0.080737 -0.910602 -1.646873
+1 -2.070907 -1.253941 -0.070455 -0.494127
+2 -0.247494 -1.005018 -0.264083 -0.870564
+3 -0.409752  0.130429 -2.262051  0.148522
+4  1.092105 -2.039971 -0.759990 -0.221799
+---------------------------------------------------------------------------------------------------------------
+TRY IT:
+-------
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+data = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+df=pd.DataFrame(data)
+print(df)
+
+print(df.loc[:,'Name'])
+
+output:
+=======
+0       Raja
+1     Gerald
+2     Suresh
+3     Vinoth
+4       Rani
+5        Uma
+6       Jack
+7     Engles
+8      Peter
+9       Arun
+10     Priya
+11    Prince
+Name: Name, dtype: object
+
+
+Example:2
+=========
+import pandas as pd
+import numpy as np
+
+data = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+df=pd.DataFrame(data)
+print(df)
+
+print(df.loc[:,['Name','Age']])
+
+
+output:
+=======
+      Name  Age
+0     Raja   25
+1   Gerald   26
+2   Suresh   25
+3   Vinoth   23
+4     Rani   30
+5      Uma   29
+6     Jack   23
+7   Engles   34
+8    Peter   40
+9     Arun   30
+10   Priya   51
+11  Prince   46
+
+
+
+Example:3
+==========
+import pandas as pd
+import numpy as np
+
+data = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',
+   'Engles','Peter','Arun','Priya','Prince']),
+   'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+df=pd.DataFrame(data)
+print(df)
+
+print(df.iloc[0:2])   #rows starts with 0 end with 1
+
+output:
+=======
+     Name  Age  Rating
+0    Raja   25    4.23
+1  Gerald   26    3.24
+
+
+Example:4
+=========
+import pandas as pd
+import numpy as np
+
+data = {'Name':pd.Series(['Raja','Gerald','Suresh','Vinoth','Rani','Uma','Jack',Engles','Peter','Arun','Priya','Prince']),
+   	'Age':pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),
+   	'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+df=pd.DataFrame(data)
+print(df)
+
+print(df.ix[0:4])   #rows starts with 0 end with 3
+
+output:
+=======
+     Name  Age  Rating
+0    Raja   25    4.23
+1  Gerald   26    3.24
+2  Suresh   25    3.98
+3  Vinoth   23    2.56
+4    Rani   30    3.20
+---------------------------------------------------------------------------------------------------------------

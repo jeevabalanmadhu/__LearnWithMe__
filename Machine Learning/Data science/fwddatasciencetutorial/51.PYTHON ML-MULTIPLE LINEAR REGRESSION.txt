@@ -1,0 +1,142 @@
+Multiple Regression
+-----------------------
+
+	1.Multiple regression is an extension of linear regression into relationship between more than two 
+	  variables.
+
+	2.In simple linear relation we have one predictor and one response variable, but in multiple regression 
+	  we have more than one predictor variable and one response variable.
+
+
+The general mathematical equation for multiple regression is
+------------------------------------------------------------
+y = a + b1x1 + b2x2 +...bnxn
+
+
+Following is the description of the parameters used:
+----------------------------------------------------
+
+	1.y is the response variable.
+
+	2.a(Intercept), b1, b2...bn are the coefficients.
+
+	3.x1, x2, ...xn are the predictor variables.
+
+	4.We create the regression model using the LinearRegression() function in Python. 
+
+	5.The model determines the value of the coefficients using the input data.
+-------------------------------------------------------------------------------------------------------------------------------------
+Example:1
+---------
+dataset:
+--------
+  Name  Age  Salary  Gender  Department  Experience
+0      Raja   33   20000    male          IT          12
+1      Teja   25   15000    male          HR           1
+2      Jeya   27   20000  Female  Operations           6
+3   Karthik   24   12000    male       Admin           3
+4   Sathish   27   25000    male     Manager           5
+5  Dhayalan   29   20000    Male     Finance           4
+6     Priya   29   50000  Female   Developer           5
+7     Jeeva   27   25000    male      Tester           4
+8     Esika   23   12000    male      Server           1
+9  Musthafa   27   30000    male   Analytics           4
+
+Program:
+--------
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import linear_model
+
+dataset=pd.read_csv("F:\\R\\DATA\\raja.csv")
+print(dataset)
+
+reg=linear_model.LinearRegression()
+reg.fit(dataset[['Age','Experience']],dataset.Salary)
+
+reg.coef_
+
+reg.intercept_
+
+reg.predict([[33,11]])
+
+---------------------------------------------------------------------------------------------------------------
+Example:
+========
+#Multiple Linear Regression
+import pandas
+from sklearn  import linear_model
+
+
+#Importing the dataset
+dataset=pandas.read_csv("C:\\Users\\LENIN\\Desktop\\R\\DATA\\Multiple.csv")   
+print(dataset)
+
+x=dataset.iloc[:,0:2].values
+print(x)
+
+y=dataset.iloc[:,2:4].values
+print(y)
+
+reg=linear_model.LinearRegression()
+reg.fit(x,y)
+
+print(reg.predict(x))
+
+print("Co-efficient:",reg.coef_)
+
+print("Intercept:",reg.intercept_)
+
+
+output:
+=======
+Age  Salary  Experience
+0   33   20000          12
+1   25   15000           1
+2   27   20000           6
+3   24   12000           3
+4   27   25000           5
+5   29   20000           4
+6   29   50000           5
+7   27   25000           4
+8   23   12000           1
+9   27   30000           4
+[[   33 20000]
+ [   25 15000]
+ [   27 20000]
+ [   24 12000]
+ [   27 25000]
+ [   29 20000]
+ [   29 50000]
+ [   27 25000]
+ [   23 12000]
+ [   27 30000]]
+[[12]
+ [ 1]
+ [ 6]
+ [ 3]
+ [ 5]
+ [ 4]
+ [ 5]
+ [ 4]
+ [ 1]
+ [ 4]]
+[[10.93355638]
+ [ 2.71548554]
+ [ 4.55782348]
+ [ 1.82260721]
+ [ 4.27491711]
+ [ 6.68306778]
+ [ 4.98562958]
+ [ 4.27491711]
+ [ 0.75998506]
+ [ 3.99201074]]
+Co-efficient: [[ 1.06262215e+00 -5.65812733e-05]]
+Intercept: [-23.00134911]
+
+Formula:
+--------
+prediction_Age=-23.00134911+(27*1.06262215e+00)+(25000*-5.65812733e-05)
+print(prediction_Age)
+----------------------------------------------------------------------------------------------------------------

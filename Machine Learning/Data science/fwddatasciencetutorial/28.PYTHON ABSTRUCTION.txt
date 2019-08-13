@@ -1,0 +1,182 @@
+Abstract Classes:
+-----------------
+
+	*Abstract classes are classes that contain one or more abstract methods. 
+	
+	*An abstract method is a method that is declared, but contains no implementation.
+	
+	*Abstract classes may not be instantiated, and require subclasses to provide implementations for the 
+	 abstract methods.	 
+	
+	*Subclasses of an abstract class in Python are not required to implement abstract methods of the 
+         parent class.
+
+
+Example:1
+---------
+class Father:
+    def display(self):
+        pass
+
+class Mother(Father):
+    def display(self):
+        print("I am a House wife")
+
+class Son(Father):
+    def display(self):
+        print("My Name is Raja")
+
+def main():
+    ob=Father()
+
+    ob1=Mother()
+    ob1.display()
+    
+    ob2=Son()
+    ob2.display()
+
+if __name__=="__main__":
+    main()
+
+output:
+------
+I am a House wife
+My Name is Raja
+---------------------------------------------------------------------------------------------------------------
+Example:2
+---------
+
+from abc import ABC,abstractmethod
+
+class A(ABC):
+
+    @abstractmethod
+    def display(self):
+        print("I am display method")
+
+class B(A):
+    def sum(self):
+        a=9
+        b=5
+        print(a+b)
+        
+def main():
+    ob=B()
+    ob.sum()
+    ob.display()
+
+
+if __name__=="__main__":
+    main()
+
+---------------------------------------------------------------------------------------------------------------
+Example:3
+---------
+
+from abc import ABC, abstractmethod
+
+class Father(ABC):
+    
+    @abstractmethod
+    def display(self):
+        pass
+
+class Mother(Father):
+    def display(self):
+        print("I am a House wife")
+
+class Son(Father):
+    def display(self):
+        print("My Name is Raja")
+
+def main():    
+    
+    ob1=Mother()
+    ob1.display()
+    
+    ob2=Son()
+    ob2.display()
+
+if __name__=="__main__":
+    main()
+
+
+output:
+-------
+Traceback (most recent call last):
+  File "C:/Users/LENIN/AppData/Local/Programs/Python/Python36/abtraction.py", line 27, in <module>
+    main()
+  File "C:/Users/LENIN/AppData/Local/Programs/Python/Python36/abtraction.py", line 18, in main
+    ob=Father()
+TypeError: Can't instantiate abstract class Father with abstract methods display
+----------------------------------------------------------------------------------------------------------------
+Example:3
+---------
+from abc import ABC, abstractmethod
+
+class Father(ABC):
+    
+    @abstractmethod
+    def display(self):
+        pass
+
+class Mother(Father):
+    def display(self):
+        print("I am a House wife")
+
+class Son(Father):
+    def display(self):
+        print("My Name is Raja")
+
+def main():
+
+    ob=Father()
+    
+    ob1=Mother()
+    ob1.display()
+    
+    ob2=Son()
+    ob2.display()
+
+if __name__=="__main__":
+    main()
+
+
+output:
+-------
+I am a House wife
+My Name is Raja
+---------------------------------------------------------------------------------------------------------------
+Access Abstract Method:
+-----------------------
+
+	1.You may think that abstract methods can't be implemented in the abstract base class.
+
+	2.This impression is wrong: An abstract method can have an implementation in the abstract class! Even 
+	  if they are implemented, designers of subclasses will be forced to override the implementation. 
+
+	3.Like in other cases of "normal" inheritance, the abstract method can be invoked with super() call mechanism. This makes it possible to provide some basic functionality in the abstract method, which can be enriched by the subclass implementation.
+
+Example:
+--------
+from abc import ABC, abstractmethod
+ 
+class AbstractClassExample(ABC):
+    
+    @abstractmethod
+    def do_something(self):
+        print("Some implementation!")
+        
+class AnotherSubclass(AbstractClassExample):
+    def do_something(self):
+        super().do_something()
+        print("The enrichment from AnotherSubclass")
+        
+x = AnotherSubclass()
+x.do_something()
+
+Output:
+=======
+Some implementation!
+The enrichment from AnotherSubclass
+---------------------------------------------------------------------------------------------------------------

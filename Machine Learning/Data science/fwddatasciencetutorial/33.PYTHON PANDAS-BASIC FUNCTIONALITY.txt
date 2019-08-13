@@ -1,0 +1,347 @@
+Python Pandas - Basic Functionality:
+------------------------------------
+Series Basic Functionality
+---------------------------------------------------------------------------------------------------------------
+S.No.	Attribute or Method	Description
+---------------------------------------------------------------------------------------------------------------
+1	axes			Returns a list of the row axis labels.
+
+2	dtype			Returns the dtype of the object.
+
+3	empty			Returns True if series is empty.
+
+4	ndim			Returns the number of dimensions of the underlying data, by definition 1.
+
+5	size			Returns the number of elements in the underlying data.
+
+6	values			Returns the Series as ndarray.
+
+7	head()			Returns the first n rows.
+
+8	tail()			Returns the last n rows.
+
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a series with 5 random numbers
+data=np.random.rand(5)
+s=pd.Series(data)
+print(s)
+
+output:
+=======
+0   -0.763131
+1    0.511409
+2    0.731118
+3   -1.745894
+4    0.422903
+dtype: float64
+---------------------------------------------------------------------------------------------------------------
+1.axes
+------
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a series with 5 random numbers
+s = pd.Series(np.random.randn(5))
+print ("The axes are:")
+print(s.axes)
+
+output:
+=======
+The axes are:
+[RangeIndex(start=0, stop=5, step=1)]
+---------------------------------------------------------------------------------------------------------------
+2.empty
+-------
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a series with 100 random numbers
+s = pd.Series(np.random.randn(4))
+print ("Is the Object empty?")
+print(s.empty)
+
+output:
+=======
+Is the Object empty?
+False
+
+Example:2
+==========
+import pandas as pd
+import numpy as np
+
+data=[]
+s=pd.Series(data)
+print(s)
+print(s.empty)
+
+output:
+=======
+Series([], dtype: float64)
+[RangeIndex(start=0, stop=0, step=1)]
+True
+---------------------------------------------------------------------------------------------------------------
+3.ndim
+-------
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a series with 4 random numbers
+s = pd.Series(np.random.randn(4))
+print(s)
+
+print ("The dimensions of the object:")
+print(s.ndim)
+
+output:
+=======
+0    1.795234
+1   -0.247240
+2    0.249794
+3   -1.468689
+dtype: float64
+The dimensions of the object:
+1
+---------------------------------------------------------------------------------------------------------------
+4.size
+------
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a series with 4 random numbers
+s = pd.Series(np.random.randn(2))
+print(s)
+print ("The size of the object:")
+print(s.size)
+
+output:
+=======
+0    0.996858
+1    0.237279
+dtype: float64
+The size of the object:
+2
+---------------------------------------------------------------------------------------------------------------
+5.values
+--------
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a series with 4 random numbers
+s = pd.Series(np.random.randn(4))
+print(s)
+
+print ("The actual data series is:")
+print(s.values)
+
+output:
+=======
+0    0.215658
+1    1.105069
+2   -0.685989
+3   -0.423891
+dtype: float64
+The actual data series is:
+[ 0.2156583   1.10506867 -0.68598889 -0.42389114]
+-----------------------------------------------------------------------------------------------------------------
+6.Head 
+------
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a series with 4 random numbers
+s = pd.Series(np.random.randn(4))
+print ("The original series is:")
+print(s)
+
+print ("The first two rows of the data series:")
+print (s.head(2))
+
+output:
+=======
+The original series is:
+0    1.871001
+1   -1.948840
+2    1.011341
+3    0.872450
+dtype: float64
+The first two rows of the data series:
+0    1.871001
+1   -1.948840
+dtype: float64
+---------------------------------------------------------------------------------------------------------------
+7.tail
+------
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+#Create a series with 4 random numbers
+s = pd.Series(np.random.randn(4))
+print ("The original series is:")
+print (s)
+
+print ("The last two rows of the data series:")
+print (s.tail(2))
+
+output:
+-------
+The original series is:
+0    0.707431
+1   -0.019141
+2   -0.479110
+3    1.567542
+dtype: float64
+The last two rows of the data series:
+2   -0.479110
+3    1.567542
+dtype: float64
+---------------------------------------------------------------------------------------------------------------
+Try It:
+-------
+
+Example:1
+=========
+import pandas as pd
+import numpy as np
+
+data=np.random.rand(5)
+s=pd.Series(data)
+print(s)
+
+print(s.axes)
+print(s.empty)
+print(s.ndim)
+print(s.size)
+print(s.values)
+print(s.head(2))
+print(s.tail(3))
+
+output:
+=======
+0    0.428139
+1    0.048596
+2    0.339812
+3    0.319244
+4    0.362897
+dtype: float64
+[RangeIndex(start=0, stop=5, step=1)]
+False
+1
+5
+[0.42813908 0.04859583 0.33981243 0.31924356 0.36289666]
+0    0.428139
+1    0.048596
+dtype: float64
+2    0.339812
+3    0.319244
+4    0.362897
+dtype: float64
+
+
+
+Example:2
+=========
+import pandas as pd
+import numpy as np
+
+data=[10,20,30,40,50]
+s=pd.Series(data)
+print(s)
+
+print(s.axes)
+print(s.empty)
+print(s.ndim)
+print(s.size)
+print(s.values)
+print(s.head(2))
+print(s.tail(3))
+
+output:
+=======
+0    10
+1    20
+2    30
+3    40
+4    50
+dtype: int64
+[RangeIndex(start=0, stop=5, step=1)]
+False
+1
+5
+[10 20 30 40 50]
+0    10
+1    20
+dtype: int64
+2    30
+3    40
+4    50
+dtype: int64
+
+
+Example:3
+=========
+import pandas as pd
+import numpy as np
+
+data={'Name':['Raja','Karthik'],
+      'Age':[34,29]
+     }
+s=pd.Series(data)
+print(s)
+
+print(s.axes)
+print(s.empty)
+print(s.ndim)
+print(s.size)
+print(s.values)
+print(s.head(2))
+print(s.tail(3))
+
+output:
+=======
+Name    [Raja, Karthik]
+Age            [34, 29]
+dtype: object
+[Index(['Name', 'Age'], dtype='object')]
+False
+1
+2
+[list(['Raja', 'Karthik']) list([34, 29])]
+Name    [Raja, Karthik]
+Age            [34, 29]
+dtype: object
+Name    [Raja, Karthik]
+Age            [34, 29]
+dtype: object
+---------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

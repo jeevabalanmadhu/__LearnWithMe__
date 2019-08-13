@@ -1,0 +1,134 @@
+Random Forest
+-------------
+
+	1.Random Forest is a trademark term for an ensemble of decision trees. 
+
+	2.In Random Forest, we’ve collection of decision trees (so known as “Forest”). 
+
+	3.To classify a new object based on attributes, each tree gives a classification and 
+	  we say the tree “votes” for that class. 
+
+	4.The forest chooses the classification having the most votes (over all the trees in the forest).
+
+
+Each tree is planted & grown as follows:
+----------------------------------------
+
+	1.If the number of cases in the training set is N, then sample of N cases is taken at random but with 
+	  replacement. 
+
+	2.This sample will be the training set for growing the tree.
+
+	3.If there are M input variables, a number m<<M is specified such that at each node, m variables are 
+	  selected at random out of the M and the best split on these m is used to split the node. 
+
+	4.The value of m is held constant during the forest growing.
+
+	5.Each tree is grown to the largest extent possible. There is no pruning.
+---------------------------------------------------------------------------------------------------------------
+Python Code
+-----------
+#Import Library
+from sklearn.ensemble import RandomForestClassifier
+
+#Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+
+# Create Random Forest object
+model= RandomForestClassifier()
+
+# Train the model using the training sets and check score
+model.fit(X, y)
+
+#Predict Output
+predicted= model.predict(x_test)
+----------------------------------------------------------------------------------------------------------------
+Example:
+========
+import pandas as pd
+from sklearn import ensemble 
+
+df=pd.read_csv("C:\\Users\\LENIN\\Desktop\\dataset.csv")
+print(df)
+print("\nRandom Forest")
+
+model = ensemble.RandomForestClassifier(n_estimators=10, criterion='gini', random_state=0)
+
+model.fit(df[['Age']],df.Salary)
+
+model.score(df[['Age']],df.Salary)
+
+#print(model.coef_)
+#print(model.intercept_)
+
+predicted= model.predict(53)
+print(predicted)
+
+output:
+=======
+Random Forest
+[70000]
+-------------------------------------------------------------------------------------------------------------------------------------
+Random forest algorithm applications
+------------------------------------
+Below are some the application where random forest algorithm is widely used.
+
+	Banking
+	Medicine
+	Stock Market
+	E-commerce
+	Let’s begin with the banking sector.
+
+1.Banking:
+-----------
+
+	1.In the banking sector, random forest algorithm widely used in two main application. 
+	  These are for finding the loyal customer and finding the fraud customers.
+
+	2.The loyal customer means not the customer who pays well, but also the customer whom can take the huge amount as loan and 
+	  pays the loan interest properly to the bank. As the growth of the bank purely depends on the loyal customers. 
+	  The bank customers data highly analyzed to find the pattern for the loyal customer based the customer details.
+
+	3.In the same way, there is need to identify the customer who are not profitable for the bank, like taking the loan and 
+	  paying the loan interest properly or find the outlier customers. 
+	  If the bank can identify theses kind of customer before giving the loan the customer.  
+	  Bank will get a chance to not approve the loan to these kinds of customers. 
+	  In this case, also random forest algorithm is used to identify the customers who are not profitable for the bank.
+
+
+2.Medicine
+-----------
+
+	1.In medicine field, random forest algorithm is used identify the correct combination of the components to validate the 
+	  medicine. Random forest algorithm also helpful for identifying the disease by analyzing the patient’s medical records.
+
+
+3.Stock Market
+--------------
+
+	1.In the stock market, random forest algorithm used to identify the stock behavior as well as the expected loss or profit by 
+	  purchasing the particular stock.
+
+
+4.E-commerce
+------------
+
+	1.In e-commerce, the random forest used only in the small segment of the recommendation engine for identifying the likely 
+	  hood of customer liking the recommend products base on the similar kinds of customers.
+
+	2.Running random forest algorithm on very large dataset requires high-end GPU systems. 
+          If you are not having any GPU system. 
+	  You can always run the machine learning models in cloud hosted desktop. 
+	  You can use clouddesktoponline platform to run high-end machine learning models from sitting any corner of the world.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Advantages of random forest algorithm
+-------------------------------------
+Below are the advantages of random forest algorithm compared with other classification algorithms.
+
+	1.The overfitting problem will never come when we use the random forest algorithm in any classification problem.
+
+	2.The same random forest algorithm can be used for both classification and regression task.
+
+	3.The random forest algorithm can be used for feature engineering.
+	  Which means identifying the most important features out of the available features from the training dataset.
+--------------------------------------------------------------------------------------------------------------------------------------

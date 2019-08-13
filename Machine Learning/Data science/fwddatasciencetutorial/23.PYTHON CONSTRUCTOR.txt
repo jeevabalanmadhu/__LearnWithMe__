@@ -1,0 +1,79 @@
+INTRODUCTION:
+
+1.The first method __init__() is a special method, which is called class constructor or initialization method 
+  that Python calls when you create a new instance of this class. 
+
+2.You declare other class methods like normal functions with the exception that the first argument to each 
+  method is self.
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+Example:1
+--------
+class A:
+    def __init__(self,name):
+        self.name = name
+    
+        
+x =A("Raja")
+print(x.name)
+
+
+output:
+Raja
+----------------------------------------------------------------------------------------------------------------------------------
+
+Example:2
+--------
+class A:
+    def __init__(self,name):
+        self.name = name
+    def Print(self):
+        print( self.name)
+        
+x =A("Raja")
+x.Print()
+
+output:
+Raja
+---------------------------------------------------------------------------------------------------------------
+Example:1
+---------
+class MyClass:
+
+    def __init__(self):
+        print("I am Constructor")
+
+#object variable creation
+My=MyClass()  #Default constructor 
+
+
+Example:2
+---------
+class MyClass:      
+
+    def __init__(self,a,b):
+        sum=a+b
+        print(sum)
+
+#object variable creation   
+My=MyClass(9,5)  #Parameter constructor
+
+
+Example:3
+---------
+class MyClass:
+
+    def __init__(self):
+        print("I am Constructor")    
+
+    def __init__(self,a,b):  #Here no constructor overloading concepts
+        sum=a+b
+        print(sum)
+
+#object variable creation
+
+My=MyClass(9,5)  #Parameter constructor
+My=MyClass()
+    
+---------------------------------------------------------------------------------------------------------------

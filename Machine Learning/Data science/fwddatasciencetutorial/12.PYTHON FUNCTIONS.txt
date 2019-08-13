@@ -1,0 +1,283 @@
+INTRODUCTION:
+-------------
+
+	1.A Function is a self block of code.
+
+	2.A Function can be called as a section of a program that is written once and can be executed 
+  	  whenever required in the program, thus making code reusability.
+
+	3.A Function is a subprogram that works on data and produce some output.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Types of Functions:
+---------------------
+There are two types of Functions.
+
+a) Built-in Functions: 
+
+	*Functions that are predefined. 
+
+	*We have used many predefined functions in Python.
+
+b) User- Defined: 
+
+	*Functions that are created according to the requirements.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Defining a Function:
+-----------------------
+A Function defined in Python should follow the following format:
+
+	1) Keyword def is used to start the Function Definition. 
+
+	2) Def specifies the starting of Function block.
+
+	3) def is followed by function-name followed by parenthesis.
+
+	4) Parameters are passed inside the parenthesis. At the end a colon is marked.
+
+	5) Before writing a code, an Indentation (space) is provided before every statement. 
+
+	6) It should be same for all statements inside the function.
+
+	7) The first statement of the function is optional. It is ?Documentation string? of function.
+
+	8) Following is the statement to be executed.
+
+
+Syntax:
+---------
+def <function_name>([parameters]): 
+ 
+</function_name>
+
+  
+Example:
+---------
+	def sum(a,b):  
+
+Here,
+	def-Keyword
+
+	sum-Function Name
+
+	a,b-Parameters
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Example:1
+-----------
+Invoking a Function:
+
+def sum(x,y):    
+    s=x+y
+    print("Sum of two numbers is: ",s)
+
+
+#calling the Function
+sum(10,20)
+sum(20,30)
+
+
+output:
+Sum of two numbers is:  30
+Sum of two numbers is:  50
+---------------------------------------------------------------------------------------------------------------------------------------
+Example:2
+----------
+return Statement:
+
+
+def sum(x,y):     
+    print("Printing Inside: ",x+y)
+    return x+y
+
+
+#calling the Function
+total=sum(10,20)
+print("printing outside:",total)
+
+output:
+-------
+Printing Inside:  30
+printing outside: 30
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Argument and Parameter:
+-----------------------
+
+There can be two types of data passed in the function.
+
+1) The First type of data is the data passed in the function call. This data is called arguments.
+
+2) The second type of data is the data received in the function definition. This data is called parameters.
+
+
+	*Arguments can be literals, variables and expressions.
+
+	*Parameters must be variable to hold incoming values.
+
+	*Alternatively, arguments can be called as actual parameters or actual arguments and parameters 
+	 can be called as formal parameters or formal arguments.
+
+
+Example:3
+---------
+def addition(x,y):
+    print ("Addition value of x+y in function calling: ",x+y )
+    
+             
+x=15  
+addition(x ,10)  
+addition(x,x)  
+y=20  
+addition(x,y)  
+
+output:
+
+Addition value when function calling:  25
+Addition value when function calling:  30
+Addition value when function calling:  35
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Passing Parameters:
+-------------------
+Apart from matching the parameters, there are other ways of matching the parameters.
+
+Python supports following types of formal argument:
+---------------------------------------------------
+1) Positional argument (Required argument).
+
+2) Default argument.
+
+3) Keyword argument (Named argument)
+
+
+Positional/Required Arguments:
+-----------------------------------
+When the function call statement must match the number and order of arguments as defined in the function 
+definition it is Positional Argument matching.
+
+Example:4
+---------
+
+def sum(x,y):
+    c=x+y
+    print("Addition value of x+y",c) 
+             
+       
+sum(10,20)  
+sum(20)
+
+Output:
+-------
+
+Addition value of x+y 30
+Traceback (most recent call last):
+  File "C:/Users/LENIN/AppData/Local/Programs/Python/Python36/RajaPrograms/Function.py", line 18, in <module>
+    sum(20)
+TypeError: sum() missing 1 required positional argument: 'y'
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Default Arguments:
+---------------------
+
+Default Argument is the argument which provides the default values to the parameters passed in the function definition, 
+in case value is not provided in the function call.
+
+Example:5
+----------
+#Function Definition  
+def msg(Id,Name,Age=30):  
+        
+         print(Id ) 
+         print(Name)
+         print(Age)
+         return  
+#Function call  
+msg(Id=100,Name='Karthik',Age=20)  
+msg(Id=101,Name='Sankili')  
+
+
+Output:
+-------
+100
+Karthik
+20
+101
+Sankili
+30
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Keyword Arguments:
+------------------
+
+	*Using the Keyword Argument, the argument passed in function call is matched with function definition on 
+	 the basis of the name of the parameter.
+
+Example:6
+---------
+
+def msg(id,name):  
+          
+         print(id)  
+         print(name) 
+         return
+        
+msg(id=100,name='Rani')  
+msg(name='priya',id=101) 
+
+
+output:
+--------
+100
+Rani
+101
+priya
+---------------------------------------------------------------------------------------------------------------
+Pass by Reference vs Value:
+---------------------------
+	*All parameters (arguments) in the Python language are passed by reference. 
+
+	*It means if you change what a parameter refers to within a function, the change also reflects back 
+	 in the calling function.
+
+
+Example:1
+
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   print ("Values inside the function before change: ", mylist)
+   mylist[2]=50
+   print ("Values inside the function after change: ", mylist)
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30]
+changeme( mylist )
+print ("Values outside the function: ", mylist)
+
+
+output:
+-------
+Values inside the function before change:  [10, 20, 30]
+Values inside the function after change:  [10, 20, 50]
+Values outside the function:  [10, 20, 50]
+---------------------------------------------------------------------------------------------------------------
+Example:
+========
+def mean(*mylist):
+	list=[]
+	for i in mylist:
+		list.append(i)
+		
+	sum=0
+	for i in list:
+		sum+=i
+	avg=sum/len(list)
+	print(avg)
+
+mean(1,2,5)
+
+output:
+=======
+2.6666666666666665
+---------------------------------------------------------------------------------------------------------------

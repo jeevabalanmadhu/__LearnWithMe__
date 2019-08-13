@@ -1,0 +1,220 @@
+Python Pandas - Reindexing:
+---------------------------
+
+	*Reindexing changes the row labels and column labels of a DataFrame. 
+
+	*To reindex means to conform the data to match a given set of labels along a particular axis.
+
+
+Multiple operations can be accomplished through indexing like:
+--------------------------------------------------------------
+
+	1.Reorder the existing data to match a new set of labels.
+
+	2.Insert missing value (NA) markers in label locations where no data for the label existed.
+
+
+Example:
+--------
+import pandas as pd
+import numpy as np
+
+N=20
+
+df = pd.DataFrame({
+   'A': pd.date_range(start='2016-01-01',periods=N,freq='D'),
+   'x': np.linspace(0,stop=N-1,num=N),
+   'y': np.random.rand(N),
+   'C': np.random.choice(['Low','Medium','High'],N).tolist(),
+   'D': np.random.normal(100, 10, size=(N)).tolist()
+})
+
+#reindex the DataFrame
+df_reindexed = df.reindex(index=[0,2,5], columns=['A', 'C', 'B'])
+
+print(df_reindexed)
+
+
+output:
+-------
+            A    C     B
+0  2016-01-01  Low   NaN
+2  2016-01-03  High  NaN
+5  2016-01-06  Low   NaN
+---------------------------------------------------------------------------------------------------------------
+Reindex to Align with Other Objects:
+------------------------------------
+
+Example:
+--------
+import pandas as pd
+import numpy as np
+
+df1 = pd.DataFrame(np.random.randn(10,3),columns=['col1','col2','col3'])
+df2 = pd.DataFrame(np.random.randn(7,3),columns=['col1','col2','col3'])
+print(df1)
+
+df1 = df1.reindex_like(df2)
+print(df1)
+
+output:
+-------
+       col1      col2      col3
+0  0.475919  0.213701 -0.763169
+1  0.459420  1.136455 -0.224169
+2 -1.339491 -0.525940 -1.616255
+3  0.227241  0.412409 -2.251099
+4 -0.805056 -1.443154  0.357002
+5 -0.201159 -0.607150  0.402219
+6 -1.612454 -0.198410 -0.627283
+7  1.463964 -0.357285 -0.602371
+8  0.552326 -1.160316  0.417068
+9 -1.119451 -0.037557 -0.620859
+       col1      col2      col3
+0  0.475919  0.213701 -0.763169
+1  0.459420  1.136455 -0.224169
+2 -1.339491 -0.525940 -1.616255
+3  0.227241  0.412409 -2.251099
+4 -0.805056 -1.443154  0.357002
+5 -0.201159 -0.607150  0.402219
+6 -1.612454 -0.198410 -0.627283
+---------------------------------------------------------------------------------------------------------------
+Filling while ReIndexing:
+-------------------------
+
+Example:
+--------
+import pandas as pd
+import numpy as np
+
+df1 = pd.DataFrame(np.random.randn(6,3),columns=['col1','col2','col3'])
+df2 = pd.DataFrame(np.random.randn(2,3),columns=['col1','col2','col3'])
+
+# Padding NAN's
+print(df2.reindex_like(df1))
+
+# Now Fill the NAN's with preceding Values
+print ("Data Frame with Forward Fill:")
+print(df2.reindex_like(df1,method='ffill'))
+
+output:
+-------
+         col1        col2       col3
+0    1.311620   -0.707176   0.599863
+1   -0.423455   -0.700265   1.133371
+2         NaN         NaN        NaN
+3         NaN         NaN        NaN
+4         NaN         NaN        NaN
+5         NaN         NaN        NaN
+
+Data Frame with Forward Fill:
+         col1        col2        col3
+0    1.311620   -0.707176    0.599863
+1   -0.423455   -0.700265    1.133371
+2   -0.423455   -0.700265    1.133371
+3   -0.423455   -0.700265    1.133371
+4   -0.423455   -0.700265    1.133371
+5   -0.423455   -0.700265    1.133371
+
+Note:
+=====
+The last four rows are padded.
+---------------------------------------------------------------------------------------------------------------
+Limits on Filling while Reindexing:
+-----------------------------------
+
+Example:
+========
+import pandas as pd
+import numpy as np
+ 
+df1 = pd.DataFrame(np.random.randn(6,3),columns=['col1','col2','col3'])
+df2 = pd.DataFrame(np.random.randn(2,2),columns=['col1','col2'])
+
+# Padding NAN's
+print(df2.reindex_like(df1))
+
+print ("Data Frame with Forward Fill limiting to 4:")
+print (df2.reindex_like(df1,method='ffill',limit=4))
+
+# Now Fill the NAN's with preceding Values
+print ("Data Frame with Forward Fill limiting to 1:")
+print df2.reindex_like(df1,method='ffill',limit=1)
+
+
+output:
+======= 
+ col1      col2  col3
+0 -0.461667 -0.160835   NaN
+1 -1.336587  0.918953   NaN
+2       NaN       NaN   NaN
+3       NaN       NaN   NaN
+4       NaN       NaN   NaN
+5       NaN       NaN   NaN
+Data Frame with Forward Fill limiting to 4:
+       col1      col2      col3
+0 -0.461667 -0.160835 -0.160835
+1 -1.336587  0.918953  0.918953
+2 -1.336587  0.918953  0.918953
+3 -1.336587  0.918953  0.918953
+4 -1.336587  0.918953  0.918953
+5 -1.336587  0.918953  0.918953
+Data Frame with Forward Fill limiting to 1:
+       col1      col2      col3
+0 -0.461667 -0.160835 -0.160835
+1 -1.336587  0.918953  0.918953
+2 -1.336587  0.918953  0.918953
+3       NaN       NaN       NaN
+4       NaN       NaN       NaN
+5       NaN       NaN       NaN
+
+Note:
+=====
+Observe, only the 7th row is filled by the preceding 6th row. Then, the rows are left as they are.
+
+---------------------------------------------------------------------------------------------------------------
+Renaming:
+---------
+
+	The rename() method allows you to relabel an axis based on some mapping (a dict or Series) or an 
+	arbitrary function.
+
+Example:1
+=========
+
+import pandas as pd
+import numpy as np
+
+df1 = pd.DataFrame(np.random.randn(6,3),columns=['col1','col2','col3'])
+print(df1)
+
+print ("After renaming the rows and columns:")
+print (df1.rename(columns={'col1' : 'c1', 'col2' : 'c2'},
+       index = {0 : 'apple', 1 : 'banana', 2 : 'orange'}))
+
+output:
+=======
+       col1      col2      col3
+0 -1.918108 -0.684977  0.490173
+1  0.499733  2.066517  0.437281
+2  0.311288  1.550249  0.479004
+3 -1.167429  0.939297  0.159988
+4  0.240696 -0.736456  1.471471
+5  0.707556  0.798910  0.332083
+After renaming the rows and columns:
+              c1        c2      col3
+apple  -1.918108 -0.684977  0.490173
+banana  0.499733  2.066517  0.437281
+orange  0.311288  1.550249  0.479004
+3      -1.167429  0.939297  0.159988
+4       0.240696 -0.736456  1.471471
+5       0.707556  0.798910  0.332083
+Note:
+=====
+
+	*The rename() method provides an inplace named parameter, which by default is False and copies the 
+	 underlying data. 
+
+	*Pass inplace=True to rename the data in place.
+---------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,152 @@
+Python Tuples
+-------------
+
+	*A tuple is a collection which is ordered and unchangeable. 
+	
+	*Tuple is another form of collection where different type of data can be stored.
+	
+	*It is similar to list where data is separated by commas. 
+	
+	*Only the difference is that list uses square bracket and tuple uses parenthesis.
+	
+	*Tuples are enclosed in parenthesis and cannot be changed
+
+	*Once a tuple is created, you cannot change its values.
+
+	*You can access tuple items by referring to the index number, inside square brackets:
+---------------------------------------------------------------------------------------------------------------------------------------
+Tuple
+-----
+	1.A tuple is a collection which is ordered and unchangeable. 
+
+	2.In Python tuples are written with round brackets.
+
+Example
+--------
+#Create a Tuple:
+
+MyTuple = (10,3.14,"apple",4+5j,True)
+print(MyTuple)
+-------------------------------------------------------------------------------------------------------------------------------------
+Access Tuple Items
+------------------
+
+	1.You can access tuple items by referring to the index number, inside square brackets:
+
+Example
+-------
+#Return the item in position 1:
+
+MyTuple = (10,3.14,"apple",4+5j,True)
+print(MyTuple[1])
+-------------------------------------------------------------------------------------------------------------------------------------
+Change Tuple Values
+-------------------
+
+	1.Once a tuple is created, you cannot change its values. 
+
+	2.Tuples are unchangeable.
+
+Example
+-------
+#You cannot change values in a tuple:
+
+MyTuple = (10,3.14,"apple",4+5j,True)
+MyTuple[1]="Orange"
+# The values will remain the same:
+print(MyTuple)
+--------------------------------------------------------------------------------------------------------------------------------------
+Loop Through a Tuple
+---------------------
+
+	1.You can loop through the tuple items by using a for loop.
+
+Example
+--------
+
+#Iterate through the items and print the values:
+
+MyTuple = (10,3.14,"apple",4+5j,True)
+for i in MyTuple:
+  print(i)
+-------------------------------------------------------------------------------------------------------------------------------------
+Check if Item Exists
+--------------------
+
+	1.To determine if a specified item is present in a tuple use the in keyword:
+
+Example
+-------
+#Check if "apple" is present in the tuple:
+
+MyTuple = (10,3.14,"apple",4+5j,True)
+
+if "apple" in MyTuple:
+  print("Yes, 'apple' is in the fruits tuple")
+---------------------------------------------------------------------------------------------------------------------------------------
+Tuple Length
+------------
+
+	1.To determine how many items a tuple has, use the len() method:
+
+Example
+-------
+#Print the number of items in the tuple:
+
+MyTuple = (10,3.14,"apple",4+5j,True)
+print(len(MyTuple))
+-------------------------------------------------------------------------------------------------------------------------------------
+Add Items
+---------
+
+	1.Once a tuple is created, you cannot add items to it. 
+
+	2.Tuples are unchangeable.
+
+Example
+-------
+#You cannot add items to a tuple:
+
+MyTuple = (10,3.14,"apple",4+5j,True)
+MyTuple[2] = "orange" # This will raise an error
+print(MyTuple)
+---------------------------------------------------------------------------------------------------------------------------------------
+Remove Items
+-------------
+
+Note:
+-----
+	1.You cannot remove items in a tuple.
+
+ 	2.Tuples are unchangeable, so you cannot remove items from it, but you can delete the tuple completely:
+
+Example
+-------
+#The del keyword can delete the tuple completely:
+
+MyTuple = (10,3.14,"apple",4+5j,True)
+del MyTuple
+print(MyTuple) #this will raise an error because the tuple no longer exists
+-------------------------------------------------------------------------------------------------------------------------------------
+The tuple() Constructor
+-----------------------
+
+	1.It is also possible to use the tuple() constructor to make a tuple.
+
+Example
+-------
+#Using the tuple() method to make a tuple:
+
+MyTuple = tuple((10,3.14,"apple",4+5j,True)) # note the double round-brackets
+print(MyTuple)
+-------------------------------------------------------------------------------------------------------------------------------------
+Tuple Methods
+-------------
+Python has two built-in methods that you can use on tuples.
+
+Method			Description
+----------------------------------------------------------------------------------------------------------------------
+count()			Returns the number of times a specified value occurs in a tuple
+
+index()			Searches the tuple for a specified value and returns the position of where it was found
+-------------------------------------------------------------------------------------------------------------------------------------
