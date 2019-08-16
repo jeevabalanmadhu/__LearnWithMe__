@@ -1,0 +1,8 @@
+{
+"Tasks_folder_path":"Output\\Tasks\\",
+"group_column":"Dept",
+"status_column":"Status",
+"missing_data_path":"Output\\MissingTasks\\",
+"task_summary_path":"Output\\Task_Summary\\",
+"input_file_path":"Input\\Dept_Tasks.csv"
+}
