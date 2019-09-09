@@ -35,8 +35,8 @@ Explanation:
 	6.Therefore, the output "Welcome To Python" is produced.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-How to execute python:
-----------------------
+>>>>>>>>>>>How to execute python:
+--------------------------------
 
 1.Interactive Mode
 
@@ -88,8 +88,8 @@ Following is the List of Python Keywords(30).
 	is	
 	lambda
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Identifiers:
-------------
+>>>>>>>>>>>>>>>>>> Identifiers:
+---------------------------------
 Identifiers are the names given to the fundamental building blocks in a program.
 
 -->These can be variables ,class ,object ,functions , lists , dictionaries etc.
