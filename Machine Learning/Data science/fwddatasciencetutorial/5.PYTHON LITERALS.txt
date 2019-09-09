@@ -5,8 +5,8 @@ Python Literals:
 
 	*Python support the following literals:
 
-I. String literals:
--------------------
+>>>>>>>>>>>>>>>>>>I. String literals:
+------------------------------------
 
 	*String literals can be formed by enclosing a text in the quotes.
 
@@ -64,8 +64,8 @@ Example:2
 	to
 	class
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-II.Numeric literals:
---------------------
+>>>>>>>>>>>>>>>>>>II.Numeric literals:
+---------------------------------------
 
 Numeric Literals are immutable. Numeric literals can belong to following four different numerical types.
 
@@ -86,8 +86,8 @@ Numeric Literals are immutable. Numeric literals can belong to following four di
 	In the form of a+bj where a forms the real part and b forms the imaginary part of complex number. 
 	Ex: 3.14j
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-III. Boolean literals:
-----------------------
+>>>>>>>>>>>>>>>>>>>>>III. Boolean literals:
+-------------------------------------------
 
 	*A Boolean literal can have any of the two values: True(1) or False(0).
 
@@ -104,8 +104,8 @@ Example:2
 	False
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-IV. Special literals
---------------------
+>>>>>>>>>>>>>>>>>>>>IV. Special literals
+-------------------------------------------
 
 	*Python contains one special literal i.e., None.
 
@@ -117,8 +117,8 @@ Example:1
 	>>> print (a)
 	None
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-V.Literal Collections:
-----------------------
+>>>>>>>>>>>>>>>>>>>>>>>>>V.Literal Collections:
+-------------------------------------------------
 
 Collections such as tuples, lists and Dictionary are used in Python.
 
