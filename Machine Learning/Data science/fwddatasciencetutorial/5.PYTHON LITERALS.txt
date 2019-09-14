@@ -74,15 +74,11 @@ Numeric Literals are immutable. Numeric literals can belong to following four di
 	Numbers( can be both positive and negative) with no fractional part.
 	Ex: 100
 
-2.Long(long integers)
-	Integers of unlimited size followed by lowercase or uppercase L 
-	Ex: 87032845L
-
-3.float(floating point)
+2.float(floating point)
 	Real numbers with both integer and fractional part 
 	Ex: -26.2
 
-4.Complex(complex)
+3.Complex(complex)
 	In the form of a+bj where a forms the real part and b forms the imaginary part of complex number. 
 	Ex: 3.14j
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
