@@ -22,3 +22,8 @@ Convolutions and filters:
 --> Filter Size
 --> Stride
 
+Famous CNN architectures:
+1. LeNet-5 by LeCun
+2. Alexnet by Alex krizhevsky et al.
+3. GoogLeNet by Szegedy at Google Research
+4. ResNet by Kaiming He et al.
