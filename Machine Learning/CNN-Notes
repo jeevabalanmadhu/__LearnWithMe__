@@ -1,0 +1,24 @@
+CNN:
+
+* LeNet-5 first classifer for MNIST
+
+Learn about:
+* Tensors
+* DNN vs CNN
+* Convolutions and Filters
+* Paddling
+* Pooling Layers
+* review Dropout
+
+Tensor:
+more than 2 dimension nd array are tensors
+
+DNN vs CNN:
+DNN - Densely connected layer - Each neuron will be connected every other neuron in the next leyer
+CNN - each unit will be connected smaller number of near by units in the next layer
+
+Convolutions and filters:
+--> Filters
+--> Filter Size
+--> Stride
+
