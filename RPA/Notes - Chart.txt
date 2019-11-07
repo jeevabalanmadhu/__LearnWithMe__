@@ -1,0 +1,16 @@
+Plots:
+
+
+Using count - Bar chart:
+
+Column="Columnname"
+
+fig = plt.figure(figsize=(5,2))
+sns.countplot(x=Column, data=df)
+plt.show()
+
+
+
+Pandas Cross tab function create new dataframe with categorical count.
+
+pd.crosstab(df.salary, df.left ).plot(kind='bar',stacked=True)
